@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Diskart: Largest Discount Store</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="image/titlebar.png" />
+    <link rel="stylesheet" href="css/normalize.css" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/modernizr.custom.83306.js"></script>
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script src="jquery/jquery-2.1.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script> 
+        //popover notification start
+        $(function () { 
+            $('[data-toggle="popover"]').popover({html : true });
+            $('#popoverclose').click(function(e) {
+              $('.popover-title').append('<button id="popovercloseid" type="button" class="close">&times;</button>');
+              $(this).popover();
+
+            });
+
+            $(document).click(function(e) {
+                if(e.target.id=="popovercloseid" )
+                {
+                    $('#popoverclose').popover('hide');                
+                }
+            });
+        });
+        //popover notification end
+        
+        $(document).ready(function(){
+            $(".dropdown").hover(            
+                function() {
+                    $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
+                    $(this).toggleClass('open');        
+                },
+                function() {
+                    $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
+                    $(this).toggleClass('open');       
+                }
+            );
+        });
+        
+        
+        //Carousel slideshow start
+        $(document).ready( function() {
+            $('#myCarousel').carousel({
+                interval: 4000
+            });
+
+            var clickEvent = false;
+            $('#myCarousel').on('click', '.nav a', function() {
+                clickEvent = true;
+                $('.nav li').removeClass('active');
+                $(this).parent().addClass('active');
+            }).on('slid.bs.carousel', function(e) {
+                if(!clickEvent) {
+                    var count = $('#myCarousel .nav').children().length -1;
+                    var current = $('#myCarousel .nav li.active');
+                    current.removeClass('active').next().addClass('active');
+                    var id = parseInt(current.data('slide-to'));
+                    if(count == id) {
+                        $('#myCarousel .nav li').first().addClass('active');
+                    }
+                }
+                clickEvent = false;
+            });
+        });
+        //Carousel slide show end
+        $(document).ready(function(){
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+    </script>
+</head>
+<body>
+    <div id="header" style="width:1349px; height:150px;"></div>
+    <!-- topbar start -->   
+    <!-- start Carousel slide show -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9 col-md-offset-3">
+                <div style="widht:730px; height:5000px;">
+                <!-- slide show start -->
+                <div id="myCarousel" class="carousel slide slide-show" data-ride="carousel">
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="image/img0.jpg" style="width:730px; height:300px;" />
+                            <div class="carousel-caption">
+                                <a href="automobile_service.html" type="button" class="btn btn-success" style="background-color:#DC143C;">
+                                    <strong>SHOP NOW <span class="glyphicon glyphicon-circle-arrow-right"></span></strong>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- End Item -->
+                        <div class="item">
+                            <img src="image/img1.jpg" style="width:730px; height:300px;" />
+                            <div class="carousel-caption">
+                                <a href="automobile_service.html" type="button" class="btn btn-success" style="background-color:#DC143C;">
+                                    <strong>SHOP NOW <span class="glyphicon glyphicon-circle-arrow-right"></span></strong>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- End Item -->
+                        <div class="item">
+                            <img src="image/img2.jpg" style="width:730px; height:300px;" />
+                            <div class="carousel-caption">
+                                <a href="cake_seller.html" type="button" class="btn btn-success" style="background-color:#DC143C;">
+                                    <strong>SHOP NOW <span class="glyphicon glyphicon-circle-arrow-right"></span></strong>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- End Item -->
+                        <div class="item">
+                            <img src="image/img3.jpg" style="width:730px; height:300px;" />
+                            <div class="carousel-caption">
+                                <a href="internet_plan.html" type="button" class="btn btn-success" style="background-color:#DC143C;">
+                                    <strong>SHOP NOW <span class="glyphicon glyphicon-circle-arrow-right"></span></strong>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- End Item -->
+                    </div>
+                    <!-- End Carousel Inner -->
+
+                    <ul class="nav nav-pills nav-justified slidelist">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active">
+                            <a href="#">FOUR WHEELER</a>
+                        </li>
+                        <li data-target="#myCarousel" data-slide-to="1">
+                            <a href="#">TWO WHEELER</a>
+                        </li>
+                        <li data-target="#myCarousel" data-slide-to="2">
+                            <a href="#">BIRTHDAY CAKES</a>
+                        </li>
+                        <li data-target="#myCarousel" data-slide-to="3">
+                            <a href="#">INERNET PLANS</a>
+                        </li>
+                    </ul>        
+                </div>
+                <!-- End slide show -->
+                
+                <!-- start four wheeler block -->
+                <div class="clearfix"></div>
+                <div style="margin-top:90px;">
+                        <div class="head-block">
+                            <h4>Four Wheeler Servicing</h4>
+                        </div>
+                        <div id="thumbcarousel1" class="carousel slide slide-block" data-interval="false">
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <div data-target="#carousel" data-slide-to="0" class="thumb" style="border-right:1px solid #F8F8F8;">
+                                        <center>
+                                            <a href="#">
+                                                <img src="image/tata.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>
+                                        </center>
+                                    </div>
+                                    <div data-target="#carousel" data-slide-to="1" class="thumb" style="border-right:1px solid #F8F8F8;">
+                                        <center>
+                                            <a href="#">    
+                                                <img src="image/bmw.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>
+                                        </center>
+                                    </div>
+                                    <div data-target="#carousel" data-slide-to="2" class="thumb" style="border-right:1px solid #F8F8F8;">
+                                        <center>
+                                            <a href="#">
+                                                <img src="image/Force%20motors.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>
+                                        </center>
+                                    </div>
+                                    <div data-target="#carousel" data-slide-to="3" class="thumb">
+                                        <center>
+                                            <a href="#">    
+                                                <img src="image/ford.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>    
+                                        </center>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div data-target="#carousel" data-slide-to="4" class="thumb" style="border-right:1px solid #F8F8F8;">
+                                        <center>
+                                            <a href="#">
+                                                <img src="image/volkswagen.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>    
+                                        </center>    
+                                    </div>
+                                    <div data-target="#carousel" data-slide-to="5" class="thumb" style="border-right:1px solid #F8F8F8;">
+                                        <center>
+                                            <a href="#">
+                                                <img src="image/maruti%20suzuki.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% 0FF</b></h5>
+                                                </div>
+                                            </a>
+                                        </center>    
+                                    </div>
+                                    <div data-target="#carousel" data-slide-to="6" class="thumb" style="border-right:1px solid #F8F8F8;">
+                                        <center>
+                                            <a href="#">    
+                                                <img src="image/tata.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>
+                                        </center>    
+                                    </div>
+                                    <div data-target="#carousel" data-slide-to="7" class="thumb">
+                                        <center>
+                                            <a href="#">
+                                                <img src="image/tata.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>
+                                        </center>    
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="left carousel-control" href="#thumbcarousel1" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" style="left:15px; background-color:black;"></span>
+                            </a>
+                            <a class="right carousel-control" href="#thumbcarousel1" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" style="right:15px; background-color:black;"></span>
+                            </a>
+                        </div>
+                </div>
+                <!-- end four wheeler block -->
+                
+                <!-- start two wheeler block -->
+                <div class="clearfix"></div>
+                <div style="margin-top:60px;">
+                        <div class="head-block">
+                            <h4>Two Wheeler Servicing</h4>
+                        </div>
+                        <div id="thumbcarousel2" class="carousel slide slide-block" data-interval="false">
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <div data-target="#carousel" data-slide-to="0" class="thumb" style="border-right:1px solid #F8F8F8;">
+                                        <center>
+                                            <a href="#">
+                                                <img src="image/tata.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>
+                                        </center>
+                                    </div>
+                                    <div data-target="#carousel" data-slide-to="1" class="thumb" style="border-right:1px solid #F8F8F8;">
+                                        <center>
+                                            <a href="#">    
+                                                <img src="image/bmw.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>
+                                        </center>
+                                    </div>
+                                    <div data-target="#carousel" data-slide-to="2" class="thumb" style="border-right:1px solid #F8F8F8;">
+                                        <center>
+                                            <a href="#">
+                                                <img src="image/Force%20motors.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>
+                                        </center>
+                                    </div>
+                                    <div data-target="#carousel" data-slide-to="3" class="thumb">
+                                        <center>
+                                            <a href="#">    
+                                                <img src="image/ford.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>    
+                                        </center>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div data-target="#carousel" data-slide-to="4" class="thumb" style="border-right:1px solid #F8F8F8;">
+                                        <center>
+                                            <a href="#">
+                                                <img src="image/volkswagen.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>    
+                                        </center>    
+                                    </div>
+                                    <div data-target="#carousel" data-slide-to="5" class="thumb" style="border-right:1px solid #F8F8F8;">
+                                        <center>
+                                            <a href="#">
+                                                <img src="image/maruti%20suzuki.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% 0FF</b></h5>
+                                                </div>
+                                            </a>
+                                        </center>    
+                                    </div>
+                                    <div data-target="#carousel" data-slide-to="6" class="thumb" style="border-right:1px solid #F8F8F8;">
+                                        <center>
+                                            <a href="#">    
+                                                <img src="image/tata.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>
+                                        </center>    
+                                    </div>
+                                    <div data-target="#carousel" data-slide-to="7" class="thumb">
+                                        <center>
+                                            <a href="#">
+                                                <img src="image/tata.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>
+                                        </center>    
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="left carousel-control" href="#thumbcarousel2" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" style="left:15px; background-color:black;"></span>
+                            </a>
+                            <a class="right carousel-control" href="#thumbcarousel2" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" style="right:15px; background-color:black;"></span>
+                            </a>
+                        </div>
+                </div>
+                <!-- end two wheeler block -->
+                
+                <!-- start cakes block -->
+                <div class="clearfix"></div>
+                <div style="margin-top:60px;">
+                        <div class="head-block">
+                            <h4>Cakes</h4>
+                        </div>
+                        <div id="thumbcarousel3" class="carousel slide slide-block" data-interval="false">
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <div data-target="#carousel" data-slide-to="0" class="thumb" style="border-right:1px solid #F8F8F8;">
+                                        <center>
+                                            <a href="#">
+                                                <img src="image/tata.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>
+                                        </center>
+                                    </div>
+                                    <div data-target="#carousel" data-slide-to="1" class="thumb" style="border-right:1px solid #F8F8F8;">
+                                        <center>
+                                            <a href="#">    
+                                                <img src="image/bmw.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>
+                                        </center>
+                                    </div>
+                                    <div data-target="#carousel" data-slide-to="2" class="thumb" style="border-right:1px solid #F8F8F8;">
+                                        <center>
+                                            <a href="#">
+                                                <img src="image/Force%20motors.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>
+                                        </center>
+                                    </div>
+                                    <div data-target="#carousel" data-slide-to="3" class="thumb">
+                                        <center>
+                                            <a href="#">    
+                                                <img src="image/ford.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>    
+                                        </center>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div data-target="#carousel" data-slide-to="4" class="thumb" style="border-right:1px solid #F8F8F8;">
+                                        <center>
+                                            <a href="#">
+                                                <img src="image/volkswagen.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>    
+                                        </center>    
+                                    </div>
+                                    <div data-target="#carousel" data-slide-to="5" class="thumb" style="border-right:1px solid #F8F8F8;">
+                                        <center>
+                                            <a href="#">
+                                                <img src="image/maruti%20suzuki.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% 0FF</b></h5>
+                                                </div>
+                                            </a>
+                                        </center>    
+                                    </div>
+                                    <div data-target="#carousel" data-slide-to="6" class="thumb" style="border-right:1px solid #F8F8F8;">
+                                        <center>
+                                            <a href="#">    
+                                                <img src="image/tata.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>
+                                        </center>    
+                                    </div>
+                                    <div data-target="#carousel" data-slide-to="7" class="thumb">
+                                        <center>
+                                            <a href="#">
+                                                <img src="image/tata.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>
+                                        </center>    
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="left carousel-control" href="#thumbcarousel3" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" style="left:15px; background-color:black;"></span>
+                            </a>
+                            <a class="right carousel-control" href="#thumbcarousel3" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" style="right:15px; background-color:black;"></span>
+                            </a>
+                        </div>
+                </div>
+                <!-- end cakes block-->
+                
+                <!-- start internet plan block -->
+                <div class="clearfix"></div>
+                <div style="margin-top:60px;">
+                        <div class="head-block">
+                            <h4>Internet Plans</h4>
+                        </div>
+                        <div id="thumbcarousel4" class="carousel slide slide-block" data-interval="false">
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <div data-target="#carousel" data-slide-to="0" class="thumb" style="border-right:1px solid #F8F8F8;">
+                                        <center>
+                                            <a href="#">
+                                                <img src="image/tata.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>
+                                        </center>
+                                    </div>
+                                    <div data-target="#carousel" data-slide-to="1" class="thumb" style="border-right:1px solid #F8F8F8;">
+                                        <center>
+                                            <a href="#">    
+                                                <img src="image/bmw.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>
+                                        </center>
+                                    </div>
+                                    <div data-target="#carousel" data-slide-to="2" class="thumb" style="border-right:1px solid #F8F8F8;">
+                                        <center>
+                                            <a href="#">
+                                                <img src="image/Force%20motors.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>
+                                        </center>
+                                    </div>
+                                    <div data-target="#carousel" data-slide-to="3" class="thumb">
+                                        <center>
+                                            <a href="#">    
+                                                <img src="image/ford.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>    
+                                        </center>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div data-target="#carousel" data-slide-to="4" class="thumb" style="border-right:1px solid #F8F8F8;">
+                                        <center>
+                                            <a href="#">
+                                                <img src="image/volkswagen.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>    
+                                        </center>    
+                                    </div>
+                                    <div data-target="#carousel" data-slide-to="5" class="thumb" style="border-right:1px solid #F8F8F8;">
+                                        <center>
+                                            <a href="#">
+                                                <img src="image/maruti%20suzuki.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% 0FF</b></h5>
+                                                </div>
+                                            </a>
+                                        </center>    
+                                    </div>
+                                    <div data-target="#carousel" data-slide-to="6" class="thumb" style="border-right:1px solid #F8F8F8;">
+                                        <center>
+                                            <a href="#">    
+                                                <img src="image/tata.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>
+                                        </center>    
+                                    </div>
+                                    <div data-target="#carousel" data-slide-to="7" class="thumb">
+                                        <center>
+                                            <a href="#">
+                                                <img src="image/tata.jpg" alt="tata" style="width:150px;height:120px;" />
+                                                <div class="caption">
+                                                    <h5><b>15% OFF</b></h5>
+                                                </div>
+                                            </a>
+                                        </center>    
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="left carousel-control" href="#thumbcarousel4" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" style="left:15px; background-color:black;"></span>
+                            </a>
+                            <a class="right carousel-control" href="#thumbcarousel4" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" style="right:15px; background-color:black;"></span>
+                            </a>
+                        </div>
+                </div>
+                <!-- end internet plan block -->
+                </div>    
+            </div>
+        </div>
+    </div>
+    <!-- end two wheeler service bolck -->
+    
+    <!-- start how it works -->
+    <div style="margin-top:50px; background-color:#F0E68C;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <center style="color:#780000;">
+                        <h3><b>HOW IT WORKS?</b></h3>
+                    </center>    
+                </div>
+            </div>
+            <div class="row howitworks">
+                <div class="col-md-3">
+                    <center>
+                        <img src="image/location.png" class="img-circle" alt="location" width="130" height="130" />
+                        <h4><b>Select Location</b></h4>
+                        <p style="color:#585858;">Select nearest location in your city or where you want to go for your products</p>
+                    </center>    
+                </div>
+                <div class="col-md-3">
+                    <center>
+                        <img src="image/greencart.jpg" class="img-circle" alt="select product" width="130" height="130" />
+                        <h4><b>Select Product</b></h4>
+                        <p style="color:#585858;">Select shops and products of your choice </p>
+                    </center>    
+                </div>
+                <div class="col-md-3">
+                    <center>
+                        <img src="image/sms.jpg" class="img-circle" alt="sms" width="130" height="130" />
+                        <h4><b>Get Sms Coupon</b></h4>
+                        <p style="color:#585858;">Get coupon code of your selected product or shop via sms</p>
+                    </center>    
+                </div>
+                <div class="col-md-3">
+                    <center>
+                        <img src="image/discount.jpg" class="img-circle" alt="discount" width="130" height="130" />
+                        <h4><b>Get Discount</b></h4>
+                        <p style="color:#585858;">Show sms coupon code at shop and get discount</p>
+                    </center>    
+                </div>
+            </div>
+        </div>
+    </div>    
+    <!-- end how it works-->
+    <div id="footer"></div>
+    <!-- start footer -->
+<!--    <div class="footer-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <center>
+                        <ul class="footer-list" style="list-style-type:none;">
+                            <li style="border-right:1px solid rgba(255, 255, 255, 0.2);">
+                                <a href="aboutus.html" style="color:whitesmoke">About Us</a>
+                            </li>
+                            <li style="border-right:1px solid rgba(255, 255, 255, 0.2);">
+                                <a href="sell.html" style="color:whitesmoke">Sell on Diskart</a>
+                            </li>
+                            <li style="border-right:1px solid rgba(255, 255, 255, 0.2);">
+                                <a href="contact.html" style="color:whitesmoke">Contact Us</a>
+                            </li>
+                            <li><a href="terms-condition.html" style="color:whitesmoke">Terms &amp; Conditions</a></li>
+                        </ul>
+                    </center>    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <center>
+                        <p>&#169; 2015 Diskart. All rights reserved.</p>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div> -->    
+    <!-- end footer -->
+</body>    
+</html>
