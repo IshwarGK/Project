@@ -1,0 +1,20 @@
+.veg_non_veg {
+    background-image: url("/Discount/image/Cakeshop-logo/egg-eggless.png");
+    height: 17px;
+    width: 38px;
+    position: absolute;
+    margin: 105px 0px 0px 155px;
+}
+
+.cake-block:hover {
+    border: 2px solid #FF8C00;
+    border-radius: 5px;
+}
+
+.cakepic {
+    border-bottom:1px solid #C0C0C0;
+}
+
+.cakepic:hover {
+    border:1px solid #A80000;
+}
