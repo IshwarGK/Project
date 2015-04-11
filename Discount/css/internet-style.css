@@ -1,10 +1,19 @@
+ul#shortcut-menu li {
+    display:inline;
+    font-size: 16px;
+}
+
+
+/*-- list of internet plan blocks start --*/
+    /* plan block */
+.brand-block {
+    border: 1px solid #B8B8B8;
+    border-radius: 5px;
+}
+    /* brand image in plan block */
 .brand-image {
     height:35px;
     border-bottom: 1px solid #B8B8B8;
     padding-top: 5px;
 }
-
-.brand-block {
-    border: 1px solid #B8B8B8;
-    border-radius: 5px;
-}
+/*-- list of internet plan blocks end --*/
