@@ -1,22 +1,8 @@
 <?php
-    
-    //Credentials
-    $servername = "localhost";
-    $username = "root";
-    $password = "1234";
-    $dbname = "discount";
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    // database connection file include
+    include "db_connect.php";
 
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    else {
-        echo "Connected successfully <br> ";
-    }
-    
     $sql = "SELECT * FROM you_broadband_plan";
     $result = $conn->query($sql);
 
@@ -29,7 +15,7 @@
                 ."<tr><td>"."Data Usage"."</td><td>".$row["Data_Usage"]."</td></tr>"
                 ."<tr><td>"."Speed"."</td><td>".$row["Speed"]."</td></tr>"
                 ."<tr><td>"."After Data Usage"."</td><td>".$row["After_Data_Usage"]."</td></tr>"
-                ."<tr><td>"."Price"."</td><td>"."<img src='/image/".$row["Image"]."' width=50 height=50>"."</td></tr>";
+                ."<tr><td>"."Price"."</td><td>"."<img src='/image/internet/".$row["Image"]."' width=50 height=50>"."</td></tr>";
         }
         echo "</table>";
     } 
