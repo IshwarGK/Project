@@ -242,7 +242,7 @@
                                 while($row = $result->fetch_assoc()) {
                         ?>
                         
-                        <div class="col-md-3" style="padding-bottom:30px;">
+                        <div class="col-md-3" style="padding-bottom:40px;">
                             <div class="brand-block">
                                 <div class="brand-image">
                                     <center>
@@ -256,7 +256,7 @@
                                     <tr>
                                         <td>
                                             <b>Plan Name :</b> 
-                                            <?php echo $row["Plan_Name"]; ?>
+                                            <?php echo str_replace($row["Validity"],"",$row["Plan_Name"]); ?>
                                         </td>
                                     </tr>
                                     <tr>
@@ -281,7 +281,7 @@
                                         <td> 
                                             <?php 
                                                 if($row["After_Data_Usage"] != "None") {
-                                                    echo "<b>After Data Usage :</b>";
+                                                    echo "<b>After Data Usage : </b>";
                                                     echo $row["After_Data_Usage"];    
                                                 }
                                             ?>
@@ -291,7 +291,11 @@
                                         <td>
                                             <h4><strong>
                                                 <del>&#8377 <?php echo $row["Price"]; ?></del> 
-                                                <?php echo $row["Discount"]; ?>% OFF &#8377 1425
+                                                <?php echo $row["Discount"]; ?>% OFF &#8377 
+                                                <?php
+                                                    $discount = ($row["Price"] - ($row["Price"] * ($row["Discount"] / 100)));  
+                                                    echo ROUND($discount,0); 
+                                                ?> 
                                                 </strong>
                                             </h4>
                                         </td>
