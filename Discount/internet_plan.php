@@ -234,8 +234,10 @@
                         <?php
                             // database connection file include
                             include "db_connect.php";
+                           // include "dp_internet_plan.php"
                             $sql = "SELECT * FROM you_broadband_plan";
                             $result = $conn->query($sql);
+                                
                             if ($result->num_rows > 0) {
                                 while($row = $result->fetch_assoc()) {
                         ?>
