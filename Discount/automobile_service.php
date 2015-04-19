@@ -10,9 +10,13 @@
     <link rel="stylesheet" href="css/font-awesome.min.css"/>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/automobile-style.css" />
+	<link rel="stylesheet" type="text/css" href="css/social.css" />
     <script src="js/modernizr.custom.83306.js"></script>
     <script src="js/modernizr-2.6.2.min.js"></script>
     <script src="jquery/jquery-2.1.3.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="js/socialbars.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
         
@@ -44,7 +48,8 @@
     </script>
 </head>
 <body>
-    
+    <div id="socialside">
+    </div>
     <!-- topbar, searchbar and menubar start  -->
     <div id="header" style="width:1349px; height:150px;"></div>
     <!-- topbar, searchbar and menubar end  -->

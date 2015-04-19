@@ -1,0 +1,35 @@
+#slider{
+	width:500px;
+	top:100px;
+	position:fixed;
+	z-index: -1;
+}
+
+#header{ 
+	width:360px;
+	height:480px;
+	position:fixed; 
+	right:0px; 
+	border:1px solid #d8d8d8;
+	margin-left:0px;
+	padding:10px 20px;
+	border-radius:3px;
+	box-shadow: 0 0 8px gray;
+	z-index: -1;
+}
+
+#sidebar{
+	position:fixed;
+	top:180px;
+	left:93px;
+	box-shadow: 0 0 8px gray;
+	z-index: -1;
+}
+
+#sidebar1{
+	position:fixed;
+	top:180px;
+	left:93px;
+	box-shadow: 0 0 8px gray;
+	z-index: -1;
+}
