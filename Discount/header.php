@@ -357,197 +357,194 @@
                             </li>
                             <li style="border-left: 1px solid rgba(255, 255, 255, 0.2); display:inline;">
                                 <!-- use data-remote instead of href  -->
-                                <a href="" data-toggle="modal" data-target="#exampleModal1">Signup</a>
+                                <a href="" data-toggle="modal" data-target="#exampleModal1" data-backdrop="static">Signup</a>
+								<!-- start modal signup -->
+								<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+								   <div class="modal-dialog" style="padding-top:130px;">
+									  <div class="modal-content">
+										 <div class="modal-body">
+											 <button type="button" class="close" data-dismiss="modal" aria-label="close">
+											   <span aria-hidden="true">&times;</span> 
+											 </button>
+											 <div class="clearfix"></div>
+											 <div id="social-icons-conatainer">
+												<div class="modal-body-left">
+													<div class="tabbable">
+														<ul class="nav nav-tabs" id="menu3">
+															<li class="active"><a href="#tab1" data-toggle="tab">Signup</a></li>
+															<li><a href="#tab2" data-toggle="tab">Login</a></li>
+														</ul>
+														<div class="tab-content">
+															<div class="tab-pane active" id="tab1">
+																<form>
+																	<div class="form-group">
+																		<label for="email" class="control-label">Email Address</label>
+																		<input type="email" class="form-control" id="email-id" />
+
+																	</div> 
+																	<div class="form-group">
+																		<label for="password" class="control-label">Password</label>
+																		<input type="password" class="form-control" id="pwd" />
+
+																	</div>
+																	<div class="form-group">
+																		<label for="repeat" class="control-label">Repeat</label>
+																		<input type="password" class="form-control" id="repeat-pwd" />
+
+																	</div> 
+																	<button type="submit" class="btn btn-success">SIGN UP NOW!</button> 
+																</form> 
+															</div>
+
+															<div class="tab-pane" id="tab2">
+																<form>
+																	<div class="form-group">
+																		<label for="email" class="control-label">Email</label>
+																		<input type="email" class="form-control" id="email-id" />
+
+																	 </div>
+																	 <div class="form-group">
+																		<label for="password" class="control-label">Password</label>
+																		<input type="password" class="form-control" id="pwd" />
+
+																	 </div>
+																	 <button type="submit" class="btn btn-primary">LOGIN</button>
+																	 <a href=""> Forgot password?</a> 
+															  </form> 
+														   </div> 
+														</div>  
+													</div>   
+												</div>
+
+												<div class="modal-body-right">                                            
+													<div class="modal-social-icons">
+														<h4><strong>Sign in with</strong></h4>
+														<a href="" class="btn btn-default facebook"> 
+															<i class="fa fa-facebook modal-icons"></i> 
+															Facebook 
+														</a>
+														<a href="" class="btn btn-default twitter"> 
+															<i class="fa fa-twitter modal-icons"></i> 
+															Twitter 
+														</a>
+														<a href="" class="btn btn-default google"> 
+															<i class="fa fa-google-plus modal-icons"></i> 
+															Google 
+														</a>
+														<a href="" class="btn btn-default linkedin"> 
+															<i class="fa fa-linkedin modal-icons"></i> 
+															Linkedin 
+														</a>
+													</div> 
+												</div>
+
+												<div id="center-line"> OR </div> 
+											 </div>                                     
+										 </div>        
+										<div class="clearfix"></div>                  
+										 <div class="modal-footer">
+											 <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+										 </div> 
+									  </div> 
+								   </div> 
+								</div>
+								<!-- end modal signup -->
                             </li>
                             <li style="border-left: 1px solid rgba(255, 255, 255, 0.2); display:inline;">
-                                <a href="" data-toggle="modal" data-target="#exampleModal2">Login</a>
+                                <a href="" data-toggle="modal" data-target="#exampleModal2" data-backdrop="static">Login</a>
+								<!-- start modal login -->
+								<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+								   <div class="modal-dialog" style="padding-top:130px;">
+									  <div class="modal-content">
+										 <div class="modal-body">
+											 <button type="button" class="close" data-dismiss="modal" aria-label="close">
+											   <span aria-hidden="true">&times;</span> 
+											 </button>
+											 <div class="clearfix"></div>
+											 <div id="social-icons-conatainer">
+												<div class="modal-body-left">
+													<div class="tabbable">
+														<ul class="nav nav-tabs" id="menu3">
+															<li><a href="#tab3" data-toggle="tab">Signup</a></li>
+															<li class="active"><a href="#tab4" data-toggle="tab">Login</a></li>
+														</ul>
+														<div class="tab-content">
+															<div class="tab-pane" id="tab3">
+																<form>
+																	<div class="form-group">
+																		<label for="email" class="control-label">Email Address</label>
+																		<input type="email" class="form-control" id="email-id" />
+
+																	</div> 
+																	<div class="form-group">
+																		<label for="password" class="control-label">Password</label>
+																		<input type="password" class="form-control" id="pwd" />
+
+																	</div>
+																	<div class="form-group">
+																		<label for="repeat" class="control-label">Repeat</label>
+																		<input type="password" class="form-control" id="repeat-pwd" />
+
+																	</div> 
+																	<button type="submit" class="btn btn-success">SIGN UP NOW!</button> 
+																</form> 
+															</div>
+
+															<div class="tab-pane active" id="tab4">
+																<form>
+																	<div class="form-group">
+																		<label for="email" class="control-label">Email</label>
+																		<input type="email" class="form-control" id="email-id" />
+
+																	 </div>
+																	 <div class="form-group">
+																		<label for="password" class="control-label">Password</label>
+																		<input type="password" class="form-control" id="pwd" />
+
+																	 </div>
+																	 <button type="submit" class="btn btn-primary">LOGIN</button>
+																	 <a href=""> Forgot password?</a> 
+															  </form> 
+														   </div> 
+														</div>  
+													</div>   
+												</div>
+												 	
+												<div class="modal-body-right">                                            
+													<div class="modal-social-icons">
+														<h4><strong>Sign in with</strong></h4>
+														<a href="" class="btn btn-default facebook"> 
+															<i class="fa fa-facebook modal-icons"></i> 
+															Facebook 
+														</a>
+														<a href="" class="btn btn-default twitter"> 
+															<i class="fa fa-twitter modal-icons"></i> 
+															Twitter 
+														</a>
+														<a href="" class="btn btn-default google"> 
+															<i class="fa fa-google-plus modal-icons"></i> 
+															Google 
+														</a>
+														<a href="" class="btn btn-default linkedin"> 
+															<i class="fa fa-linkedin modal-icons"></i> 
+															Linkedin 
+														</a>
+													</div> 
+												</div>
+
+												<div id="center-line"> OR </div> 
+											 </div>                                     
+										 </div>        
+										<div class="clearfix"></div>                  
+										 <div class="modal-footer">
+											 <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+										 </div> 
+									  </div> 
+								   </div> 
+								</div> 
+								<!-- end modal login -->
+
                             </li>
-
-                            <!-- start modal signup -->
-                            <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
-                               <div class="modal-dialog">
-                                  <div class="modal-content">
-                                     <div class="modal-body">
-                                         <button type="button" class="close" data-dismiss="modal" aria-label="close">
-                                           <span aria-hidden="true">&times;</span> 
-                                         </button>
-                                         <div class="clearfix"></div>
-                                         <div id="social-icons-conatainer">
-                                            <div class="modal-body-left">
-                                                <div class="tabbable">
-                                                    <ul class="nav nav-tabs" id="menu3">
-                                                        <li class="active"><a href="#tab1" data-toggle="tab">Signup</a></li>
-                                                        <li><a href="#tab2" data-toggle="tab">Login</a></li>
-                                                    </ul>
-                                                    <div class="tab-content">
-                                                        <div class="tab-pane active" id="tab1">
-                                                            <form>
-                                                                <div class="form-group">
-                                                                    <label for="email" class="control-label">Email Address</label>
-                                                                    <input type="email" class="form-control" id="email-id" />
-
-                                                                </div> 
-                                                                <div class="form-group">
-                                                                    <label for="password" class="control-label">Password</label>
-                                                                    <input type="password" class="form-control" id="pwd" />
-
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="repeat" class="control-label">Repeat</label>
-                                                                    <input type="password" class="form-control" id="repeat-pwd" />
-
-                                                                </div> 
-                                                                <button type="submit" class="btn btn-success">SIGN UP NOW!</button> 
-                                                            </form> 
-                                                        </div>
-
-                                                        <div class="tab-pane" id="tab2">
-                                                            <form>
-                                                                <div class="form-group">
-                                                                    <label for="email" class="control-label">Email</label>
-                                                                    <input type="email" class="form-control" id="email-id" />
-
-                                                                 </div>
-                                                                 <div class="form-group">
-                                                                    <label for="password" class="control-label">Password</label>
-                                                                    <input type="password" class="form-control" id="pwd" />
-
-                                                                 </div>
-                                                                 <button type="submit" class="btn btn-primary">LOGIN</button>
-                                                                 <a href=""> Forgot password?</a> 
-                                                          </form> 
-                                                       </div> 
-                                                    </div>  
-                                                </div>   
-                                            </div>
-
-                                            <div class="modal-body-right">                                            
-                                                <div class="modal-social-icons">
-                                                    <h4><strong>Sign in with</strong></h4>
-                                                    <a href="" class="btn btn-default facebook"> 
-                                                        <i class="fa fa-facebook modal-icons"></i> 
-                                                        Facebook 
-                                                    </a>
-                                                    <a href="" class="btn btn-default twitter"> 
-                                                        <i class="fa fa-twitter modal-icons"></i> 
-                                                        Twitter 
-                                                    </a>
-                                                    <a href="" class="btn btn-default google"> 
-                                                        <i class="fa fa-google-plus modal-icons"></i> 
-                                                        Google 
-                                                    </a>
-                                                    <a href="" class="btn btn-default linkedin"> 
-                                                        <i class="fa fa-linkedin modal-icons"></i> 
-                                                        Linkedin 
-                                                    </a>
-                                                </div> 
-                                            </div>
-
-                                            <div id="center-line"> OR </div> 
-                                         </div>                                     
-                                     </div>        
-                                    <div class="clearfix"></div>                  
-                                     <div class="modal-footer">
-                                         <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
-                                     </div> 
-                                  </div> 
-                               </div> 
-                            </div>
-                            <!-- end modal signup -->
-
-                            <!-- start modal login -->
-                            <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
-                               <div class="modal-dialog">
-                                  <div class="modal-content">
-                                     <div class="modal-body">
-                                         <button type="button" class="close" data-dismiss="modal" aria-label="close">
-                                           <span aria-hidden="true">&times;</span> 
-                                         </button>
-                                         <div class="clearfix"></div>
-                                         <div id="social-icons-conatainer">
-                                            <div class="modal-body-left">
-                                                <div class="tabbable">
-                                                    <ul class="nav nav-tabs" id="menu3">
-                                                        <li><a href="#tab1" data-toggle="tab">Signup</a></li>
-                                                        <li class="active"><a href="#tab2" data-toggle="tab">Login</a></li>
-                                                    </ul>
-                                                    <div class="tab-content">
-                                                        <div class="tab-pane" id="tab1">
-                                                            <form>
-                                                                <div class="form-group">
-                                                                    <label for="email" class="control-label">Email Address</label>
-                                                                    <input type="email" class="form-control" id="email-id" />
-
-                                                                </div> 
-                                                                <div class="form-group">
-                                                                    <label for="password" class="control-label">Password</label>
-                                                                    <input type="password" class="form-control" id="pwd" />
-
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="repeat" class="control-label">Repeat</label>
-                                                                    <input type="password" class="form-control" id="repeat-pwd" />
-
-                                                                </div> 
-                                                                <button type="submit" class="btn btn-success">SIGN UP NOW!</button> 
-                                                            </form> 
-                                                        </div>
-
-                                                        <div class="tab-pane active" id="tab2">
-                                                            <form>
-                                                                <div class="form-group">
-                                                                    <label for="email" class="control-label">Email</label>
-                                                                    <input type="email" class="form-control" id="email-id" />
-
-                                                                 </div>
-                                                                 <div class="form-group">
-                                                                    <label for="password" class="control-label">Password</label>
-                                                                    <input type="password" class="form-control" id="pwd" />
-
-                                                                 </div>
-                                                                 <button type="submit" class="btn btn-primary">LOGIN</button>
-                                                                 <a href=""> Forgot password?</a> 
-                                                          </form> 
-                                                       </div> 
-                                                    </div>  
-                                                </div>   
-                                            </div>
-
-                                            <div class="modal-body-right">
-
-                                                <div class="modal-social-icons">
-                                                    <h4><strong>Sign in with</strong></h4>
-                                                    <a href="" class="btn btn-default facebook"> 
-                                                        <i class="fa fa-facebook modal-icons"></i> 
-                                                        Facebook 
-                                                    </a>
-                                                    <a href="" class="btn btn-default twitter"> 
-                                                        <i class="fa fa-twitter modal-icons"></i> 
-                                                        Twitter 
-                                                    </a>
-                                                    <a href="" class="btn btn-default google"> 
-                                                        <i class="fa fa-google-plus modal-icons"></i> 
-                                                        Google 
-                                                    </a>
-                                                    <a href="" class="btn btn-default linkedin"> 
-                                                        <i class="fa fa-linkedin modal-icons"></i> 
-                                                        Linkedin 
-                                                    </a>
-                                                </div> 
-                                            </div>
-
-                                            <div id="center-line"> OR </div> 
-                                         </div>                                     
-                                     </div>        
-                                    <div class="clearfix"></div>                  
-                                     <div class="modal-footer">
-                                         <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
-                                     </div> 
-                                  </div> 
-                               </div> 
-                            </div> 
-                            <!-- end modal login -->
-
                         </ul>
                     </div>
                 </div>
@@ -567,10 +564,14 @@
                     <div class="col-md-7">
                         <form role="form">
                             <div class="input-group form-group">
-                                <input type="search" class="form-control" value="" placeholder="Search discounts for a Vehicle service, Internet plans and Cakes">
+                                <input type="search" name="search" class="form-control" value="" placeholder="Search discounts for a Vehicle service, Internet plans and Cakes" onkeydown="searchq();">
                                 <span class="input-group-btn">
                                     <button type="submit" class="btn btn-warning">SEARCH</button> 
                                 </span>
+                                
+                            </div>
+                            <div id="output" style="z-index: 10; position: absolute ; background-color: yellow;">
+                                   
                             </div>
                         </form>
                     </div>
@@ -787,12 +788,42 @@
                                     <div class="row">
                                         <div class="col-md-5">
                                             <ul style="list-style-type:none;">
-												<li><a href=<?php echo 'internet_plan.php?brand=airtel_plan' ?>><span><b>Airtel</b></span></a></li><br />
-												<li><a href=<?php echo 'internet_plan.php?brand=bsnl_plan' ?>><span><b>BSNL</b></span></a></li><br />
-												<li><a href=<?php echo 'internet_plan.php?brand=hathway_plan' ?>><span><b>Hathway</b></span></a></li><br />
-												<li><a href=<?php echo 'internet_plan.php?brand=docomo_plan' ?>><span><b>Tata Docomo</b></span></a></li><br />
-												<li><a href=<?php echo 'internet_plan.php?brand=tikona_plan' ?>><span><b>Tikona</b></span></a></li><br />
-												<li><a href=<?php echo 'internet_plan.php?brand=you_broadband_plan' ?>><span><b>You Broadband</b></span></a></li><br />
+												<li>
+													<span class="glyphicon glyphicon-circle-arrow-right"> </span> 
+													<a href=<?php echo 'internet_plan.php?brand=airtel_plan' ?>>
+														<span style="padding-left:5px;"><b> Airtel</b></span>
+													</a>
+												</li><br />
+												<li>
+													<span class="glyphicon glyphicon-circle-arrow-right"> </span> 
+													<a href=<?php echo 'internet_plan.php?brand=bsnl_plan' ?>>
+														<span style="padding-left:5px;"><b> BSNL</b></span>
+													</a>
+												</li><br />
+												<li>
+													<span class="glyphicon glyphicon-circle-arrow-right"> </span> 
+													<a href=<?php echo 'internet_plan.php?brand=hathway_plan' ?>>
+														<span style="padding-left:5px;"><b> Hathway</b></span>
+													</a>
+												</li><br />
+												<li>
+													<span class="glyphicon glyphicon-circle-arrow-right"> </span> 
+													<a href=<?php echo 'internet_plan.php?brand=docomo_plan' ?>>
+														<span style="padding-left:5px;"><b> Tata Docomo</b></span>
+													</a>
+												</li><br />
+												<li>
+													<span class="glyphicon glyphicon-circle-arrow-right"> </span> 
+													<a href=<?php echo 'internet_plan.php?brand=tikona_plan' ?>>
+														<span style="padding-left:5px;"><b> Tikona</b></span>
+													</a>
+												</li><br />
+												<li>
+													<span class="glyphicon glyphicon-circle-arrow-right"> </span> 
+													<a href=<?php echo 'internet_plan.php?brand=you_broadband_plan' ?>>
+														<span style="padding-left:5px;"><b> You Broadband</b></span>
+													</a>
+												</li><br />
                                             </ul>
                                             <a href="internet_plan.php">
 												<span><b>View All Broadband Internet Plans</b></span>

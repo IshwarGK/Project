@@ -7,20 +7,20 @@
     <link rel="icon" type="image/png" href="image/titlebar.png" />
     <script src="jquery/jquery-2.1.3.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-	<script src="jquery/jquery-1.11.1.min.js"></script>
-	<script src="jquery/jquery.scrollUp.min.js"></script>
-	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js">            </script>
+    
+	<script src="jquery/jquery.scrollUp.min.js"></script> <!-- back to top button js -->
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js">         </script><!-- bootstrap form validation -->
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css"/>
-	<script src="js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="js/socialbars.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="css/bootstrap.min.css" />
-	<link id="scrollUpTheme" rel="stylesheet" href="css/back-to-top-tab.css">
-    <link rel="stylesheet" href="css/back-to-top-labs.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/social.css" />
-	<link rel="stylesheet" type="text/css" href="css/feedback.css" />
+	<!-- bootstrap form validation -->
+	<script src="js/bootstrap.min.js" type="text/javascript"></script> <!-- bootstrap for all -->
+	<script src="js/socialbars.js" type="text/javascript"></script> <!-- social bar left -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" /> <!-- bootstrap for all -->
+	<link id="scrollUpTheme" rel="stylesheet" href="css/back-to-top-tab.css"> <!-- back to top button -->
+    <link rel="stylesheet" href="css/back-to-top-labs.css"> <!-- back to top button -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" /> <!-- signup and login social icons -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" /> <!-- all css file -->
+    <link rel="stylesheet" type="text/css" href="css/social.css" /> <!-- social icons bar left -->
+	<link rel="stylesheet" type="text/css" href="css/feedback.css" /> <!-- feedback form -->
 
     <script type="text/javascript"> 
         //fix search bar on scroll start
@@ -1054,12 +1054,42 @@
                                     <div class="row">
                                         <div class="col-md-5">
                                             <ul style="list-style-type:none;">
-												<li><a href=<?php echo 'internet_plan.php?brand=airtel_plan' ?>><span><b>Airtel</b></span></a></li><br />
-												<li><a href=<?php echo 'internet_plan.php?brand=bsnl_plan' ?>><span><b>BSNL</b></span></a></li><br />
-												<li><a href=<?php echo 'internet_plan.php?brand=hathway_plan' ?>><span><b>Hathway</b></span></a></li><br />
-												<li><a href=<?php echo 'internet_plan.php?brand=docomo_plan' ?>><span><b>Tata Docomo</b></span></a></li><br />
-												<li><a href=<?php echo 'internet_plan.php?brand=tikona_plan' ?>><span><b>Tikona</b></span></a></li><br />
-												<li><a href=<?php echo 'internet_plan.php?brand=you_broadband_plan' ?>><span><b>You Broadband</b></span></a></li><br />
+												<li>
+													<span class="glyphicon glyphicon-circle-arrow-right"> </span> 
+													<a href=<?php echo 'internet_plan.php?brand=airtel_plan' ?>>
+														<span style="padding-left:5px;"><b> Airtel</b></span>
+													</a>
+												</li><br />
+												<li>
+													<span class="glyphicon glyphicon-circle-arrow-right"> </span> 
+													<a href=<?php echo 'internet_plan.php?brand=bsnl_plan' ?>>
+														<span style="padding-left:5px;"><b> BSNL</b></span>
+													</a>
+												</li><br />
+												<li>
+													<span class="glyphicon glyphicon-circle-arrow-right"> </span> 
+													<a href=<?php echo 'internet_plan.php?brand=hathway_plan' ?>>
+														<span style="padding-left:5px;"><b> Hathway</b></span>
+													</a>
+												</li><br />
+												<li>
+													<span class="glyphicon glyphicon-circle-arrow-right"> </span> 
+													<a href=<?php echo 'internet_plan.php?brand=docomo_plan' ?>>
+														<span style="padding-left:5px;"><b> Tata Docomo</b></span>
+													</a>
+												</li><br />
+												<li>
+													<span class="glyphicon glyphicon-circle-arrow-right"> </span> 
+													<a href=<?php echo 'internet_plan.php?brand=tikona_plan' ?>>
+														<span style="padding-left:5px;"><b> Tikona</b></span>
+													</a>
+												</li><br />
+												<li>
+													<span class="glyphicon glyphicon-circle-arrow-right"> </span> 
+													<a href=<?php echo 'internet_plan.php?brand=you_broadband_plan' ?>>
+														<span style="padding-left:5px;"><b> You Broadband</b></span>
+													</a>
+												</li><br />
                                             </ul>
                                             <a href="internet_plan.php">
 												<span><b>View All Broadband Internet Plans</b></span>
