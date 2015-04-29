@@ -5,28 +5,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="image/titlebar.png" />
-    <link rel="stylesheet" href="css/normalize.css" type="text/css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/coupon.css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/internet-style.css" />
-    <script src="js/modernizr.custom.83306.js"></script>
-    <script src="js/modernizr-2.6.2.min.js"></script>
-    <script src="jquery/jquery-2.1.3.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="http://cdn.jsdelivr.net/jquery.cookie/1.4.0/jquery.cookie.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+	<script src="jquery/jquery-2.1.3.min.js"></script><!-- jquery -->
+    <script src="http://cdn.jsdelivr.net/jquery.cookie/1.4.0/jquery.cookie.min.js"></script><!-- cookie jquery -->
+    <script src="js/bootstrap.min.js"></script> <!-- bootstrap js -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" /><!-- bootstrap css -->
+    <link rel="stylesheet" href="css/coupon.css" /><!-- coupon button css -->
+    <link rel="stylesheet" href="css/font-awesome.min.css"/> <!-- login and signup social icons -->
+    <link rel="stylesheet" href="css/style.css" /> <!-- all page css -->
+    <link rel="stylesheet" href="css/internet-style.css" /> <!-- internet style css -->
     <script> 
-       // var plan = [];
         
         //topbar, searchbar and menubar start
         $(document).ready(function(){
             $("#header").load("header.php");
             $("#footer").load("footer.php");
             $.removeCookie("checkboxValues");
-            //}
         });
         //topbar, searchbar and menubar end  
          
@@ -80,7 +73,7 @@
     <div id="header" style="width:1349px; height:150px;"></div>
     <!-- topbar, searchbar and menubar end  -->
     
-<!-- list of internet plans start -->
+	<!-- list of internet plans start -->
     <div style="width:1349px;">
         <div class="container-fluid">
             <div class="row">
