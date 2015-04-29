@@ -15,22 +15,17 @@
     <script src="js/modernizr-2.6.2.min.js"></script>
     <script src="jquery/jquery-2.1.3.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://cdn.jsdelivr.net/jquery.cookie/1.4.0/jquery.cookie.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script> 
        // var plan = [];
         
         //topbar, searchbar and menubar start
         $(document).ready(function(){
-            $("#header").load("header.html");
-            $("#footer").load("footer.html");
-            
+            $("#header").load("header.php");
+            $("#footer").load("footer.php");
             $.removeCookie("checkboxValues");
-            
-            
-            
             //}
         });
         //topbar, searchbar and menubar end  
@@ -84,11 +79,6 @@
     <!-- topbar, searchbar and menubar start  -->
     <div id="header" style="width:1349px; height:150px;"></div>
     <!-- topbar, searchbar and menubar end  -->
-    
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="http://cdn.jsdelivr.net/jquery.cookie/1.4.0/jquery.cookie.min.js"></script>
-
     
 <!-- list of internet plans start -->
     <div style="width:1349px;">
