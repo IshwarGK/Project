@@ -22,8 +22,8 @@
         
         //topbar, searchbar and menubar start
         $(document).ready(function(){
-            $("#header").load("header.html");
-            $("#footer").load("footer.html");
+            $("#header").load("header.php");
+            $("#footer").load("footer.php");
         });
         //topbar, searchbar and menubar end
         

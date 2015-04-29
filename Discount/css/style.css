@@ -1,4 +1,18 @@
-/*------ topbar menu sell, customer care, signup, login and below search start ----*/
+/*-- fix search bar css start --*/
+.fix-nav {
+	z-index: 9999;
+	position: fixed;
+	left: 0;
+	top: 0;
+	padding-top:15px;		
+	width: 100%;
+}
+.fix-body {
+	margin-top: 50px;
+}
+/*-- fix search bar css end --*/
+
+/*------ topbar menu city, sell, customer care, signup, login and below search start ----*/
     /*topbar background color*/
 .header-topbar {
     background-color: #228B22;
@@ -15,7 +29,7 @@ ul#menu1 > li > a {
 }
 
 ul#menu1 li a:hover {
-    text-decoration: underline;
+    text-decoration: none;
     color: darkred;
 }
 
@@ -33,7 +47,7 @@ ul#menu1 li a:hover {
     height:380px;
 }
 ul.cityloc li {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #DCDCDC;
 }
 
 .cityname {
@@ -172,74 +186,18 @@ ul#menu3 li a:hover {
 
 /*-------------------- Carousel slide show  start------- */
 
-    /* css to entire slide show*/
 .slide-show {
-    border: 1px solid #C0C0C0;
-    border-radius: 5px;
-    width: 730px;
-    height: 300px;
+	width: 100%;
+    height: 400px;
+	margin-top: -20px;
 }
 
-#myCarousel .nav a small
-{
-    display: block;
-}
-#myCarousel .nav
-{
-    background: #eee;
-}
-
-.nav-justified > li > a
-{
-    border-radius: 0px;
-    color: black;
-}
-.nav-pills>li[data-slide-to="0"].active a { 
-    background-color: #5BC0DE;
-    font-weight: bold;
-    color: black;
-}
-.nav-pills>li[data-slide-to="1"].active a { 
-    background-color: #5BC0DE; 
-    font-weight: bold;
-    color: black;
-}
-.nav-pills>li[data-slide-to="2"].active a { 
-    background-color: #5BC0DE;
-    font-weight: bold;
-    color: black;
-}
-.nav-pills>li[data-slide-to="3"].active a { 
-    background-color: #5BC0DE;
-    font-weight: bold;
-    color: black;
-}
-.nav-pills>li[data-slide-to="4"].active a { 
-    background-color: #5BC0DE; 
-    font-weight: bold;
-    color: black;
-}
-.nav-pills>li[data-slide-to="5"].active a { 
-    background-color: #5BC0DE; 
-    font-weight: bold;
-    color: black;
-}
-.nav-pills>li[data-slide-to="6"].active a { 
-    background-color: #5BC0DE; 
-    font-weight: bold;
-    color: black;
-}
-
-ul.slidelist {
-    border: 1px solid #eee;
-    border-radius: 3px;
-}
 /*-----------------Carousel slide show  end -------------*/
 
 /*---------four wheeler, two wheeler, cakes and internet plans block start -------*/
 
 .slide-block {
-    width:730px;
+    width:1100px;
 }
 
 div.slide-block img:hover {
@@ -247,7 +205,7 @@ div.slide-block img:hover {
 }
 
 .head-block {
-    width:730px; 
+    width:1100px; 
     background-color:#333;
     color: whitesmoke;
     padding: 4px 0px 2px 9px;
