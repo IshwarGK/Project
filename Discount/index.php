@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="image/titlebar.png" />
     <script src="jquery/jquery-2.1.3.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    
 	<script src="jquery/jquery.scrollUp.min.js"></script> <!-- back to top button js -->
-	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js">         </script><!-- bootstrap form validation -->
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js">         </script> <!-- bootstrap form validation -->
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css"/>
 	<!-- bootstrap form validation -->
 	<script src="js/bootstrap.min.js" type="text/javascript"></script> <!-- bootstrap for all -->
@@ -21,7 +19,6 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" /> <!-- all css file -->
     <link rel="stylesheet" type="text/css" href="css/social.css" /> <!-- social icons bar left -->
 	<link rel="stylesheet" type="text/css" href="css/feedback.css" /> <!-- feedback form -->
-
     <script type="text/javascript"> 
         //fix search bar on scroll start
         jQuery("document").ready(function($){
@@ -75,13 +72,10 @@
 				feedback_count = feedback_count + 1;
 				if(feedback_count % 2 != 0){
 					$("#feedback").animate({right:"0px"});
-				//	$("#feedback_form").load("feedback_form.php");
 					document.getElementById("feedback_form").reset();
-					
 					$("#feedback-content").show()	
 					$("#feedback-success").hide()
 					$('#feedback_form').data('bootstrapValidator').resetForm('resetFormData',true);
-					
 				}
 				else {	
 					$("#feedback").animate({right:"-385px"});
