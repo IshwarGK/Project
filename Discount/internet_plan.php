@@ -99,7 +99,7 @@
                     <!-- shop by brand start-->
                     <div class="row">
                         <div class="col-md-12" style="background-color:#FF9966;">
-                            <h5><strong>Shop by Brands </strong> <?php if (isset($_GET["count1"]) ) { if($_GET["count1"] > 0) { ?> <a href="#" id="uncheck_1"  onclick="toggle_uncheck_brand(this)" style="color:black;text-decoration:none;float:right;" > Clear </a> <?php } } ?>  </h5>
+                            <h5><strong>Shop by Brands </strong> <?php if (isset($_GET["count1"]) ) { if($_GET["count1"] > 0) { ?> <a href="#" id="uncheck_1"  onclick="toggle_uncheck_brand(this)" style="color:black;text-decoration:none;float:right;" > Clear </a> <?php } } else{ ?>  <a href="#" id="uncheck_1"  onclick="toggle_uncheck_brand(this)" style="color:black;text-decoration:none;float:right;" > Clear </a>  <?php } ?>  </h5>
                         </div>
                     </div>
                     <div class="row sort">
