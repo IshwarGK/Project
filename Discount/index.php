@@ -882,7 +882,7 @@
 													</a>
 												</li><br />
                                             </ul>
-                                            <a href="internet_plan.php">
+                                            <a href="internet_plan.php?bb=B">
 												<span><b>View All Broadband Internet Plans</b></span>
                                             </a><br />
                                         </div>
