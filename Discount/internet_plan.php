@@ -523,12 +523,12 @@ var speed = [];
      // End function is for creating cookies again                      
       function repopulateCheckboxes(){
         var checkboxValues = $.cookie('checkboxValues');
-        //if(checkboxValues){
+        if(checkboxValues){
           Object.keys(checkboxValues).forEach(function(element) {
             var checked = checkboxValues[element];
             $("#" + element).prop('checked', checked);
           });
-        //}
+        }
       }
 
       $.cookie.json = true;
