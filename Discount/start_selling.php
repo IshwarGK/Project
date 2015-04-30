@@ -5,19 +5,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="image/titlebar.png" />
-    <link rel="stylesheet" href="css/normalize.css" type="text/css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" type="text/css" href="css/social.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" /> <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/style.css" /> <!-- style css for all -->
+	<link rel="stylesheet" type="text/css" href="css/social.css" /> <!-- left social icons -->
+	<link rel="stylesheet" type="text/css" href="css/start-selling.css" /> <!-- start selling page css -->
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css"/>
-    <script src="js/modernizr.custom.83306.js"></script>
-    <script src="js/modernizr-2.6.2.min.js"></script>
-    <script src="jquery/jquery-2.1.3.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-    <script src="js/socialbars.js" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js">            </script>
+	<!-- bootstrap form validator css -->
+    <script src="jquery/jquery-2.1.3.min.js"></script> <!-- jquery -->
+    <script src="js/socialbars.js" type="text/javascript"></script> <!--left fixed social icons -->
+    <script src="js/bootstrap.min.js"></script> <!-- bootstrap js -->
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js">         </script> <!-- bootstrap form validator js -->
     <script>
         $(document).ready(function() {
             $('#selleraccount').bootstrapValidator({
@@ -167,6 +164,7 @@
     
 	<div id="socialside">
     </div>
+	
     <!-- topbar start -->
     <div class="header-topbar">
         <div class="container">
@@ -302,12 +300,13 @@
         </form>
     </div>
     <!-- account creation end -->
+	
     <!-- footer start -->
-    <div class="footer-block">
+    <div class="footer-block" style="margin-top:50px;">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2 col-md-offset-1">
-                    <p><a href="sell.html" style="color:whitesmoke;">Seller Learning Center</a></p>    
+                    <p><a href="sell.php" style="color:whitesmoke;">Seller Learning Center</a></p>    
                 </div>
                 <div class="col-md-3 col-md-offset-6">
                     <p>&#169; 2015 Diskart. All rights reserved.</p>
@@ -316,5 +315,6 @@
         </div>
     </div>
     <!-- footer end -->
+	
 </body>    
 </html>    

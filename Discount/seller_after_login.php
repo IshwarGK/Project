@@ -5,12 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="image/titlebar.png" />
-    <link rel="stylesheet" href="css/normalize.css" type="text/css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/font-awesome.min.css"/>
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/modernizr.custom.83306.js"></script>
-    <script src="js/modernizr-2.6.2.min.js"></script>
     <script src="jquery/jquery-2.1.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </head>

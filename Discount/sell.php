@@ -5,18 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="image/titlebar.png">
-    <link rel="stylesheet" href="css/normalize.css" type="text/css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" type="text/css" href="css/social.css" />
-	<link rel="stylesheet" type="text/css" href="css/sell.css" />
-    <script src="js/modernizr-2.6.2.min.js"></script>
-    <script src="jquery/jquery-2.1.3.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-    <script src="js/socialbars.js" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" /> <!-- bootstrap css for all -->
+    <link rel="stylesheet" href="css/style.css" /> <!-- common style css for all  -->
+	<link rel="stylesheet" type="text/css" href="css/social.css" /> <!-- left social icons css -->
+	<link rel="stylesheet" type="text/css" href="css/sell.css" /> <!-- sell.php page css -->
+    <script src="jquery/jquery-2.1.3.min.js"></script> <!-- jquery -->
+    <script src="js/socialbars.js" type="text/javascript"></script> <!-- left social icons js -->
+    <script src="js/bootstrap.min.js"></script> <!-- bootstrap js for all -->
     <script>
         //topbar, searchbar and menubar start
         $(document).ready(function(){
@@ -26,8 +21,10 @@
     </script>
 </head>
 <body>
+	
 	<div id="socialside">
     </div>
+	
     <!-- topbar start -->
     <div class="header-topbar">
         <div class="container">
