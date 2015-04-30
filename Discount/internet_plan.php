@@ -19,31 +19,34 @@
         $(document).ready(function(){
             $("#header").load("header.php");
             $("#footer").load("footer.php");
-<<<<<<< HEAD
-            //$.removeCookie("checkboxValues");
-=======
-            $.removeCookie("checkboxValues");
->>>>>>> origin/master
+           // $.removeCookie("checkboxValues");
+
         });
         
        
         //topbar, searchbar and menubar end  
          
+        // Start code for uncheck function 
+                 
         function toggle_uncheck_brand(source){
                checkboxes = document.getElementsByName('brand');
           for(var i=0, n=checkboxes.length;i<n;i++) {
             checkboxes[i].checked = source.unchecked;
           }
+          
             $("#uncheck_1").hide();
-            countChecked();
+            cookies_handling();
+           
         }
         function toggle_uncheck_plan(source){
                checkboxes = document.getElementsByName('plan');
           for(var i=0, n=checkboxes.length;i<n;i++) {
             checkboxes[i].checked = source.unchecked;
           }
+            
             $("#uncheck_2").hide();
-            countChecked();
+            cookies_handling();
+            
         }
        
         function toggle_uncheck_speed(source){
@@ -52,7 +55,8 @@
             checkboxes[i].checked = source.unchecked;
           }
             $("#uncheck_3").hide();
-            countChecked();
+            
+            cookies_handling();
         }
         function toggle_uncheck_price(source){
                checkboxes = document.getElementsByName('price');
@@ -60,7 +64,8 @@
             checkboxes[i].checked = source.unchecked;
           }
             $("#uncheck_4").hide();
-            countChecked();
+            
+            cookies_handling();
         }
         function toggle_uncheck_validity(source){
                checkboxes = document.getElementsByName('validity');
@@ -68,10 +73,12 @@
             checkboxes[i].checked = source.unchecked;
           }
             $("#uncheck_5").hide();
-            countChecked();
+            
+            cookies_handling();
+
         }
         
-         
+         // End for check button code
             
         
         
@@ -439,27 +446,37 @@
         var countChecked = function() {
             var cookies_imp = 1;
   var favorite = [];
-            $.each($("input[name='brand']:checked"), function(){            
+            
+                $.each($("input[name='brand']:checked"), function(){            
                 favorite.push($(this).val());
-            });
+                });
+           
             
  var plan = [];
-            $.each($("input[name='plan']:checked"), function(){            
+            
+                $.each($("input[name='plan']:checked"), function(){            
                 plan.push($(this).val());
-            });   
-             //plan.push($_Get['brand']);
+                });
+           
 var speed = [];
-            $.each($("input[name='speed']:checked"), function(){            
+            
+                 $.each($("input[name='speed']:checked"), function(){            
                 speed.push($(this).val());
-            });      
+                });
+           
+                  
     var price = [];
-            $.each($("input[name='price']:checked"), function(){            
-                price.push($(this).val());
-            });      
+            
+                $.each($("input[name='price']:checked"), function(){            
+                    price.push($(this).val());
+                });
+                
     var validity = [];
-            $.each($("input[name='validity']:checked"), function(){            
+            
+                $.each($("input[name='validity']:checked"), function(){            
                 validity.push($(this).val());
-            });
+                });
+           
          
     var brand_len = $("input[name='brand']:checked").length;
     var plan_len = $("input[name='plan']:checked").length;
@@ -468,7 +485,7 @@ var speed = [];
     var validity_len = $("input[name='validity']:checked").length;
              
              // $("#load").load('t2.php', {var1:'value1', var2:'value2'});            
-            var url = "internet_plan.php?brand=" + favorite.join(", ") + "& plan=" + plan.join(", ") + "& speed=" + speed.join(", ") + "& price=" + price.join(", ") + "& validity=" + validity.join(", ") + "& count1=" + brand_len + "& count2=" + plan_len + "& count3=" + speed_len + "& count4=" + price_len + "& count5=" + validity_len + "& Plan_test_name=airtel_plan & bb =C" ;
+            var url = "internet_plan.php?brand=" + favorite.join(", ") + "& plan=" + plan.join(", ") + "& speed=" + speed.join(", ") + "& price=" + price.join(", ") + "& validity=" + validity.join(", ") + "& count1=" + brand_len + "& count2=" + plan_len + "& count3=" + speed_len + "& count4=" + price_len + "& count5=" + validity_len + "& Plan_test_name=airtel_plan & bb=C" ;
                     window.location.href = url;
              
              var favorite2 = favorite.join(", ");
@@ -487,21 +504,31 @@ var speed = [];
           checkboxValues[this.id] = this.checked;
         });
         $.cookie('checkboxValues', checkboxValues, { expires: 7, path: '/' })
+        countChecked();
+
+      });
+         
+    // this function is for creating cookies again                 
+        function cookies_handling(){
+            var checkboxValues = {};
+        $(":checkbox").each(function(){
+          checkboxValues[this.id] = this.checked;
+        });
+        $.cookie('checkboxValues', checkboxValues, { expires: 7, path: '/' })
         
          
         countChecked();
-//$('input[type=checkbox]').attr('checked',false);
-        
-      });
 
+        }             
+     // End function is for creating cookies again                      
       function repopulateCheckboxes(){
         var checkboxValues = $.cookie('checkboxValues');
-        if(checkboxValues){
+        //if(checkboxValues){
           Object.keys(checkboxValues).forEach(function(element) {
             var checked = checkboxValues[element];
             $("#" + element).prop('checked', checked);
           });
-        }
+        //}
       }
 
       $.cookie.json = true;
