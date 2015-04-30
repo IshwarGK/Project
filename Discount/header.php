@@ -350,10 +350,10 @@
                             <!-- end modal of change location exampleModal3 -->
 
                             <li style="border-left: 1px solid rgba(255, 255, 255, 0.2); display:inline;">
-                                <a href="sell.html">Sell</a>
+                                <a href="sell.php">Sell</a>
                             </li>
                             <li style="border-left: 1px solid rgba(255, 255, 255, 0.2); display:inline;">
-                                <a href="contact.html"><span class="glyphicon glyphicon-earphone"></span> 24x7 Customer Care</a>
+                                <a href="contact.php"><span class="glyphicon glyphicon-earphone"></span> 24x7 Customer Care</a>
                             </li>
                             <li style="border-left: 1px solid rgba(255, 255, 255, 0.2); display:inline;">
                                 <!-- use data-remote instead of href  -->

@@ -1,3 +1,4 @@
+<script>
 //Feedback form building start
 		$(document).ready(function(){
     		var feedback_count = 0;
@@ -150,7 +151,7 @@
 			else {
 			$.ajax({
 				type: "POST",
-				url: "feedback.php",
+				url: "feedback_database.php",
 				data: dataString,
 				cache: false,
 				success: function(html) {
@@ -163,3 +164,33 @@
 		}
 				// ajax function to send data to database end
 		//Feedback form building end
+
+</script>
+<a href="#" class="pull_feedback">Feedback</a>
+		<form role="form" id="feedback_form" method="post" onsubmit="return myFunction()" style="width:385px;height:550px;">
+			<div id="feedback-content">
+				<h3><b>Tell us what you think.</b></h3>
+				<p>Love us / have suggestions / ideas / feature requests?<br /> 
+					Tell us how we can improve our website.
+				</p>
+				<div class="form-group">
+					<label for="email">Email <span style="color:red;"> &#42;</span></label><br />
+					<input type="email" class="form-control" id="email" name="email" />
+					<div id="emailvalidation"></div>
+				</div>
+				<div class="form-group">
+					<label for="mobilenumber">Mobile Number <span style="color:red;"> &#42;</span></label><br />
+					<input type="tel" class="form-control" id="mobilenumber" name="mobilenumber" />
+					<div id="mobilenumbervalidation"></div>
+				</div>
+				<div class="form-group">
+					<label for="message">Message <span style="color:red;"> &#42;</span></label><br />
+					<textarea class="form-control" rows="4" id="formmessage" name="formmessage"></textarea>
+					<div id="messagevalidation"></div>
+				</div>
+				<button name="feedback_submit" id="feedback_submit" type="submit" class="btn btn-success">Submit</button>
+			</div>
+			<div id="feedback-success" style="margin:200px 0px 0px 50px;">
+				<h4>Thank you for your feedback.</h4>
+			</div>
+		</form>

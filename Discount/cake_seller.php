@@ -1,17 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Diskart: Largest Discount Store</title>
-    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="image/titlebar.png" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" type="text/css" href="css/social.css" />
-	<script src="jquery/jquery-2.1.3.min.js"></script>
-    <script src="js/socialbars.js" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="jquery/jquery-2.1.3.min.js"></script>
+	<script src="jquery/jquery.scrollUp.min.js"></script> <!-- back to top button js -->
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js">         </script> <!-- bootstrap form validation -->
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css"/>
+	<!-- bootstrap form validation -->
+	<script src="js/bootstrap.min.js" type="text/javascript"></script> <!-- bootstrap for all -->
+	<script src="js/socialbars.js" type="text/javascript"></script> <!-- social bar left -->
+	<script src="js/back-to-top.js" type="text/javascript"></script> <!-- back to top js -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" /> <!-- bootstrap for all -->
+	<link id="scrollUpTheme" rel="stylesheet" href="css/back-to-top-tab.css"> <!-- back to top button -->
+    <link rel="stylesheet" href="css/back-to-top-labs.css"> <!-- back to top button -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" /> <!-- signup and login social icons -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" /> <!-- all css file -->
+    <link rel="stylesheet" type="text/css" href="css/social.css" /> <!-- social icons bar left -->
+	<link rel="stylesheet" type="text/css" href="css/feedback.css" /> <!-- feedback form -->
     <script> 
         
         //topbar, searchbar and menubar start
@@ -20,13 +28,26 @@
             $("#footer").load("footer.php");
         });
         //topbar, searchbar and menubar end
+		
+		//feedback form load start
+		$(document).ready(function(){
+            $("#feedback").load("feedback_form.php");
+        });
+		//feedback form load end
         
     </script>
 </head>
 <body>
-    <div id="socialside">
-    </div>
-    <!-- topbar, searchbar and menubar start  -->
+	
+    <!-- social buttons start -->
+    <div id="socialside"></div>
+	<!-- social buttons end -->
+	
+	<!-- feedback form start -->
+	<div id="feedback"></div>
+	<!-- feedback form end -->
+	
+	<!-- topbar, searchbar and menubar start  -->
     <div id="header" style="width:1349px; height:150px;"></div>
     <!-- topbar, searchbar and menubar end  -->
     
@@ -125,7 +146,7 @@
                     <div style="border-bottom:1px solid #F0F0F0; padding-bottom:10px;">
                         <div class="row">
                             <div class="col-md-8">
-                                <a href="monginies.html" style="color:#E00000;">
+                                <a href="monginies.php" style="color:#E00000;">
                                     <h4><strong>The Monginies Cake Shop</strong></h4>
                                 </a>
                                 Kothrud<small> <span class="glyphicon glyphicon-menu-right"></span></small>
@@ -180,7 +201,7 @@
                     <div style="border-bottom:1px solid #F0F0F0; padding:15px 0px 10px 0px;">
                         <div class="row">
                             <div class="col-md-8">
-                                <a href="monginies.html" style="color:#E00000;">
+                                <a href="monginies.php" style="color:#E00000;">
                                     <h4><strong>The Monginies Cake Shop</strong></h4>
                                 </a>
                                 Kothrud<small> <span class="glyphicon glyphicon-menu-right"></span></small>
@@ -235,7 +256,7 @@
                     <div style="border-bottom:1px solid #F0F0F0; padding:15px 0px 10px 0px;">
                         <div class="row">
                             <div class="col-md-8">
-                                <a href="monginis-online.html" style="color:#E00000;">
+                                <a href="monginis-online.php" style="color:#E00000;">
                                     <h4><strong>The Monginies Cake Shop</strong></h4>
                                 </a>
                                 Online<small> <span class="glyphicon glyphicon-menu-right"></span></small>
@@ -292,7 +313,11 @@
         </div>
     </div>    
     <!-- list of cakes end -->
-    
+	
+	<!-- back to top button start -->
+	<a href="#" class="image-switch"></a>
+	<!-- back to top button end -->
+
     <!-- start footer -->
     <div id="footer" style="width:1349px;"></div>    
     <!-- end footer -->
