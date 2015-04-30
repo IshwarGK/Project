@@ -19,7 +19,11 @@
         $(document).ready(function(){
             $("#header").load("header.php");
             $("#footer").load("footer.php");
+<<<<<<< HEAD
             //$.removeCookie("checkboxValues");
+=======
+            $.removeCookie("checkboxValues");
+>>>>>>> origin/master
         });
         
        

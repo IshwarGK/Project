@@ -281,16 +281,20 @@ div.slide-block img:hover {
 
 /*--------footer start ------------*/
 .footer-block {
-    margin-top: 50px;;
+    bottom: 0px;
     border-top: 1px solid #C0C0C0;
     padding: 10px 0px 0px 0px;
     background-color: #008B8B;
-    color: whitesmoke;
+    color: #DCDCDC;
 }
 
 ul.footer-list li {
     display:inline;
     padding: 4px;
+}
+
+ul.footer-list li a:hover {
+	color: darkred;
 }
 /*-------footer end------------*/
 
