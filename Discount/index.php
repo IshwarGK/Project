@@ -1492,7 +1492,7 @@
                     <div style="margin-top:60px;">
                     	<div class="head-block">
                         	<h4>
-                            	<a href="internet_plan.php" style="color:white;">Internet Plans</a>
+                            	<a href="internet_plan.php" style="color:white;">Internet Broadband Plans</a>
                             </h4>
                         </div>
                         <div id="thumbcarousel4" class="carousel slide slide-block" data-interval="false">
