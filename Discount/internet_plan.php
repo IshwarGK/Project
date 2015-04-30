@@ -19,7 +19,11 @@
         $(document).ready(function(){
             $("#header").load("header.php");
             $("#footer").load("footer.php");
+<<<<<<< HEAD
             //$.removeCookie("checkboxValues");
+=======
+            $.removeCookie("checkboxValues");
+>>>>>>> origin/master
         });
         
        
@@ -464,7 +468,7 @@ var speed = [];
     var validity_len = $("input[name='validity']:checked").length;
              
              // $("#load").load('t2.php', {var1:'value1', var2:'value2'});            
-            var url = "internet_plan.php?brand=" + favorite.join(", ") + "& plan=" + plan.join(", ") + "& speed=" + speed.join(", ") + "& price=" + price.join(", ") + "& validity=" + validity.join(", ") + "& count1=" + brand_len + "& count2=" + plan_len + "& count3=" + speed_len + "& count4=" + price_len + "& count5=" + validity_len + "& Plan_test_name=airtel_plan & bb=C" ;
+            var url = "internet_plan.php?brand=" + favorite.join(", ") + "& plan=" + plan.join(", ") + "& speed=" + speed.join(", ") + "& price=" + price.join(", ") + "& validity=" + validity.join(", ") + "& count1=" + brand_len + "& count2=" + plan_len + "& count3=" + speed_len + "& count4=" + price_len + "& count5=" + validity_len + "& Plan_test_name=airtel_plan & bb =C" ;
                     window.location.href = url;
              
              var favorite2 = favorite.join(", ");
