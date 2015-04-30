@@ -1,20 +1,22 @@
     <!-- start footer -->
-    <div class="footer-block">
+    <div class="footer-block" style="margin-top:50px;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <center>
                         <ul class="footer-list" style="list-style-type:none;">
                             <li style="border-right:1px solid rgba(255, 255, 255, 0.2);">
-                                <a href="aboutus.html" style="color:whitesmoke">About Us</a>
+                                <a href="aboutus.php" style="color:#DCDCDC;">About Us</a>
                             </li>
                             <li style="border-right:1px solid rgba(255, 255, 255, 0.2);">
-                                <a href="sell.html" style="color:whitesmoke">Sell on Diskart</a>
+                                <a href="sell.php" style="color:#DCDCDC;">Sell on Diskart</a>
                             </li>
                             <li style="border-right:1px solid rgba(255, 255, 255, 0.2);">
-                                <a href="contact.html" style="color:whitesmoke">Contact Us</a>
+                                <a href="contact.php" style="color:#DCDCDC;">Contact Us</a>
                             </li>
-                            <li><a href="terms-condition.html" style="color:whitesmoke">Terms &amp; Conditions</a></li>
+                            <li>
+								<a href="terms-condition.php" style="color:#DCDCDC;">Terms &amp; Conditions</a>
+							</li>
                         </ul>
                     </center>    
                 </div>
