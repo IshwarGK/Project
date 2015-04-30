@@ -790,37 +790,37 @@
                                             <ul style="list-style-type:none;">
 												<li>
 													<span class="glyphicon glyphicon-circle-arrow-right"> </span> 
-													<a href=<?php echo 'internet_plan.php?brand=airtel_plan' ?>>
+													<a href=<?php echo 'internet_plan.php?brand=airtel_plan&bb=B' ?>>
 														<span style="padding-left:5px;"><b> Airtel</b></span>
 													</a>
 												</li><br />
 												<li>
 													<span class="glyphicon glyphicon-circle-arrow-right"> </span> 
-													<a href=<?php echo 'internet_plan.php?brand=bsnl_plan' ?>>
+													<a href=<?php echo 'internet_plan.php?brand=bsnl_plan&bb=B' ?>>
 														<span style="padding-left:5px;"><b> BSNL</b></span>
 													</a>
 												</li><br />
 												<li>
 													<span class="glyphicon glyphicon-circle-arrow-right"> </span> 
-													<a href=<?php echo 'internet_plan.php?brand=hathway_plan' ?>>
+													<a href=<?php echo 'internet_plan.php?brand=hathway_plan&bb=B' ?>>
 														<span style="padding-left:5px;"><b> Hathway</b></span>
 													</a>
 												</li><br />
 												<li>
 													<span class="glyphicon glyphicon-circle-arrow-right"> </span> 
-													<a href=<?php echo 'internet_plan.php?brand=docomo_plan' ?>>
+													<a href=<?php echo 'internet_plan.php?brand=docomo_plan&bb=B' ?>>
 														<span style="padding-left:5px;"><b> Tata Docomo</b></span>
 													</a>
 												</li><br />
 												<li>
 													<span class="glyphicon glyphicon-circle-arrow-right"> </span> 
-													<a href=<?php echo 'internet_plan.php?brand=tikona_plan' ?>>
+													<a href=<?php echo 'internet_plan.php?brand=tikona_plan&bb=B' ?>>
 														<span style="padding-left:5px;"><b> Tikona</b></span>
 													</a>
 												</li><br />
 												<li>
 													<span class="glyphicon glyphicon-circle-arrow-right"> </span> 
-													<a href=<?php echo 'internet_plan.php?brand=you_broadband_plan' ?>>
+													<a href=<?php echo 'internet_plan.php?brand=you_broadband_plan&bb=B' ?>>
 														<span style="padding-left:5px;"><b> You Broadband</b></span>
 													</a>
 												</li><br />

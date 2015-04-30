@@ -1050,13 +1050,13 @@
                                             <ul style="list-style-type:none;">
 												<li>
 													<span class="glyphicon glyphicon-circle-arrow-right"> </span> 
-													<a href=<?php echo 'internet_plan.php?brand=airtel_plan' ?>>
+													<a href=<?php echo 'internet_plan.php?brand=airtel_plan&bb=B' ?>>
 														<span style="padding-left:5px;"><b> Airtel</b></span>
 													</a>
 												</li><br />
 												<li>
 													<span class="glyphicon glyphicon-circle-arrow-right"> </span> 
-													<a href=<?php echo 'internet_plan.php?brand=bsnl_plan' ?>>
+													<a href=<?php echo 'internet_plan.php?brand=bsnl_plan&bb=B' ?>>
 														<span style="padding-left:5px;"><b> BSNL</b></span>
 													</a>
 												</li><br />
