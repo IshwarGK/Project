@@ -614,8 +614,9 @@
                 <div class="row">
                     <div class="col-md-3 col-md-offset-1">
                         <a href="index.php">
-                            <img src="image/logo.png" alt="Diskart.com:Online Discount India" title="Online Discount India | Diskart.com" style="width:250px;height:45px;"/>
-                        </a>    
+                            <img src="image/logo.png" alt="Diskart.com:Online Discount India" title="Online Discount India | Diskart.com" style="width:250px;height:45px;margin-top:-25px;"/>
+                        </a>
+						<font size="2" style="margin-left:40px;">The Largest Discount Store</font>
                     </div>
 
                     <div class="col-md-7">
@@ -625,11 +626,10 @@
                                 <span class="input-group-btn">
                                     <button type="submit" class="btn btn-warning">SEARCH</button> 
                                 </span>
-                                
                             </div>
-                            <div id="output" style="z-index: 10; position: absolute ; background-color: yellow;">
+                          <!--  <div id="output" style="z-index: 10; position: absolute;">
                                    
-                            </div>
+                            </div>-->
                         </form>
                     </div>
                 </div>
