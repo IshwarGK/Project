@@ -1,4 +1,4 @@
-/*-- fix search bar css start --*/
+/*-- fix search bar on scroll start --*/
 .fix-nav {
 	z-index: 9999;
 	position: fixed;
@@ -10,7 +10,7 @@
 .fix-body {
 	margin-top: 50px;
 }
-/*-- fix search bar css end --*/
+/*-- fix search bar on scroll end --*/
 
 /*------ topbar menu city, sell, customer care, signup, login and below search start ----*/
     /*topbar background color*/
@@ -244,36 +244,7 @@ div.slide-block img:hover {
 
 /*--------- cake page end --------------------*/
 
-/*----------- sell page --------------------*/
-.header-banner{
-    background-color:#005387; 
-    margin-top:-20px;
-    text-align: center;
-    font-weight: bolder;
-    padding: 20px 0px 30px 0px;
-}
-
-.row-items {
-    margin-top:20px;
-    margin-bottom:10px;
-}
-
-.how-sell {
-    text-align: center;
-}
-
-.sell-step{
-    border:1px solid transparent;
-    border-radius: 8px;
-    padding: 2px 0px 0px 15px;
-    height:110px;
-    color: antiquewhite;
-}
-
-/*-------- sell page ------------------------*/
-
-
-/*----------howitworks start-----------------*/
+/*----------how it works start-----------------*/
 .howitworks{
     margin: 20px 0px 0px 0px;
 }

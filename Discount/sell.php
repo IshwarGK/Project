@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/font-awesome.min.css"/>
     <link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" href="css/social.css" />
+	<link rel="stylesheet" type="text/css" href="css/sell.css" />
     <script src="js/modernizr-2.6.2.min.js"></script>
     <script src="jquery/jquery-2.1.3.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -63,10 +64,10 @@
         <nav class="navbar navbar-inverse">
             <div class="container">
                 <ul class="nav navbar-nav">
-                    <li class="active" style="border-right: 1px solid #181818;"><a href="home.html"><b>HOME</b></a></li>
-                    <li style="border-right: 1px solid #181818;"><a href="aboutus.html"><b>ABOUT US</b></a></li>
-                    <li style="border-right: 1px solid #181818;"><a href="pricing.html"><b>PRICING</b></a></li>
-                    <li><a href="start_selling.html"><b>START SELLING</b></a></li>
+                    <li class="active" style="border-right: 1px solid #181818;"><a href="home.php"><b>HOME</b></a></li>
+                    <li style="border-right: 1px solid #181818;"><a href="aboutus.php"><b>ABOUT US</b></a></li>
+                    <li style="border-right: 1px solid #181818;"><a href="pricing.php"><b>PRICING</b></a></li>
+                    <li><a href="start_selling.php"><b>START SELLING</b></a></li>
                 </ul>
             </div>
         </nav>
@@ -87,7 +88,7 @@
                     Register your product discount today.
                 </div>    
             </h4>
-            <a href="start_selling.html" type="button" class="btn btn-default" style="background-color:#FBD00E;"><b>Start selling</b></a>
+            <a href="start_selling.php" type="button" class="btn btn-default" style="background-color:#FBD00E;"><b>Start selling</b></a>
         </div>
     </div>
     <!-- start selling & slogan start -->

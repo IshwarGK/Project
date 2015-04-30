@@ -5,8 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="icon" type="image/png" href="image/titlebar.png" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css"/> <!-- -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" /> <!-- bootstrap all css -->
+    <link rel="stylesheet" href="css/font-awesome.min.css"/> <!-- signup and login font -->
     <link rel="stylesheet" href="css/style.css" /> <!-- all page css -->
     <link rel="stylesheet" href="css/automobile-style.css" /> <!-- automobile css -->
 	<link rel="stylesheet" type="text/css" href="css/social.css" /> <!-- left social icons css -->
