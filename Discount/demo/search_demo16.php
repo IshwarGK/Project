@@ -1,7 +1,7 @@
 <html>
     <head>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="/jquery/jquery-2.1.3.min.js"></script>
     
     </head>
     <body>
@@ -11,17 +11,26 @@
 				var z = $('#datalist1');
 				var val = $(z).find('option[value="' + x + '"]');
 				var endval = val.attr('value');
+<<<<<<< HEAD
 			    //var url = "internet_plan.php?searchval=" + endval;
                 window.location.href = "internet_plan.php";
                 
     			//alert(endval);
+=======
+			//	var x = document.getElementById("datalist1").options[0].value;
+    			alert(endval);
+>>>>>>> origin/master
 			}
 		</script>
     
         <h1>Search web page</h1>
         <form onsubmit="myFunction()">
         
+<<<<<<< HEAD
             <input id="search" type="text" name="search" placeholder="search here" list="datalist1" />
+=======
+            <input id="search" type="search" name="search" placeholder="search here" list="datalist1" />
+>>>>>>> origin/master
             <input type="submit" value="submit" />
            
             
