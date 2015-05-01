@@ -9,9 +9,7 @@
     $conn = new mysqli($servername, $username, $password, $dbname);
     //if(isset($_POST['searchval'])){
     $search = $_POST['searchval'];
-    //$search = 'ri';
-   // $search = preg_replace("#[^0-9a-z]#i"," ",$search);
-
+    
     $pieces = explode(" ", $search);
     $pieces_count = count($pieces);
 
