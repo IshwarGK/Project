@@ -14,29 +14,26 @@
     $pieces = explode(" ", $search);
     $pieces_count = count($pieces);
 
-//    $pieces[0] = preg_replace("#[^0-9a-z]#i"," ",$pieces[0]);
-  //  $pieces[1] = preg_replace("#[^0-9a-z]#i"," ",$pieces[1]);
-        
-        
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
     $sql = "select * from search_demo where fname like '%$search%' or lname like '%$search%'";
     $result = $conn->query($sql);
-
+        $i = 1;
+        echo "<datalist id='datalist2'>";
                  while($row = $result->fetch_assoc()){
                      $pname = $row['fname'];
                      $purl = $row['lname'];
                      //if($piece == $row['brand']){
                          
-                    $output .= '<option>'.$pname.' '.$purl.'</option>'; 
-                     
-                     
-
-                 }
+                   // $output .= '<option value ='.$i.'>'.$pname.' '.$purl.'</option>'; 
+                     echo "<option value='http://www.google.com'>".$pname."</option>";
+                     $i++;
+                }
+        echo "</datalist>";
                
     }
-
-echo ($output);
+    
+ //echo "<select id='datalist2'>".$output."</select>";
 ?>

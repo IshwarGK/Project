@@ -59,7 +59,8 @@
             }
     }
         
-    
+    echo "<datalist id='datalist2'>";
+        
      if($b == 1 and $p == 0){
         $output .= '<a href="http://localhost/internet_plan.php?brand='. $burl .'">'.$bname.'</a>'; 
     }
