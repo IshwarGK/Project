@@ -1,6 +1,6 @@
 <html>
     <head>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="/jquery/jquery-2.1.3.min.js"></script>
     
     </head>
@@ -11,27 +11,44 @@
 				var z = $('#datalist1');
 				var val = $(z).find('option[value="' + x + '"]');
 				var endval = val.attr('value');
-<<<<<<< HEAD
-			    //var url = "internet_plan.php?searchval=" + endval;
-                window.location.href = "internet_plan.php";
-                
-    			//alert(endval);
-=======
+				window.location.href = "http://www.page-2.com";
+			//	alert(endval);
 			//	var x = document.getElementById("datalist1").options[0].value;
-    			alert(endval);
->>>>>>> origin/master
+			/*	$.ajax({
+        			type: 'POST',
+        			url: $(this).attr('action'),
+        			dataType: 'json',
+        			success: function(json) {
+           				window.location.href = "http://www.flipkart.com";
+          			}
+    			});*/
+    			return false;	
 			}
+			/*
+			$(document).ready(function() {
+          $('#submit').click(function(){
+             var form = $(this).parents('form');
+
+             $.ajax({
+                 type: 'POST',
+                 url: $(this).attr('action'),
+                 data: form.serialize(),
+                 dataType: 'json',
+                 success: function(response) {
+					 alert();
+                      window.location.href = "http://www.page-2.com";
+                 }
+             });
+             return false;
+           });
+      });	*/		
 		</script>
     
         <h1>Search web page</h1>
-        <form onsubmit="myFunction()">
+        <form id="mysearch" onsubmit="return myFunction();">
         
-<<<<<<< HEAD
-            <input id="search" type="text" name="search" placeholder="search here" list="datalist1" />
-=======
-            <input id="search" type="search" name="search" placeholder="search here" list="datalist1" />
->>>>>>> origin/master
-            <input type="submit" value="submit" />
+            <input id="search" type="search" name="search" method="post" placeholder="search here" list="datalist1" />
+			<input type="submit" value="submit" id="submit" />
            
             
                      <datalist id="datalist1">
