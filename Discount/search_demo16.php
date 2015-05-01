@@ -16,10 +16,15 @@
                 
     			//alert(endval);
 			}
+            function f(){
+                //window.location = "internet_plan.php";
+                 window.location = 'internet_plan.php?username=' + name;
+                //alert("kj");
+            }
 		</script>
     
         <h1>Search web page</h1>
-        <form onsubmit="myFunction()">
+        <form onsubmit="f()">
         
             <input id="search" type="text" name="search" placeholder="search here" list="datalist1" />
             <input type="submit" value="submit" />
