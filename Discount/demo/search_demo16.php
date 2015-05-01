@@ -8,7 +8,7 @@
     <body>
     
         <h1>Search web page</h1>
-        <form action="search_demo.php" method="post"  >
+        <form  method="post"  >
         
             <input type="text" name="search" placeholder="search here" list="datalist1" onkeydown="searchq();" />
             <input type="submit" value=">>" />
