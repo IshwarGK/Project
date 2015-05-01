@@ -5,21 +5,23 @@
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="image/titlebar.png" />
-    <script src="jquery/jquery-2.1.3.min.js"></script>
-	<script src="jquery/jquery.scrollUp.min.js"></script> <!-- back to top button js -->
-	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js">         </script> <!-- bootstrap form validation -->
-	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css"/>
-	<!-- bootstrap form validation -->
-	<script src="js/bootstrap.min.js" type="text/javascript"></script> <!-- bootstrap for all -->
-	<script src="js/socialbars.js" type="text/javascript"></script> <!-- social bar left -->
-	<script src="js/back-to-top.js" type="text/javascript"></script> <!-- back to top js -->
-	<link rel="stylesheet" href="css/bootstrap.min.css" /> <!-- bootstrap for all -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" /> <!-- bootstrap for all -->
 	<link rel="stylesheet" type="text/css" href="css/style.css" /> <!-- all css file -->
 	<link id="scrollUpTheme" rel="stylesheet" href="css/back-to-top-tab.css"> <!-- back to top button -->
     <link rel="stylesheet" href="css/back-to-top-labs.css"> <!-- back to top button -->
     <link rel="stylesheet" href="css/font-awesome.min.css" /> <!-- signup and login social icons -->
     <link rel="stylesheet" type="text/css" href="css/social.css" /> <!-- social icons bar left -->
 	<link rel="stylesheet" type="text/css" href="css/feedback.css" /> <!-- feedback form -->
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css"/>
+	<script src="jquery/jquery-2.1.3.min.js"></script>
+	<script src="jquery/jquery.scrollUp.min.js"></script> <!-- back to top button js -->
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js">         </script> <!-- bootstrap form validation -->
+	
+	<!-- bootstrap form validation -->
+	<script src="js/bootstrap.min.js" type="text/javascript"></script> <!-- bootstrap for all -->
+	<script src="js/socialbars.js" type="text/javascript"></script> <!-- social bar left -->
+	<script src="js/back-to-top.js" type="text/javascript"></script> <!-- back to top js -->
+	
     <script type="text/javascript"> 
         
 		//fix search bar on scroll start

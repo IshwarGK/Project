@@ -1,24 +1,30 @@
 <html>
-
     <head>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="/jquery/jquery-2.1.3.min.js"></script>
     
     </head>
     <body>
+		<script>
+			function myFunction(){
+				var x = $('#search').val();
+				var z = $('#datalist1');
+				var val = $(z).find('option[value="' + x + '"]');
+				var endval = val.attr('value');
+			//	var x = document.getElementById("datalist1").options[0].value;
+    			alert(endval);
+			}
+		</script>
     
         <h1>Search web page</h1>
-        <form action="search_demo.php" method="post"  >
+        <form onsubmit="myFunction()">
         
-            <input type="text" name="search" placeholder="search here" list="datalist1" onkeydown="searchq();" />
-            <input type="submit" value=">>" />
+            <input id="search" type="search" name="search" placeholder="search here" list="datalist1" />
+            <input type="submit" value="submit" />
+           
             
-            <div id="output" style="z-index: 10; position: absolute ; background-color: yellow;">
-            
-            </div>
-            <div id="stable" style="">
                      <datalist id="datalist1">
-                          <option value="Airtel"></option>
+                         <option value="Airtel"></option>
                          <option value="BSNL"></option>
                          <option value="Hathway"></option>
                          <option value="Tata Docomo"></option>
@@ -98,10 +104,10 @@
                          <option value="Tata Docomo 4 Mbps"></option>
                          <option value="Tikona 4 Mbps"></option>
                          <option value="You Broadband 4 Mbps"></option>
-                    </datalist>      
-            </div>
+                   </datalist>      
             
         </form>
+		<p id="demo"></p>
     </body>
 
 </html>
