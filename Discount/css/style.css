@@ -1,26 +1,42 @@
-/*-- fix search bar on scroll start --*/
+/*--------------------------------------------- logo, slogan, helping bar and search bar start ------------------------------------------------*/
+
+/*topbar background color*/
+.header-topbar {
+    background-color: #228B22;
+}
+
+/*company logo*/
+.company-logo {
+	margin-top:13px;
+	margin-left:30px;
+	width:200px;
+	height:40px;
+}
+
+/*slogan*/
+#slogan {
+	margin-left:50px;
+	color:#EEE8AA;
+}
+
+/* fix header on scroll start */
 .fix-nav {
 	z-index: 9999;
 	position: fixed;
 	left: 0;
 	top: 0;
-	padding-top:15px;		
+	padding-top:0px;		
 	width: 100%;
 }
+
 .fix-body {
 	margin-top: 50px;
 }
-/*-- fix search bar on scroll end --*/
+/* fix header on scroll end */
 
-/*------ topbar menu city, sell, customer care, signup, login and below search start ----*/
-    /*topbar background color*/
-.header-topbar {
-    background-color: #228B22;
-}
-
-    /* topbar menu css start*/
+/* helping bar start*/
 ul#menu1 {
-    padding: 5px 0px 0px 0px;
+    padding: 5px 0px 0px 31px;
 }
 
 ul#menu1 > li > a {
@@ -32,7 +48,13 @@ ul#menu1 li a:hover {
     text-decoration: none;
     color: darkred;
 }
+.helpbar-border {
+	border-left: 1px solid white; 
+	display:inline;
+}
+/*helping bar end*/
 
+/*change city location start*/
 .topsearch {
     margin-top: 5px;
 }
@@ -57,9 +79,9 @@ ul.cityloc li {
 ul.cityname li {
     padding: 5px;
 }
-    /* topbar menu css end */
+/* change city location end */
 
-    /* modal windows signup and login start */
+/* modal signup and login start */
 ul#menu3 li a {
     color: black;
     font-weight: bold;
@@ -141,7 +163,7 @@ ul#menu3 li a:hover {
     border-radius: 100px;*/
     font-weight: bold;
 }
-    /* modal windows signup and login end */
+/* modal signup and login end */
 /*------ topbar menu sell, customer care, signup, login and below search end  ----*/
 
 
