@@ -12,7 +12,8 @@
 				var val = $(z).find('option[value="' + x + '"]');
 				var endval = val.attr('value');
 				window.location.href = "http://www.page-2.com";
-			//	alert(endval);
+				alert(endval);
+				
 			//	var x = document.getElementById("datalist1").options[0].value;
 			/*	$.ajax({
         			type: 'POST',
@@ -24,24 +25,7 @@
     			});*/
     			return false;	
 			}
-			/*
-			$(document).ready(function() {
-          $('#submit').click(function(){
-             var form = $(this).parents('form');
-
-             $.ajax({
-                 type: 'POST',
-                 url: $(this).attr('action'),
-                 data: form.serialize(),
-                 dataType: 'json',
-                 success: function(response) {
-					 alert();
-                      window.location.href = "http://www.page-2.com";
-                 }
-             });
-             return false;
-           });
-      });	*/		
+					
 		</script>
     
         <h1>Search web page</h1>
