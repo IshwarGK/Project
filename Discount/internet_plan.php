@@ -255,7 +255,7 @@
                                     <label><input type="checkbox" name="speed" value="3 Mbps" id="option23" disabled />3 Mbps</label>
                                 </div>
                                 <div class="checkbox">
-                                    <label><input type="checkbox" name="speed" value="2 Mbps" id="option24" disabled />2 Mbps</label>
+                                    <label><input type="checkbox" name="speed" value="2 Mbps" id="option24" <?php if(isset($_GET["speed"])){ if($_GET['speed'] == "2 Mbps"){echo 'checked';}} ?> />2 Mbps</label>
                                 </div>
                                 <div class="checkbox">
                                     <label><input type="checkbox" name="speed" value="1.5 Mbps" id="option25" disabled />1.5 Mbps</label>
@@ -306,13 +306,13 @@
                                     <label><input type="checkbox" name="speed" value="5 Mbps" id="option21" />5 Mbps</label>
                                 </div>
                                 <div class="checkbox">
-                                    <label><input type="checkbox" name="speed" value="4 Mbps" id="option22" />4 Mbps</label>
+                                    <label><input type="checkbox" name="speed" value="4 Mbps" id="option22" <?php if(isset($_GET["speed"])){ if($_GET['speed'] == "4 Mbps"){echo 'checked';}} ?> />4 Mbps</label>
                                 </div>
                                 <div class="checkbox">
                                     <label><input type="checkbox" name="speed" value="3 Mbps" id="option23" />3 Mbps</label>
                                 </div>
                                 <div class="checkbox">
-                                    <label><input type="checkbox" name="speed" value="2 Mbps" id="option24" />2 Mbps</label>
+                                    <label><input type="checkbox" name="speed" value="2 Mbps" id="option24" <?php if(isset($_GET["speed"])){ if($_GET['speed'] == "2 Mbps"){echo 'checked';}} ?> />2 Mbps</label>
                                 </div>
                                 <div class="checkbox">
                                     <label><input type="checkbox" name="speed" value="1.5 Mbps" id="option25" />1.5 Mbps</label>
@@ -363,13 +363,13 @@
                                     <label><input type="checkbox" name="speed" value="5 Mbps" id="option21" />5 Mbps</label>
                                 </div>
                                 <div class="checkbox">
-                                    <label><input type="checkbox" name="speed" value="4 Mbps" id="option22" />4 Mbps</label>
+                                    <label><input type="checkbox" name="speed" value="4 Mbps" id="option22" <?php if(isset($_GET["speed"])){ if($_GET['speed'] == "4 Mbps"){echo 'checked';}} ?> />4 Mbps</label>
                                 </div>
                                 <div class="checkbox">
                                     <label><input type="checkbox" name="speed" value="3 Mbps" id="option23" />3 Mbps</label>
                                 </div>
                                 <div class="checkbox">
-                                    <label><input type="checkbox" name="speed" value="2 Mbps" id="option24" />2 Mbps</label>
+                                    <label><input type="checkbox" name="speed" value="2 Mbps" id="option24" <?php if(isset($_GET["speed"])){ if($_GET['speed'] == "2 Mbps"){echo 'checked';}} ?> />2 Mbps</label>
                                 </div>
                                 <div class="checkbox">
                                     <label><input type="checkbox" name="speed" value="1.5 Mbps" id="option25" />1.5 Mbps</label>
@@ -447,13 +447,13 @@
                                     <label><input type="checkbox" name="validity" value="3 month" id="option35" <?php if(isset($_GET["validity"])){ if($_GET['validity'] == "3 month"){echo 'checked';}} ?> />3 month</label>
                                 </div>
                                 <div class="checkbox">
-                                    <label><input type="checkbox" name="validity" value="6 month" id="option36"  <?php if(isset($_GET["validity"])){ if($_GET['validity'] == "1 month"){echo 'checked';}} ?> />6 month</label>
+                                    <label><input type="checkbox" name="validity" value="6 month" id="option36"  <?php if(isset($_GET["validity"])){ if($_GET['validity'] == "6 month"){echo 'checked';}} ?> />6 month</label>
                                 </div>
                                 <div class="checkbox">
-                                    <label><input type="checkbox" name="validity" value="12 month" id="option37" <?php if(isset($_GET["validity"])){ if($_GET['validity'] == "1 month"){echo 'checked';}} ?> />12 month</label>
+                                    <label><input type="checkbox" name="validity" value="12 month" id="option37" <?php if(isset($_GET["validity"])){ if($_GET['validity'] == "12 month"){echo 'checked';}} ?> />12 month</label>
                                 </div>
                                 <div class="checkbox">
-                                    <label><input type="checkbox" name="validity" value="24 month" id="option38" <?php if(isset($_GET["validity"])){ if($_GET['validity'] == "1 month"){echo 'checked';}} ?> />24 month</label>
+                                    <label><input type="checkbox" name="validity" value="24 month" id="option38" <?php if(isset($_GET["validity"])){ if($_GET['validity'] == "24 month"){echo 'checked';}} ?> />24 month</label>
                                 </div>
                             </form>
                         </div>
