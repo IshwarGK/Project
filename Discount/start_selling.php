@@ -212,7 +212,7 @@
 			});
 		});
 		//email already exists check end
-		
+	
 		//passing form values to database start
 		function seller_account() {	
 			var fullname = document.getElementById("fullname").value;

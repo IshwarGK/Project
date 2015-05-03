@@ -96,7 +96,7 @@
         //Carousel slideshow start
         $(document).ready( function() {
             $('#myCarousel').carousel({
-                interval: 6000
+                //interval: 6000
             });
         });
         //Carousel slide show end

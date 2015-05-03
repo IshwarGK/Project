@@ -35,6 +35,38 @@
         });
 		//feedback form load end
 		
+		//login submit start
+		function loginfunction(){
+			var username = document.getElementById("username").value;
+			var pwd = document.getElementById("pwd").value;
+			
+			var dataString = 'username=' + username + '&pwd=' + pwd;
+			
+			if(username == "" || pwd == "")
+			{
+				document.getElementById("username-confirm").innerHTML = "Username field is empty";
+				document.getElementById("password-confirm").innerHTML = "Password field is empty";
+			} else {
+				$.ajax({
+				type: "POST",
+				url: "seller_login_database.php",
+				data: dataString,
+				cache: false,
+				dataType: "json",
+				success: function(data) {
+    				if(data.status == 'success'){
+        				alert("success");
+						
+    				}else if(data.status == 'error'){
+        				document.getElementById("login-error").innerHTML = "<font style='margin-left:120px;color:darkred;padding-top:5px;'>Username or Password is incorrect</font>";
+    				}
+				}
+				});
+			}
+			return false;
+		}
+		//login submit end
+		
     </script>
 </head>
 <body>
@@ -59,20 +91,21 @@
                 </div>
                 
                 <div class="col-md-8">
-                    <form class="form-inline" role="form">
+                    <form class="form-inline" role="form" onsubmit="return loginfunction()" >
                         <span style="padding-right:8px;">
                             <font style="color:#FBD00E;font-size:19px;"><b>Seller Login</b></font>
                         </span>
                         <div class="form-group">
-                            <input type="email" class="form-control input-md" id="email" placeholder="Email" />
-							<div id="email-confirm"></div>
+                            <input type="username" class="form-control input-md" id="username" name="username" placeholder="Username" />
+							<div id="username-confirm"></div>
                         </div>
                         <div class="form-group" style="padding:0px 5px 0px 5px;">
-                            <input type="password" class="form-control input-md" id="pwd" placeholder="Password" />
+                            <input type="password" class="form-control input-md" id="pwd" name="pwd" placeholder="Password" />
 							<div id="password-confirm"></div>
                         </div>
                         <button type="submit" class="btn btn-primary"><b>Login</b></button>
                         <sub><font style="font-size:13px;"><a href="" style="color:white;">Forgot your password?</a></font></sub>
+						<span id="login-error"></span>
                     </form>
                 </div>
             </div>
