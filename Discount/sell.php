@@ -5,22 +5,23 @@
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="image/titlebar.png" />
-    <script src="jquery/jquery-2.1.3.min.js"></script>
-	<script src="jquery/jquery.scrollUp.min.js"></script> <!-- back to top button js -->
-	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js">         </script> <!-- bootstrap form validation -->
-	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css"/>
-	<!-- bootstrap form validation -->
-	<script src="js/bootstrap.min.js" type="text/javascript"></script> <!-- bootstrap for all -->
-	<script src="js/socialbars.js" type="text/javascript"></script> <!-- social bar left -->
-	<script src="js/back-to-top.js" type="text/javascript"></script> <!-- back to top js -->
-	<link rel="stylesheet" href="css/bootstrap.min.css" /> <!-- bootstrap for all -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" /> <!-- bootstrap for all -->
+	<link rel="stylesheet" type="text/css" href="css/style.css" /> <!-- all css file -->
 	<link id="scrollUpTheme" rel="stylesheet" href="css/back-to-top-tab.css"> <!-- back to top button -->
     <link rel="stylesheet" href="css/back-to-top-labs.css"> <!-- back to top button -->
     <link rel="stylesheet" href="css/font-awesome.min.css" /> <!-- signup and login social icons -->
-    <link rel="stylesheet" type="text/css" href="css/style.css" /> <!-- all css file -->
     <link rel="stylesheet" type="text/css" href="css/social.css" /> <!-- social icons bar left -->
 	<link rel="stylesheet" type="text/css" href="css/feedback.css" /> <!-- feedback form -->	
 	<link rel="stylesheet" type="text/css" href="css/sell.css" /> <!-- sell.php page css -->
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css"/>
+	<!-- bootstrap form validation -->
+	<script src="jquery/jquery-2.1.3.min.js"></script>
+	<script src="jquery/jquery.scrollUp.min.js"></script> <!-- back to top button js -->
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js">         </script> <!-- bootstrap form validation -->
+	<script src="js/bootstrap.min.js" type="text/javascript"></script> <!-- bootstrap for all -->
+	<script src="js/socialbars.js" type="text/javascript"></script> <!-- social bar left -->
+	<script src="js/back-to-top.js" type="text/javascript"></script> <!-- back to top js -->
+	
     <script>
         //topbar, searchbar and menubar start
         $(document).ready(function(){
@@ -52,7 +53,7 @@
             <div class="row row-items">
                 <div class="col-md-4">
                     <a href="index.php">
-                        <img src="image/logo.png" alt="Diskart.com:Online Discount India" title="Online Discount India | Diskart.com" style="width:210px;height:45px;"/>
+                        <img src="image/logo.png" alt="Diskart.com:Online Discount India" title="Online Discount India | Diskart.com" style="width:200px;height:40px;margin-top:-20px;" />
                     </a> 
                     <font style="color:white;font-size:25px;"><b>Marketplace</b></font>
                 </div>
@@ -64,9 +65,11 @@
                         </span>
                         <div class="form-group">
                             <input type="email" class="form-control input-md" id="email" placeholder="Email" />
+							<div id="email-confirm"></div>
                         </div>
                         <div class="form-group" style="padding:0px 5px 0px 5px;">
                             <input type="password" class="form-control input-md" id="pwd" placeholder="Password" />
+							<div id="password-confirm"></div>
                         </div>
                         <button type="submit" class="btn btn-primary"><b>Login</b></button>
                         <sub><font style="font-size:13px;"><a href="" style="color:white;">Forgot your password?</a></font></sub>

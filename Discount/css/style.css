@@ -253,6 +253,11 @@ div.slide-block img:hover {
 }
 /*---------four wheeler, two wheeler, cakes and internet plans block end ---------*/
 
+html, body {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;	
+}
 
 /*-----------------IN cake page -------------------------*/
 .sort {
