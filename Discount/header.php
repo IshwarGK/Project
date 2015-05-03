@@ -1,7 +1,51 @@
     <script> 
+        // start for creating cookies for city name
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0; i<ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1);
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        
+        function citynamefun(){
+                     var city = getCookie("cityname"); 
+                     if(city == "" ){
+                                     $("#mum").text("Mumbai");
+                                     setCookie("cityname", "Mumbai", 30);
+                                 }
+                                else{
+                                    $("#mum").text(city);
+                                }
+                                 
+                  
+                }
+        // End for creating cookies for city name
+        
+        // start for setting cookies for city name
+                    function setCookie(cname,cvalue,exdays) {
+                        var d = new Date();
+                        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+                        var expires = "expires=" + d.toGMTString();
+                        document.cookie = cname+"="+cvalue+"; "+expires;
+                    }
+                function f1(id){ 
+                     $("#mum").text(id);
+                    var divsToHide = document.getElementsByClassName("modal fade");
+                    setCookie("cityname", id, 30);
+                    
+                }
+                   // End for setting cookies for city name
+        
 		//fix search bar on scroll start
 			// first method
 			jQuery("document").ready(function($){
+                citynamefun(); // call for city name.
 				var nav = $('.header-topbar');
 				var pos = nav.offset().top;
 				$(window).scroll(function () {
@@ -92,9 +136,10 @@
                     	<div class="col-md-7 col-md-offset-4">
 							<ul id="menu1">
 								<li style="display:inline;">
-									<a href="" data-toggle="modal" data-target="#exampleModal3" data-backdrop="static">Pune
-										<span class="glyphicon glyphicon-menu-down"></span>
-									</a>    
+									<a id="mum" href="" data-toggle="modal" data-target="#exampleModal3" data-backdrop="static">Pune
+										
+									</a>   
+                                    <span class="glyphicon glyphicon-menu-down"></span>
 								</li>
 								<!-- start modal of change location exampleModal3 -->
 								<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="locationModalLabel" aria-hidden="true">
@@ -115,9 +160,9 @@
 													</div>
 													<div class="row topsearch">
 														<div class="col-md-12">
-															<strong>Top Searched: </strong> <a href="">Delhi,</a> <a href="">Mumbai,</a> 
-															<a href="">Pune,</a> <a href="">Bengaluru,</a> <a href="">Hyderabad,</a>
-															<a href="">Chennai,</a> <a href="">Kolkata</a>
+															<strong>Top Searched: </strong> <a onclick="f1(this.id);" id="Delhi" data-dismiss="modal">Delhi,</a> <a onclick="f1(this.id);" id="Mumbai" data-dismiss="modal">Mumbai,</a> 
+															<a onclick="f1(this.id);" id="Pune" data-dismiss="modal">Pune</a> <a href="">Bengaluru,</a> <a href="">Hyderabad,</a>
+															<a onclick="f1(this.id);" id="Chennai" data-dismiss="modal">Chennai,</a> <a onclick="f1(this.id);" id="Kolkata" data-dismiss="modal">Kolkata</a>
 														</div>    
 													</div>    
 												</div> 
@@ -220,7 +265,7 @@
 																<div class="tab-content">
 																	<div role="tabpanel" class="tab-pane active" id="AndhraPradesh">
 																		<ul class="cityname">
-																			<li><a href="">Visakhapatnam</a></li>
+																			<li><a onclick="f1(this.id);" id="Visakhapatnam" data-dismiss="modal">Visakhapatnam</a></li>
 																		</ul>
 																	</div>
 
@@ -238,33 +283,33 @@
 
 																	<div role="tabpanel" class="tab-pane" id="Chhattisgarh">
 																		<ul class="cityname">
-																			<li><a href="">Bhilai</a></li>
-																			<li><a href="">Raipur</a></li>
+																			<li><a onclick="f1(this.id);" id="Bhilai" data-dismiss="modal">Bhilai</a></li>
+																			<li><a onclick="f1(this.id);" id="Raipur" data-dismiss="modal">Raipur</a></li>
 																		</ul>
 																	</div>
 
 																	<div role="tabpanel" class="tab-pane" id="DelhiNCR">
 																		<ul class="cityname">
-																			<li><a href="">Delhi</a></li>
-																			<li><a href="">Faridabad</a></li>
-																			<li><a href="">Ghaziabad</a></li>
-																			<li><a href="">Gurgaon</a></li>
-																			<li><a href="">Noida</a></li>
+																			<li><a onclick="f1(this.id);" id="Delhi" data-dismiss="modal">Delhi</a></li>
+																			<li><a onclick="f1(this.id);" id="Faridabad" data-dismiss="modal">Faridabad</a></li>
+																			<li><a onclick="f1(this.id);" id="Ghaziabad" data-dismiss="modal">Ghaziabad</a></li>
+																			<li><a onclick="f1(this.id);" id="Gurgaon" data-dismiss="modal">Gurgaon</a></li>
+																			<li><a onclick="f1(this.id);" id="Noida" data-dismiss="modal">Noida</a></li>
 																		</ul>
 																	</div>
 
 																	<div role="tabpanel" class="tab-pane" id="Goa">
 																		<ul class="cityname">
-																			<li><a href="">Goa</a></li>
+																			<li><a onclick="f1(this.id);" id="Goa" data-dismiss="modal">Goa</a></li>
 																		</ul>        
 																	</div>
 
 																	<div role="tabpanel" class="tab-pane" id="Gujarat">
 																		<ul class="cityname">
-																			<li><a href="">Ahmedabad</a></li>
-																			<li><a href="">Baroda</a></li>
-																			<li><a href="">Rajkot</a></li>
-																			<li><a href="">Surat</a></li>
+																			<li><a onclick="f1(this.id);" id="Ahmedabad" data-dismiss="modal">Ahmedabad</a></li>
+																			<li><a onclick="f1(this.id);" id="Baroda" data-dismiss="modal">Baroda</a></li>
+																			<li><a onclick="f1(this.id);" id="Rajkot" data-dismiss="modal">Rajkot</a></li>
+																			<li><a onclick="f1(this.id);" id="Surat" data-dismiss="modal">Surat</a></li>
 																		</ul>
 																	</div>
 
@@ -278,7 +323,7 @@
 
 																	<div role="tabpanel" class="tab-pane" id="JammuandKashmir">
 																		<ul class="cityname">
-																			<li><a href="">Jammu</a></li>
+																			<li><a onclick="f1(this.id);" id="Jammu" data-dismiss="modal">Jammu</a></li>
 																		</ul>
 																	</div>
 
@@ -288,7 +333,7 @@
 
 																	<div role="tabpanel" class="tab-pane" id="Karnataka">
 																		<ul class="cityname">
-																			<li><a href="">Bengaluru</a></li>
+																			<li><a onclick="f1(this.id);" id="Bengaluru" data-dismiss="modal">Bengaluru</a></li>
 																		</ul>
 																	</div>
 
@@ -298,24 +343,24 @@
 
 																	<div role="tabpanel" class="tab-pane" id="MadhyaPradesh">
 																		<ul class="cityname">
-																			<li><a href="">Bhopal</a></li>
-																			<li><a href="">Indore</a></li>
-																			<li><a href="">Jabalpur</a></li>
+																			<li><a onclick="f1(this.id);" id="Bhopal" data-dismiss="modal">Bhopal</a></li>
+																			<li><a onclick="f1(this.id);" id="Indore" data-dismiss="modal">Indore</a></li>
+																			<li><a onclick="f1(this.id);" id="Jabalpur" data-dismiss="modal">Jabalpur</a></li>
 
 																		</ul>
 																	</div>
 
 																	<div role="tabpanel" class="tab-pane" id="Maharashtra">
 																		<ul class="cityname">
-																			<li><a href="">Ahmednagar</a></li>
-																			<li><a href="">Aurangabad</a></li>
-																			<li><a href="">Jalgaon</a></li>
-																			<li><a href="">Mumbai</a></li>
-																			<li><a href="">Nagpur</a></li>
-																			<li><a href="">Navi Mumbai</a></li>
-																			<li><a href="">Powai</a></li>
-																			<li><a href="">Pune</a></li>
-																			<li><a href="">Thane</a></li>
+																			<li><a onclick="f1(this.id);" id="Ahmednagar" data-dismiss="modal">Ahmednagar</a></li>
+																			<li><a onclick="f1(this.id);" id="Aurangabad" data-dismiss="modal">Aurangabad</a></li>
+																			<li><a onclick="f1(this.id);" id="Jalgaon" data-dismiss="modal">Jalgaon</a></li>
+																			<li><a onclick="f1(this.id);" id="Mumbai" data-dismiss="modal">Mumbai</a></li>
+																			<li><a onclick="f1(this.id);" id="Nagpur" data-dismiss="modal">Nagpur</a></li>
+																			<li><a onclick="f1(this.id);" id="Navi Mumbai" data-dismiss="modal">Navi Mumbai</a></li>
+																			<li><a onclick="f1(this.id);" id="Powai" data-dismiss="modal">Powai</a></li>
+																			<li><a onclick="f1(this.id);" id="Pune" data-dismiss="modal">Pune</a></li>
+																			<li><a onclick="f1(this.id);" id="Thane" data-dismiss="modal">Thane</a></li>
 																		</ul>
 																	</div>
 
@@ -333,27 +378,27 @@
 
 																	<div role="tabpanel" class="tab-pane" id="Punjab">
 																		<ul class="cityname">
-																			<li><a href="">Chandigarh</a></li>
+																			<li><a onclick="f1(this.id);" id="Chandigarh" data-dismiss="modal">Chandigarh</a></li>
 																		</ul>
 																	</div>
 
 																	<div role="tabpanel" class="tab-pane" id="Rajasthan">
 																		<ul class="cityname">
-																			<li><a href="">Jaipur</a></li>
+																			<li><a onclick="f1(this.id);" id="Jaipur" data-dismiss="modal">Jaipur</a></li>
 																		</ul>
 																	</div>
 
 																	<div role="tabpanel" class="tab-pane" id="TamilNadu">
 																		<ul class="cityname">
-																			<li><a href="">Chennai</a></li>
-																			<li><a href="">Coimbatore</a></li>
+																			<li><a onclick="f1(this.id);" id="Chennai" data-dismiss="modal">Chennai</a></li>
+																			<li><a onclick="f1(this.id);" id="Coimbatore" data-dismiss="modal">Coimbatore</a></li>
 																		</ul>
 																	</div>
 
 																	<div role="tabpanel" class="tab-pane" id="Telangana">
 																		<ul class="cityname">
-																			<li><a href="">Hyderabad</a></li>
-																			<li><a href="">Secunderabad</a></li>
+																			<li><a onclick="f1(this.id);" id="Hyderabad" data-dismiss="modal">Hyderabad</a></li>
+																			<li><a onclick="f1(this.id);" id="Secunderabad" data-dismiss="modal">Secunderabad</a></li>
 																		</ul>        
 																	</div>
 
@@ -363,12 +408,12 @@
 
 																	<div role="tabpanel" class="tab-pane" id="UttarPradesh">
 																		<ul class="cityname">
-																			<li><a href="">Agra</a></li>
-																			<li><a href="">Allahabad</a></li>
-																			<li><a href="">Kanpur</a></li>
-																			<li><a href="">Lucknow</a></li>
-																			<li><a href="">Meerut</a></li>
-																			<li><a href="">Varanasi</a></li>
+																			<li><a onclick="f1(this.id);" id="Agra" data-dismiss="modal">Agra</a></li>
+																			<li><a onclick="f1(this.id);" id="Allahabad" data-dismiss="modal">Allahabad</a></li>
+																			<li><a onclick="f1(this.id);" id="Kanpur" data-dismiss="modal">Kanpur</a></li>
+																			<li><a onclick="f1(this.id);" id="Lucknow" data-dismiss="modal">Lucknow</a></li>
+																			<li><a onclick="f1(this.id);" id="Meerut" data-dismiss="modal">Meerut</a></li>
+																			<li><a onclick="f1(this.id);" id="Varanasi" data-dismiss="modal">Varanasi</a></li>
 																		</ul>
 																	</div>
 
@@ -378,7 +423,7 @@
 
 																	<div role="tabpanel" class="tab-pane" id="WestBengal">
 																		<ul class="cityname">
-																			<li><a href="">Kolkata</a></li>
+																			<li><a onclick="f1(this.id);" id="Kolkata" data-dismiss="modal">Kolkata</a></li>
 																		</ul>
 																	</div>
 

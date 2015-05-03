@@ -1,0 +1,6 @@
+var favorite2 = favorite.join(", ");
+             var plan2 = plan.join(", ");
+             var speed2 = speed.join(", ");
+             var price2 = price.join(", ");
+             var validity2 = validity.join(", ");
+            

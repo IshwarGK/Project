@@ -25,6 +25,7 @@
 	<link rel="stylesheet" href="css/internet-style.css" /> <!-- internet style css -->
     <script> 
         
+                
         //topbar, searchbar and menubar start
         $(document).ready(function(){
             $("#header").load("header.php");
@@ -133,6 +134,7 @@
             
             <div class="row">
                 <!-- left panel start -->
+                    
                 <div class="col-md-2 col-md-offset-1" style="border-right:1px solid #F0F0F0;">
                     <!-- shop by brand start-->
                     <div class="row">
