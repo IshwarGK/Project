@@ -21,7 +21,6 @@
 	<script src="js/bootstrap.min.js" type="text/javascript"></script> <!-- bootstrap for all -->
 	<script src="js/socialbars.js" type="text/javascript"></script> <!-- social bar left -->
 	<script src="js/back-to-top.js" type="text/javascript"></script> <!-- back to top js -->
-	
     <script>
         //topbar, searchbar and menubar start
         $(document).ready(function(){
