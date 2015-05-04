@@ -706,7 +706,7 @@ var speed = [];
                            // include "dp_internet_plan.php"
                            // $sql = "SELECT * FROM you_broadband_plan";
                             $result = $conn->query($sql);
-                                
+                            $modalname = 1;    
                             if ($result->num_rows > 0) {
                                 while($row = $result->fetch_assoc()) {
                         ?>
@@ -725,7 +725,7 @@ var speed = [];
                                     <tr>
                                         <td>
                                             <b>Plan Name :</b> 
-                                            <?php echo str_replace($row["Validity"],"",$row["Plan_Name"]); ?>
+                                            <?php $plan_name = $row["Plan_Name"]; echo $plan_name; ?>
                                         </td>
                                     </tr>
                                     <tr>
@@ -762,6 +762,7 @@ var speed = [];
                                                 <del>&#8377 <?php echo $row["Price"]; ?></del> 
                                                 <?php echo $row["Discount"]; ?>% OFF &#8377 
                                                 <?php
+                                                    
                                                     $discount = ($row["Price"] - ($row["Price"] * ($row["Discount"] / 100)));  
                                                     echo ROUND($discount,0); 
                                                 ?> 
@@ -773,27 +774,47 @@ var speed = [];
                             </div>
                             <div style="padding:10px 0px 0px 60px;">
                                 <!--button trigger for coupon modal -->
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#couponmodal">Get Coupon</button>
+                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#<?php echo $modalname; ?>">Get Coupon</button>
+                                <?php 
+                                    $sql2 = "SELECT * FROM coupon_validation_airtel where plan_name = '$plan_name' limit 1";
+                                        $result2 = $conn->query($sql2);
+                                        $row2 = $result2->fetch_assoc();
+                                    
+                                        if($row2 == 0){
+                                             $sql2 = "SELECT * FROM coupon_validation_tikona where plan_name = '$plan_name'";
+                                            $result2 = $conn->query($sql2);
+                                            $row2 = $result2->fetch_assoc();
+                                        }
+                                        if($row2 == 0){
+                                             $sql2 = "SELECT * FROM coupon_validation_you_broadband where plan_name = '$plan_name'";
+                                            $result2 = $conn->query($sql2);
+                                            $row2 = $result2->fetch_assoc();
+                                        }
+                                        if($row2 == 0){
+                                             $sql2 = "SELECT * FROM coupon_validation_docomo where plan_name = '$plan_name'";
+                                            $result2 = $conn->query($sql2);
+                                            $row2 = $result2->fetch_assoc();
+                                        }
+                                        if($row2 == 0){
+                                             $sql2 = "SELECT * FROM coupon_validation_hathway where plan_name = '$plan_name'";
+                                            $result2 = $conn->query($sql2);
+                                            $row2 = $result2->fetch_assoc();
+                                        }
+                                        if($row2 == 0){
+                                             $sql2 = "SELECT * FROM coupon_validation_bsnl where plan_name = '$plan_name'";
+                                            $result2 = $conn->query($sql2);
+                                            $row2 = $result2->fetch_assoc();
+                                        }
+                                        
+                                                       
+                                ?>
                             </div>
                             <!-- PHP code for getting coupon code  -->
                            
-                            <?php
-                            $servername = "localhost";
-                                $username = "root";
-                                $password = "1234";
-                                $dbname = "discount";
-
-                                // Create connection
-                                $conn = new mysqli($servername, $username, $password, $dbname);
-
-
-                            $sql2 = "SELECT * FROM aitel_coupon where Plan_Name = 'Fibernet 25 GB'";
-                                                        $result2 = $conn->query($sql2);
-                                                        $row2 = $result2->fetch_assoc();
-                            ?>
+                           
                                     
                             <!-- coupon-modal -->
-							<div class="modal fade" id="couponmodal" tabindex="-1" role="dialog" aria-labelledby="mycouponmodal" aria-
+							<div class="modal fade" id="<?php echo $modalname; ?>" tabindex="-1" role="dialog" aria-labelledby="mycouponmodal" aria-
 								 hidden="true">
 								<div class="modal-dialog" style="width:700px;padding:150px 0px 0px 50px;">
 									<div class="modal-content">
@@ -803,10 +824,13 @@ var speed = [];
 											</button>
 											<center id="couponbody" style="color:#888888;">
 												<h4>HERE IS YOUR COUPON CODE</h4>
+                                                <?php $modalname++;                        
+                                                ?>
 												<form class="form-inline" role="form">
 													<div class="form-group">
-														<input type="text" class="form-control" id="coupon" value= <?php echo $row2["Coupon_Code"];?> size="50" disabled />
+														<input type="text" class="form-control" id="coupon" value= '<?php echo $row2['coupon_code']; ?>' size="50" disabled />
 													</div>
+                                                    
 													<button type="button" class="btn btn-primary">Copy</button>
 												</form>
 												<h4>Go to <a href="#">Airtel</a> and Avail this Offer</h4>
@@ -819,9 +843,10 @@ var speed = [];
 										<div class="modal-footer">
 											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
 										</div>
-									</div>
+									</div>     
 								</div>
 							</div>
+                                
 							
 							<!-- sms coupon -->
 							<div class="modal fade" tabindex="-1" id="smsmodal" role="dialog" aria-labelledby="smsmodal" aria-
