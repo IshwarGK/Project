@@ -151,8 +151,8 @@
                     function citynamefun(){
                                  var city = getCookie("cityname"); 
                                  if(city == "" ){
-                                     $("#mum").text("Mumbai");
-                                     setCookie("cityname", "Mumbai", 30);
+                                     $("#mum").text("Pune");
+                                     setCookie("cityname", "Pune", 30);
                                  }
                                 else{
                                     $("#mum").text(city);
