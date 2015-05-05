@@ -96,7 +96,7 @@
         //Carousel slideshow start
         $(document).ready( function() {
             $('#myCarousel').carousel({
-                //interval: 6000
+                interval: 6000
             });
         });
         //Carousel slide show end
@@ -809,7 +809,7 @@
 
         <!----------------------- menubar start -------------------------->
         <div class="header-menubar" style="width:100%;"> <!-- menubar color -->
-            <nav class="navbar navbar-inverse" role="navigation"> <!-- inverse navbar -->
+            <nav class="navbar " role="navigation"> <!-- inverse navbar -->
                 <div class="container">
                     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                         <!-- menubar items list -->

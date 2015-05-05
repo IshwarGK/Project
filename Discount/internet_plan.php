@@ -699,9 +699,48 @@ var speed = [];
                             else{
                             $count5 = 0;
                             }
-                
-
-                            include "db_connect.php";
+                               
+                            function pwd($plan_name){
+                                            include "db_connect.php";
+                                                
+                                            $sql2 = "SELECT * FROM coupon_validation_airtel where plan_name = '$plan_name' and used = 0 limit 1";
+                                        $result2 = $conn->query($sql2);
+                                        $row2 = $result2->fetch_assoc();
+                                        
+                                        if($row2 > 0){
+                                            $coupon_code = $row2['coupon_code'];
+                                            $sql3 = "UPDATE coupon_validation_airtel SET used= 1 WHERE coupon_code= '$coupon_code'";
+                                            $result3 = $conn->query($sql3);
+                                                
+                                        }
+                                    
+                                        }?>
+                        <script>
+                        
+                            //login submit start
+                            function loginfunction(plan){
+                                   
+                                    var dataString = 'plan=' + plan;
+                                    
+                                    $.ajax({
+                                    type: "POST",
+                                    url: "pwd.php",
+                                    data: dataString,
+                                    cache: false,
+                                    dataType: "json",
+                                    success:function(data) {
+                                        var coupon = document.getElementById("coupon");
+                                        coupon.value = data.status;
+					                   }
+                                    });
+                                
+                            }
+                            //login submit end
+		
+                            
+                        </script>
+                            
+                        <?php    include "db_connect.php";
                             include 'internet_plan_backend.php';
                            // include "dp_internet_plan.php"
                            // $sql = "SELECT * FROM you_broadband_plan";
@@ -774,51 +813,36 @@ var speed = [];
                             </div>
                             <div style="padding:10px 0px 0px 60px;">
                                 <!--button trigger for coupon modal -->
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#<?php echo $modalname; ?>">Get Coupon</button>
-                                <?php 
-                                    $sql2 = "SELECT * FROM coupon_validation_airtel where plan_name = '$plan_name' limit 1";
-                                        $result2 = $conn->query($sql2);
-                                        $row2 = $result2->fetch_assoc();
-                                    
-                                        if($row2 == 0){
-                                             $sql2 = "SELECT * FROM coupon_validation_tikona where plan_name = '$plan_name'";
-                                            $result2 = $conn->query($sql2);
-                                            $row2 = $result2->fetch_assoc();
-                                        }
-                                        if($row2 == 0){
-                                             $sql2 = "SELECT * FROM coupon_validation_you_broadband where plan_name = '$plan_name'";
-                                            $result2 = $conn->query($sql2);
-                                            $row2 = $result2->fetch_assoc();
-                                        }
-                                        if($row2 == 0){
-                                             $sql2 = "SELECT * FROM coupon_validation_docomo where plan_name = '$plan_name'";
-                                            $result2 = $conn->query($sql2);
-                                            $row2 = $result2->fetch_assoc();
-                                        }
-                                        if($row2 == 0){
-                                             $sql2 = "SELECT * FROM coupon_validation_hathway where plan_name = '$plan_name'";
-                                            $result2 = $conn->query($sql2);
-                                            $row2 = $result2->fetch_assoc();
-                                        }
-                                        if($row2 == 0){
-                                             $sql2 = "SELECT * FROM coupon_validation_bsnl where plan_name = '$plan_name'";
-                                            $result2 = $conn->query($sql2);
-                                            $row2 = $result2->fetch_assoc();
-                                        }
-                                        
-                                                       
-                                ?>
+                                <button type="button" class="btn btn-success" data-toggle="modal"  data-target="#example" onclick="loginfunction('<?php echo $plan_name ?>')" >  Get Coupon</button>
+                                
                             </div>
                             <!-- PHP code for getting coupon code  -->
                            
                            
                                     
-                            <!-- coupon-modal -->
-							<div class="modal fade" id="<?php echo $modalname; ?>" tabindex="-1" role="dialog" aria-labelledby="mycouponmodal" aria-
+    			
+							
+                   
+                        </div>
+                        <?php                                            
+                                }        
+                            }     
+                        else{
+                            
+                            echo "Hey Please try another combination";
+                            
+                        }
+                            // Close connection
+                            $conn->close();
+                        ?>
+                        <!-- coupon-modal -->
+							<div class="modal fade" id="example" tabindex="-1" role="dialog" aria-labelledby="mycouponmodal" aria-
 								 hidden="true">
+                          
 								<div class="modal-dialog" style="width:700px;padding:150px 0px 0px 50px;">
 									<div class="modal-content">
 										<div class="modal-body">
+                                 
 											<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background-color:#080808;width:40px;height:40px;margin:-15px -15px 0px 0px;">
 												<span aria-hidden="true" style="color:white;">&times;</span>
 											</button>
@@ -828,7 +852,7 @@ var speed = [];
                                                 ?>
 												<form class="form-inline" role="form">
 													<div class="form-group">
-														<input type="text" class="form-control" id="coupon" value= '<?php echo $row2['coupon_code']; ?>' size="50" disabled />
+														<input type="text" class="form-control" id="coupon" value= 'Coupons Are Over' size="50" disabled />
 													</div>
                                                     
 													<button type="button" class="btn btn-primary">Copy</button>
@@ -902,21 +926,7 @@ var speed = [];
 										</div>
 									</div>
 								</div>
-							</div>			
-							
-                   
-                        </div>
-                        <?php                                            
-                                }        
-                            }     
-                        else{
-                            
-                            echo "Hey Please try another combination";
-                            
-                        }
-                            // Close connection
-                            $conn->close();
-                        ?>
+							</div>
                     </div> <!-- row end -->    
                 </div> <!-- col-md-9 end -->
                 <!-- right panel end -->

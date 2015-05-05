@@ -218,14 +218,7 @@ alert("woooow");
                             <!-- PHP code for getting coupon code  -->
                            
                             <?php
-                            $servername = "localhost";
-                                $username = "root";
-                                $password = "1234";
-                                $dbname = "discount";
-
-                                // Create connection
-                                $conn = new mysqli($servername, $username, $password, $dbname);
-
+                           include "db_connect.php";
 
                             $sql2 = "SELECT * FROM aitel_coupon where Plan_Name = 'Fibernet 25 GB'";
                                                         $result2 = $conn->query($sql2);

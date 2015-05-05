@@ -2,7 +2,8 @@
 
 /*topbar background color*/
 .header-topbar {
-    background-color: #228B22;
+    /*background-color: #228B22;   amazon : #232f3e;*/
+    background-color:#3b5998;
 }
 
 /*company logo*/
@@ -170,7 +171,8 @@ ul#menu3 li a:hover {
 /*---------------------------------------------- menubar start ------------------------------------------------------------------------------- */
 
 .header-menubar{
-    background-color: #333;   
+    /*background-color: #333;   */
+    background-color: #232f3e;
 }
 
 .menutab {
@@ -288,7 +290,7 @@ html, body {
     bottom: 0px;
     border-top: 1px solid #C0C0C0;
     padding: 10px 0px 0px 0px;
-    background-color: #008B8B;
+    background-color: #3b5998;
     color: #DCDCDC;
 }
 
