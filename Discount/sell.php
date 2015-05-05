@@ -27,25 +27,35 @@
             $("#footer").load("footer.php");
         });
         //topbar, searchbar and menubar end
-		
-		//feedback form load start
-		$(document).ready(function(){
-            $("#feedback").load("feedback_form.php");
-        });
-		//feedback form load end
-		
+				
 		//login submit start
 		function loginfunction(){
+			
 			var username = document.getElementById("username").value;
 			var pwd = document.getElementById("pwd").value;
 			
 			var dataString = 'username=' + username + '&pwd=' + pwd;
 			
-			if(username == "" || pwd == "")
+			if(username == "")
 			{
-				document.getElementById("username-confirm").innerHTML = "Username field is empty";
-				document.getElementById("password-confirm").innerHTML = "Password field is empty";
-			} else {
+				document.getElementById("username-confirm").innerHTML = "<font style='margin-left:120px;color:darkred;'>Username field is empty</font>";
+				document.getElementById("password-confirm").innerHTML = "";
+				
+			} 
+			if(pwd == "")
+			{
+				if(username == "")
+				{
+					document.getElementById("password-confirm").innerHTML = "<font style='margin-left:25px;color:darkred;'>Password field is empty</font>";
+				} else {
+					document.getElementById("username-confirm").innerHTML = "";
+					document.getElementById("password-confirm").innerHTML = "<font style='margin-left:300px;color:darkred;'>Password field is empty</font>";	
+				}
+			}
+			
+			if(username != "" && pwd != "" ) 
+			{
+				
 				$.ajax({
 				type: "POST",
 				url: "seller_login_database.php",
@@ -54,10 +64,13 @@
 				dataType: "json",
 				success: function(data) {
     				if(data.status == 'success'){
-        				alert("success");
+						document.getElementById("login-error").innerHTML = "";
+        				window.location.assign("http://localhost:81/seller_after_login.php");
 						
     				}else if(data.status == 'error'){
-        				document.getElementById("login-error").innerHTML = "<font style='margin-left:120px;color:darkred;padding-top:5px;'>Username or Password is incorrect</font>";
+						document.getElementById("username-confirm").innerHTML = "";
+						document.getElementById("password-confirm").innerHTML = "";
+        				document.getElementById("login-error").innerHTML = "<font style='margin-left:120px;color:darkred;'>Username or Password is incorrect</font>";
     				}
 				}
 				});
@@ -96,14 +109,14 @@
                         </span>
                         <div class="form-group">
                             <input type="username" class="form-control input-md" id="username" name="username" placeholder="Username" />
-							<div id="username-confirm"></div>
                         </div>
                         <div class="form-group" style="padding:0px 5px 0px 5px;">
                             <input type="password" class="form-control input-md" id="pwd" name="pwd" placeholder="Password" />
-							<div id="password-confirm"></div>
                         </div>
                         <button type="submit" class="btn btn-primary"><b>Login</b></button>
-                        <sub><font style="font-size:13px;"><a href="" style="color:white;">Forgot your password?</a></font></sub>
+                        <sub><font style="font-size:13px;"><a href="" style="color:white;">Forgot your password?</a></font></sub><br />
+						<span id="username-confirm"></span>
+						<span id="password-confirm"></span>
 						<span id="login-error"></span>
                     </form>
                 </div>

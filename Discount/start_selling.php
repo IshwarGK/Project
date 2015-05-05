@@ -53,8 +53,8 @@
                                 message:'Username should be of atleast 3 characters'
                             },
                             regexp: {
-                                regexp: /^[a-zA-Z0-9_\. ]+$/,
-                                message: 'The username can consist of alphabetical characters only'
+                                regexp: /^[a-zA-Z0-9_\.]+$/,
+                                message: 'The username can consist of alphabetical characters, number, _, . only'
                             }
                         }
                     },
@@ -109,7 +109,7 @@
                                 message: 'The content is required and cannot be empty'
                             },
                             regexp: {
-                                regexp: /^[a-zA-Z0-9_\.]+$/,
+                                regexp: /^[a-zA-Z0-9_\. ]+$/,
                                 message: 'The company name can only consist of alphabetical, number, dot and underscore'
                             }    
                         }
@@ -122,7 +122,7 @@
                                 message: 'The content is required and cannot be empty'
                             },
                             regexp: {
-                                regexp: /^[a-zA-Z0-9_\.]+$/,
+                                regexp: /^[a-zA-Z0-9_\., ]+$/,
                                 message: 'The company address can only consist of alphabetical, number, dot and underscore'
                             }
                         }
@@ -135,7 +135,7 @@
                                 message: 'The content is required and cannot be empty'
                             },
                             regexp: {
-                                regexp: /^[a-z\s]+$/i,
+                                regexp: /^[a-zA-Z ]+$/,
                                 message: 'The area name can only consist of alphabetical characters and spaces only'
                             }
                         }

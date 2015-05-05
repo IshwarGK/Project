@@ -1,4 +1,7 @@
 <?php
+
+	// Start the session
+	session_start();
 	
 	//Credentials
     $servername = "localhost";
@@ -16,10 +19,14 @@
 	$username = $_POST['username'];
 	$pwd = $_POST['pwd'];
 	
-	$sql = "SELECT Username and Password FROM seller_account WHERE Username = '$username' and Password = '$pwd'";
+	$sql = "SELECT * FROM seller_account WHERE Username = '$username' and Password = '$pwd'";
 	$result = $conn->query($sql);
-	if ($result->num_rows == 1) {
+	$row = $result->fetch_assoc();
+	if ($row > 0) {
 		$response_array['status'] = 'success'; 
+		
+		$_SESSION["user"] = $row["Username"];
+		$_SESSION["pass"] = $row["Password"];
 	} else {
 		$response_array['status'] = 'error';
 	}

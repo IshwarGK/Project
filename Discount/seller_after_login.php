@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,6 +90,16 @@
 	</script>
 </head>
 <body>
+	<!-- database connection start -->
+	<?php 
+		include 'db_connect.php'; 
+		$username = $_SESSION["user"];
+		$pwd = $_SESSION["pass"];
+		$sql = "SELECT * FROM seller_account WHERE Username = '$username' and Password = '$pwd'";
+		$result = $conn->query($sql);
+		$row = $result->fetch_assoc();
+	?>
+	<!-- database connection end -->
 	
     <!-- topbar start -->
     <div class="seller_profile_top">
@@ -115,7 +129,7 @@
 				<div class="row">
 					<div class="col-md-11 col-md-offset-1">
 						<center>
-							<h2>GoSwift Exim Private Limited, Kothrud</h2>
+							<h2><?php echo $row['Company_Name'].", " .$row['Area']; ?></h2>
 						</center>	
 					</div>
 				</div>
@@ -244,7 +258,7 @@
 							<p><b>Company Name </b></p>
 						</div>
 						<div class="col-md-7">
-							<p><b> : </b> Goswift Exim Private Limited</p>
+							<p><b> : </b> <?php echo $row['Company_Name']; ?></p>
 						</div>
 					</div>
 					
@@ -253,7 +267,7 @@
 							<p><b>Owner </b></p>
 						</div>
 						<div class="col-md-7">
-							<p><b> : </b> Rimish Bansod</p>
+							<p><b> : </b> <?php echo $row['Full_Name']; ?></p>
 						</div>
 					</div>
 					
@@ -262,7 +276,7 @@
 							<p><b>Username </b></p>
 						</div>
 						<div class="col-md-7">
-							<p><b> : </b> rimish786</p>
+							<p><b> : </b> <?php echo $row['Username']; ?></p>
 						</div>
 					</div>
 					
@@ -271,7 +285,7 @@
 							<p><b>Email-Id</b></p>
 						</div>
 						<div class="col-md-7">
-							<p><b> : </b> rimish786@gmail.com</p>
+							<p><b> : </b> <?php echo $row['Email']; ?></p>
 						</div>
 					</div>
 					
@@ -280,7 +294,7 @@
 							<p><b>Mobile Number</b></p>
 						</div>
 						<div class="col-md-7">
-							<p><b> : </b> 808724524</p>
+							<p><b> : </b> <?php echo $row['Mobile_Number']; ?></p>
 						</div>
 					</div>
 					
@@ -289,7 +303,7 @@
 							<p><b>Product </b></p>
 						</div>
 						<div class="col-md-7">
-							<p><b> : </b> Internet Broadband</p>
+							<p><b> : </b> <?php echo $row['Product']; ?></p>
 						</div>
 					</div>
 					
@@ -300,5 +314,9 @@
 		</div>
 	</div>
 	<!-- seller details and enter coupon end -->
+	<?php 
+		// Close connection
+    	$conn->close();
+	?>
 </body>
 </html>    
