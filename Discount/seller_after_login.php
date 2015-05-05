@@ -264,6 +264,16 @@
 					
 					<div class="row">
 						<div class="col-md-5">
+							<p><b>Address </b></p>
+						</div>
+						<div class="col-md-7">
+							<p><b> : </b> <?php echo $row['Company_Address'].", " .$row['Area'].", " .$row['City'].", " .$row['State'].", " .$row['Zip_Code']; 
+								?></p>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-5">
 							<p><b>Owner </b></p>
 						</div>
 						<div class="col-md-7">
