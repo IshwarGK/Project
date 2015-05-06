@@ -175,6 +175,10 @@ ul#menu3 li a:hover {
     background-color: #232f3e;
 }
 
+.navbar-inverse {
+	background-color: #232f3e;
+	border-color: #232f3e;
+}
 .menutab {
   display: inline-block;
   padding: 0px 0px 0px 0px;

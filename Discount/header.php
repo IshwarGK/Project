@@ -664,7 +664,7 @@
 								<div class="input-group form-group" id="search-box" style="width:651px;">
 									<input id="mainsearch" type="search"  name="search" class="form-control" placeholder="Search discounts for a Vehicle service, Internet plans and Cakes" list="datalist1" />
 									<span class="input-group-btn">
-										<button type="submit" class="btn btn-warning">SEARCH</button> 
+										<button type="submit" class="btn btn-warning" style="background-color:#FDD922;"><b style="color:#303030 ;">SEARCH</b></button> 
 									</span>
 								</div>
 							  	<datalist id="datalist1">
@@ -766,27 +766,28 @@
                     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                         <!-- menubar items list -->
                         <ul class="nav navbar-nav" style="padding: 0px 0px 0px 215px;">
+							
                             <!-- menubar item 1 "automobile service" -->
-                            <li class="dropdown mega-dropdown" style="border-right: 1px solid #181818;">
+                    <!--    <li class="dropdown mega-dropdown" style="border-right: 1px solid #3b5998;">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     AUTOMOBILE SERVICE
                                     <span class="caret"></span>
-                                </a>
+                                </a>-->
                                 <!-- submenu of automobile service -->
-                                <div class="dropdown-menu mega-dropdown-menu">    
+                     <!--       <div class="dropdown-menu mega-dropdown-menu"> -->   
                                     <!-- Nav tabs -->
-                                    <ul class="nav nav-tabs menutab" role="tablist">
+                                <!--<ul class="nav nav-tabs menutab" role="tablist">
                                         <li class="active">
                                             <a href="#twowheeler" role="tab" data-toggle="tab">Two Wheeler</a>
                                         </li>
                                         <li>
                                             <a href="#fourwheeler" role="tab" data-toggle="tab">Four Wheeler</a>
                                         </li>
-                                    </ul>        
+                                    </ul>-->        
                                     <!-- Tab panels -->
-                                    <div class="tab-content">
+                                  <!--<div class="tab-content">-->
                                         <!-- Categories tab content -->
-                                        <div class="tab-pane active" id="twowheeler">
+                                  <!--  <div class="tab-pane active" id="twowheeler">
                                             <ul class="nav-list list-inline">
                                                 <li style="background-color:#F8F8F8; float:left;">
                                                     <a href="#">
@@ -897,10 +898,10 @@
                                                     </div>
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div> -->
 
                                         <!-- four wheeler tab content -->
-                                        <div class="tab-pane" id="fourwheeler">
+                                <!--    <div class="tab-pane" id="fourwheeler">
                                             <ul class="nav-list list-inline">
                                                 <li style="background-color:#F8F8F8;">
                                                     <a href="#">
@@ -955,11 +956,11 @@
                                         </div>
                                     </div>
                                 </div>				
-                            </li>
+                            </li>-->
 
-                            <!-- menubar item 2 "sweets and cakes" -->
-                            <li class="dropdown mega-dropdown" style="border-right: 1px solid #181818;">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <!-- menubar item 2 "internet plans" -->
+                            <li class="dropdown mega-dropdown" style="border-right: 1px solid #3b5998;">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:#F0F0F0;">
                                     INTERNET PLANS
                                     <span class="caret"></span>
                                 </a>		
@@ -1021,7 +1022,7 @@
 
                             <!-- menubar item3 internet plans -->
                             <li class="dropdown mega-dropdown">
-                                <a href="cake_seller.php">
+                                <a href="cake_seller.php" style="color:#F0F0F0;">
                                     SWEETS &amp; CAKES
                                 </a>						
                             </li>
