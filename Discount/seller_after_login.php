@@ -136,16 +136,44 @@
 				
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3">
-						<form role="form" class="form-inline" style="margin-top:40px;">
+						<form role="form" class="form-inline" style="margin-top:40px;" onsubmit="return verify_coupon_code_fun('<?php echo $username ?>', '<?php echo $pwd ?>')">
 							<h4>Enter Coupon</h4>
 							<div class="form-group">
 								<input type="text" class="form-control" id="coupon" name="coupon" placeholder="Enter Coupon" autofocus required />
 							</div>
 							<button type="submit" class="btn btn-primary">Verify</button>
-						</form>	
+                            <span class="verified">hi</span>
+						</form>
+                        
 					</div>
 				</div>
 				
+                <script>
+                function verify_coupon_code_fun(username,pwd){
+                    
+                    var coupon = document.getElementById("coupon").value;
+			        
+                    var dataString = 'username=' + username + '&pwd=' + pwd + '&coupon=' + coupon;
+                    
+                                    $.ajax({
+                                    type: "POST",
+                                    url: "verify_coupon_code.php",
+                                    data: dataString,
+                                    cache: false,
+                                    dataType: "json",
+                                    success:function(data) {
+                                        if(data.status == 'success'){
+                                            alert('Success');
+                                             
+                                        }    
+                                    }
+                                    });
+                                return false;
+                    
+                    
+                }
+                </script>
+                
 				<div class="row" style="padding-top:40px;">
 					<div class="col-md-2 col-md-offset-3">
 						<button type="button" class="btn btn-success" onclick="paynowfunction()">Pay Now</button>
@@ -154,14 +182,46 @@
 						<button type="button" class="btn btn-danger" onclick="couponhistoryfunction()" id="coupon-button">Show Coupon History</button>	
 					</div>
 				</div>
-				
+				<?php
+                    $i = 1;
+                    $j = 0;
+                    $total = 0;
+                ?>
 				<div class="row">
 					<div class="col-md-11 col-md-offset-1">
 						<div class="pay-now">
 							<font size="4">
 								<center>
-									<p>Total Number of Coupons Used : 1500</p>
-									<p>Total Pay Out : 4500 &#8377</p>
+                                    <?php 
+                                
+                            include "db_connect.php";
+                                
+                                
+                                $sql3 = "SELECT cv.coupon_code, vc.used_date, ap.plan_name, ap.price 
+
+                                        FROM verified_coupon_airtel vc
+
+                                        INNER JOIN coupon_validation_airtel as cv
+
+                                            on cv.coupon_code = vc.coupon_code
+
+                                        INNER JOIN airtel_plan as ap
+
+                                            on ap.plan_name = cv.plan_name";
+
+                                $result3 = $conn->query($sql3);
+                                $total2 = 0;
+
+                                if ($result3->num_rows > 0) {
+                                while($row2 = $result3->fetch_assoc()){
+                                    $j++;
+                                    $sum2 = ($row2['price']) * (5/100);
+                                    $total2 = $total2 + $sum2;
+                                   
+                                }
+                                } ?>
+									<p>Total Number of Coupons Used : <?php echo ($j); ?></p>
+									<p>Total Pay Out : <?php echo $total2; ?></p>
 									<button class="btn btn-primary">Checkout</button>
 								</center>	
 							</font>
@@ -175,7 +235,7 @@
 							<thead>
 								<tr>
 									<th>#</th>
-									<th>PRODUCT</th>
+									<th>Plan Name</th>
 									<th>PRICE</th>
 									<th>COUPON</th>
 									<th>DATE</th>
@@ -184,51 +244,43 @@
 								</tr>
 							</thead>
 							<tbody>
+                                <?php 
+                                
+                            include "db_connect.php";
+                                
+                                
+                                $sql2 = "SELECT cv.coupon_code, vc.used_date, ap.plan_name, ap.price 
+
+                                        FROM verified_coupon_airtel vc
+
+                                        INNER JOIN coupon_validation_airtel as cv
+
+                                            on cv.coupon_code = vc.coupon_code
+
+                                        INNER JOIN airtel_plan as ap
+
+                                            on ap.plan_name = cv.plan_name";
+
+                                $result2 = $conn->query($sql2);
+                                
+
+                                if ($result2->num_rows > 0) {
+                                while($row2 = $result2->fetch_assoc()){
+                                    ?>
+                                
 								<tr>
-									<td>1</td>
-									<td>Airtel</td>
-									<td>1500 &#8377</td>
-									<td>AD50</td>
-									<td>25-04-15</td>
+									<td><?php echo $i; $i++;?></td>
+									<td><?php echo $row2['plan_name'] ?></td>
+									<td><?php echo $row2['price'] ?></td>
+									<td><?php echo $row2['coupon_code'] ?></td>
+									<td><?php echo $row2['used_date'] ?></td>
 									<td>5%</td>
-									<td>75 &#8377</td>
+									<td> <?php $sum = ($row2['price']) * (5/100); $total = $total + $sum; echo $sum ?></td>
 								</tr>
-								<tr>
-									<td>2</td>
-									<td>Docomo</td>
-									<td>1500 &#8377</td>
-									<td>AD50</td>
-									<td>25-04-15</td>
-									<td>5%</td>
-									<td>75 &#8377</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>Airtel</td>
-									<td>1500 &#8377</td>
-									<td>AD50</td>
-									<td>25-04-15</td>
-									<td>5%</td>
-									<td>75 &#8377</td>
-								</tr>
-								<tr>
-									<td>4</td>
-									<td>Airtel</td>
-									<td>1500 &#8377</td>
-									<td>AD50</td>
-									<td>25-04-15</td>
-									<td>5%</td>
-									<td>75 &#8377</td>
-								</tr>
-								<tr>
-									<td>5</td>
-									<td>Airtel</td>
-									<td>1500 &#8377</td>
-									<td>AD50</td>
-									<td>25-04-15</td>
-									<td>5%</td>
-									<td>75 &#8377</td>
-								</tr>
+								
+								<?php 
+                                }
+                                } ?>
 								<tr>
 									<td></td>
 									<td></td>
@@ -236,7 +288,7 @@
 									<td></td>
 									<td></td>
 									<td><b>Total Pay</b></td>
-									<td><b>1500 &#8377</b></td>
+									<td><b><?php echo $total ?></b></td>
 								</tr>
 								
 							</tbody>

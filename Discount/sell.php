@@ -65,7 +65,7 @@
 				success: function(data) {
     				if(data.status == 'success'){
 						document.getElementById("login-error").innerHTML = "";
-        				window.location.assign("http://localhost:81/seller_after_login.php");
+        				window.location.assign("seller_after_login.php");
 						
     				}else if(data.status == 'error'){
 						document.getElementById("username-confirm").innerHTML = "";
