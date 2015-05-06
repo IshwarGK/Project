@@ -4,8 +4,8 @@
     <title>Diskart: Largest Discount Store</title>
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" /> <!-- bootstrap for all -->
 	<link rel="icon" type="image/png" href="image/titlebar.png" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" /> <!-- bootstrap for all -->
 	<link rel="stylesheet" type="text/css" href="css/style.css" /> <!-- all css file -->
 	<link id="scrollUpTheme" rel="stylesheet" href="css/back-to-top-tab.css"> <!-- back to top button -->
     <link rel="stylesheet" href="css/back-to-top-labs.css"> <!-- back to top button -->
@@ -707,12 +707,22 @@
 					
 					<!-- search bar row start -->
 					<div class="row">
-						<div class="col-md-11">
+						<div class="col-md-3" style="border:1px solid black;">
+							<div style="width:170px;height:35px; border:1px solid white;background-color:white;border-radius:3px;padding:0px 0px 0px 10px;">
+								<img src="image/city-location.png" style="width:40px;height:30px;" />
+								<a id="mum" href="" data-toggle="modal" data-target="#exampleModal3"  data-backdrop="static" style="padding-top:7px;color:black;">
+									Pune
+								</a>  
+                                <span class=""></span>
+							</div>
+						</div>
+						
+						<div class="col-md-9">
 							<form role="form" id="mysearch" onsubmit="return searchFunction();" method="post">
-								<div class="input-group form-group" id="search-box" style="width:651px;">
-									<input id="mainsearch" type="search"  name="search" class="form-control" placeholder="Search discounts for a Vehicle service, Internet plans and Cakes" list="datalist1" />
+								<div class="input-group form-group" id="search-box">
+									<input id="mainsearch" type="search"  name="search" class="form-control" placeholder="Search discounts for producs" list="datalist1" />
 									<span class="input-group-btn">
-										<button type="submit" class="btn btn-warning">SEARCH</button> 
+										<button type="submit" class="btn btn-warning" style="background-color:#FDD922;"><b style="color:#303030 ;">SEARCH</b></button> 
 									</span>
 								</div>
 							  	<datalist id="datalist1">
@@ -809,32 +819,33 @@
 
         <!----------------------- menubar start -------------------------->
         <div class="header-menubar" style="width:100%;"> <!-- menubar color -->
-            <nav class="navbar " role="navigation"> <!-- inverse navbar -->
+            <nav class="navbar navbar-inverse" role="navigation"> <!-- inverse navbar -->
                 <div class="container">
                     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                         <!-- menubar items list -->
                         <ul class="nav navbar-nav" style="padding: 0px 0px 0px 215px;">
-                            <!-- menubar item 1 "automobile service" -->
-                            <li class="dropdown mega-dropdown" style="border-right: 1px solid #181818;">
+                            
+							<!-- menubar item 1 "automobile service" -->
+                      <!--  <li class="dropdown mega-dropdown" style="border-right: 1px solid #3b5998;">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     AUTOMOBILE SERVICE
                                     <span class="caret"></span>
-                                </a>
+                                </a>-->
                                 <!-- submenu of automobile service -->
-                                <div class="dropdown-menu mega-dropdown-menu">    
+                     <!--       <div class="dropdown-menu mega-dropdown-menu"> -->   
                                     <!-- Nav tabs -->
-                                    <ul class="nav nav-tabs menutab" role="tablist">
+                                <!--<ul class="nav nav-tabs menutab" role="tablist">
                                         <li class="active">
                                             <a href="#twowheeler" role="tab" data-toggle="tab">Two Wheeler</a>
                                         </li>
                                         <li>
                                             <a href="#fourwheeler" role="tab" data-toggle="tab">Four Wheeler</a>
                                         </li>
-                                    </ul>        
+                                    </ul>-->        
                                     <!-- Tab panels -->
-                                    <div class="tab-content">
+                                  <!--<div class="tab-content">-->
                                         <!-- Categories tab content -->
-                                        <div class="tab-pane active" id="twowheeler">
+                                  <!--  <div class="tab-pane active" id="twowheeler">
                                             <ul class="nav-list list-inline">
                                                 <li style="background-color:#F8F8F8; float:left;">
                                                     <a href="#">
@@ -945,10 +956,10 @@
                                                     </div>
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div> -->
 
                                         <!-- four wheeler tab content -->
-                                        <div class="tab-pane" id="fourwheeler">
+                                <!--    <div class="tab-pane" id="fourwheeler">
                                             <ul class="nav-list list-inline">
                                                 <li style="background-color:#F8F8F8;">
                                                     <a href="#">
@@ -1003,11 +1014,11 @@
                                         </div>
                                     </div>
                                 </div>				
-                            </li>
+                            </li>-->
 
                             <!-- menubar item 2 "sweets and cakes" -->
-                            <li class="dropdown mega-dropdown" style="border-right: 1px solid #181818;">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <li class="dropdown mega-dropdown" style="border-right: 1px solid #3b5998;">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:#F0F0F0;">
                                     INTERNET PLANS
                                     <span class="caret"></span>
                                 </a>		
@@ -1069,7 +1080,7 @@
 
                             <!-- menubar item3 internet plans -->
                             <li class="dropdown mega-dropdown">
-                                <a href="cake_seller.php">
+                                <a href="cake_seller.php" style="color:#F0F0F0;">
                                     SWEETS &amp; CAKES
                                 </a>						
                             </li>
