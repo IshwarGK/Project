@@ -41,20 +41,51 @@
                 $.each($("input[name='brand']:checked"), function(){            
                 hori_brands.push($(this).val());
                 });
+            ///airtel_plan bsnl_plan hathway_plan docomo_plan tikona_plan you_broadband_plan
                 var text = "";
+                var hori_brands_name = "haha";
                 var i;
                 var j = hori_brands.length;
                 for (i = 0; i < j; i++) {
-                    text += "<lable onclick='toggle_uncheckall_hori(this.id)' id="+hori_brands[i]+" >" + hori_brands[i]  + " </lable > ";
+                    if(hori_brands[i] == "airtel_plan"){
+                        hori_brands_name = "Airtel";
+                    }
+                    else if(hori_brands[i] == "docomo_plan"){
+                        hori_brands_name = 'Tata Docomo';
+                    }
+                    else if(hori_brands[i] == "bsnl_plan"){
+                        hori_brands_name = 'BSNL';
+                    }
+                    else if(hori_brands[i] == "hathway_plan"){
+                        hori_brands_name = 'Hathway';
+                    }
+                    else if(hori_brands[i] == "tikona_plan"){
+                        hori_brands_name = 'Tikona';
+                    }
+                    else if(hori_brands[i] == "you_broadband_plan"){
+                        hori_brands_name = 'You Broadband';
+                    }
+                    
+                    text += "<lable onclick='toggle_uncheckall_hori(this.id)' id="+hori_brands[i]+" >" + hori_brands_name  + " </lable > ";
                 }
                 var hori_plan = [];
                 $.each($("input[name='plan']:checked"), function(){            
                 hori_plan.push($(this).val());
                 });
+            // unlimited daynight normal
                 var i;
                 var j = hori_plan.length;
                 for (i = 0; i < j; i++) {
-                    text += "<lable onclick='toggle_uncheckall_hori(this.id)' id="+hori_plan[i]+" >" + hori_plan[i]  + " </lable > ";
+                    if(hori_plan[i] == "unlimited"){
+                        hori_plan_name = "Unlimited";
+                    }
+                    if(hori_plan[i] == "daynight"){
+                        hori_plan_name = "Day / Night";
+                    }
+                    if(hori_plan[i] == "normal"){
+                        hori_plan_name = "GB Plan";
+                    }
+                    text += "<lable onclick='toggle_uncheckall_hori(this.id)' id="+hori_plan[i]+" >" + hori_plan_name  + " </lable > ";
                 }
                 var hori_speed = [];
                 $.each($("input[name='speed']:checked"), function(){            
@@ -69,10 +100,11 @@
                 $.each($("input[name='price']:checked"), function(){            
                 hori_price.push($(this).val());
                 });
-                var i;
+                var p3;
                 var j = hori_price.length;
                 for (i = 0; i < j; i++) {
-                    text += "<lable onclick='toggle_uncheckall_hori(this.id)' id="+hori_price[i]+" >" + hori_price[i]  + " </lable > ";
+                     p3 = hori_price[i].split(" ");
+                    text += "<lable onclick='toggle_uncheckall_hori(this.id)' id="+hori_price[i]+" >" + p3[0] + " - " + p3[1]  + " </lable > ";
                 }
                 var hori_validity = [];
                 $.each($("input[name='validity']:checked"), function(){            
@@ -87,7 +119,7 @@
         }
         
         function toggle_uncheckall_hori(tp){
-          alert(tp);
+          
           checkboxes = document.getElementsByName('brand');
           for(var i=0, n=checkboxes.length;i<n;i++) {
               if(checkboxes[i].value == tp){
