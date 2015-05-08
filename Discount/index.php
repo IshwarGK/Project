@@ -170,7 +170,6 @@
 					<div class="row">	
                     	<div class="col-md-5 col-md-offset-6">
 							<ul id="menu1">
-								
 								<li style="display:inline;">
 									<a href="sell.php">Sell</a>
 								</li>
@@ -1048,9 +1047,9 @@
         <!-- Carousel slide show start -->
 	
 		<!--list of blocks start -->
-		<div class="container-fluid">
+		<div class="container">
         	<div class="row">
-            	<div class="col-md-11 col-md-offset-1">
+            	<div class="col-md-12">
                 	
 					<!-- start four wheeler block -->
                     <div class="clearfix"></div>
