@@ -116,16 +116,25 @@
     </script>
     
     <!-- logo, helping bar and search bar start -->   
-	<div class="header-topbar">
+	<div class="header-topbar" style="width:100%;">
 		<div class="container">
         	<div class="row">
 				
 				<!-- company logo and slogan column start -->
 				<div class="col-md-3 col-md-offset-1">
-                	<a href="index.php">
-                    	<img src="image/logo.png" class="company-logo" alt="Diskart.com:Online Discount India" title="Online Discount India | Diskart.com" />
-                    </a>
-					<font id="slogan" size="2">The Largest Discount Store</font>
+					<div class="row">
+						<div class="col-md-12">
+							<a href="index.php">
+                    			<img src="image/logo.png" class="company-logo" alt="Diskart.com:Online Discount India" title="Online Discount India | Diskart.com" />
+                    		</a>		
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<font id="slogan" size="2">The Largest Discount Store</font>
+						</div>
+					</div>
+                	
                 </div>
 				<!-- company logo and slogan column end -->
 				
@@ -133,15 +142,131 @@
 				<div class="col-md-8">
 					<!-- helping bar row start -->
 					<div class="row">	
-                    	<div class="col-md-7 col-md-offset-4">
+                    	<div class="col-md-5 col-md-offset-6">
 							<ul id="menu1">
 								<li style="display:inline;">
-									<a id="mum" href="" data-toggle="modal" data-target="#exampleModal3" data-backdrop="static">Pune
-										
-									</a>   
-                                    <span class="glyphicon glyphicon-menu-down"></span>
+									<a href="sell.php">Sell</a>
 								</li>
-								<!-- start modal of change location exampleModal3 -->
+								<li class="helpbar-line">
+									<a href="contact.php">
+										<span class="glyphicon glyphicon-earphone"></span>
+										24x7 Customer Care
+									</a>
+								</li>
+								<li class="helpbar-line">
+									<!-- use data-remote instead of href  -->
+									<a href="#" data-toggle="modal" data-target="#exampleModal1">Login</a>
+									<!-- start modal signup -->
+									<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+									   <div class="modal-dialog" style="padding-top:130px;">
+										  <div class="modal-content">
+											 <div class="modal-body">
+												 <button type="button" class="close" data-dismiss="modal" aria-label="close">
+												   <span aria-hidden="true">&times;</span> 
+												 </button>
+												 <div class="clearfix"></div>
+												 <div id="social-icons-conatainer">
+													<div class="modal-body-left">
+														<div class="tabbable">
+															<ul class="nav nav-tabs" id="menu3">
+																<li class="active"><a href="#tab1" data-toggle="tab">Login</a></li>
+																<li><a href="#tab2" data-toggle="tab">Signup</a></li>
+															</ul>
+															<div class="tab-content">
+																
+																<div class="tab-pane active" id="tab1">
+																	<form>
+																		<div class="form-group">
+																			<label for="email" class="control-label">Email</label>
+																			<input type="email" class="form-control" id="email-id" />
+
+																		 </div>
+																		 <div class="form-group">
+																			<label for="password" class="control-label">Password</label>
+																			<input type="password" class="form-control" id="pwd" />
+
+																		 </div>
+																		 <button type="submit" class="btn btn-primary">LOGIN</button>
+																		 <a href=""> Forgot password?</a> 
+																  </form> 
+															   </div>
+																
+																<div class="tab-pane" id="tab2">
+																	<form>
+																		<div class="form-group">
+																			<label for="email" class="control-label">Email Address</label>
+																			<input type="email" class="form-control" id="email-id" />
+
+																		</div> 
+																		<div class="form-group">
+																			<label for="password" class="control-label">Password</label>
+																			<input type="password" class="form-control" id="pwd" />
+
+																		</div>
+																		<div class="form-group">
+																			<label for="repeat" class="control-label">Repeat</label>
+																			<input type="password" class="form-control" id="repeat-pwd" />
+
+																		</div> 
+																		<button type="submit" class="btn btn-success">SIGN UP NOW!</button> 
+																	</form> 
+																</div>
+ 
+															</div>  
+														</div>   
+													</div>
+
+													<div class="modal-body-right">                                            
+														<div class="modal-social-icons">
+															<h4><strong>Sign in with</strong></h4>
+															<a href="" class="btn btn-default facebook"> 
+																<i class="fa fa-facebook modal-icons"></i> 
+																Facebook 
+															</a>
+															<a href="" class="btn btn-default twitter"> 
+																<i class="fa fa-twitter modal-icons"></i> 
+																Twitter 
+															</a>
+															<a href="" class="btn btn-default google"> 
+																<i class="fa fa-google-plus modal-icons"></i> 
+																Google 
+															</a>
+															<a href="" class="btn btn-default linkedin"> 
+																<i class="fa fa-linkedin modal-icons"></i> 
+																Linkedin 
+															</a>
+														</div> 
+													</div>
+
+													<div id="center-line"> OR </div> 
+												 </div>                                     
+											 </div>        
+											<div class="clearfix"></div>                  
+											 <div class="modal-footer">
+												 <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+											 </div> 
+										  </div> 
+									   </div> 
+									</div>
+									<!-- end modal signin -->
+								</li>
+							</ul>
+                    	</div>
+					</div>
+					<!-- helping bar row end -->
+					
+					<!-- search bar row start -->
+					<div class="row">
+						<div class="col-md-3">
+							<div id="location-box">
+								<a href="" id="location-link" data-toggle="modal" data-target="#exampleModal3"  data-backdrop="static">
+									<img src="image/city-location.png" style="width:35px;height:30px;" />
+									<font id="mum">
+										Pune
+									</font>
+								</a>	
+							</div>
+							<!-- start modal of change location exampleModal3 -->
 								<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="locationModalLabel" aria-hidden="true">
 									<div class="modal-dialog">
 										<div class="modal-content">
@@ -160,9 +285,14 @@
 													</div>
 													<div class="row topsearch">
 														<div class="col-md-12">
-															<strong>Top Searched: </strong> <a onclick="f1(this.id);" id="Delhi" data-dismiss="modal">Delhi,</a> <a onclick="f1(this.id);" id="Mumbai" data-dismiss="modal">Mumbai,</a> 
-															<a onclick="f1(this.id);" id="Pune" data-dismiss="modal">Pune</a> <a href="">Bengaluru,</a> <a href="">Hyderabad,</a>
-															<a onclick="f1(this.id);" id="Chennai" data-dismiss="modal">Chennai,</a> <a onclick="f1(this.id);" id="Kolkata" data-dismiss="modal">Kolkata</a>
+															<strong>Top Searched: </strong> 
+															<a href="#" onclick="f1(this.id);" id="Delhi" data-dismiss="modal">Delhi,</a> 
+															<a href="#" onclick="f1(this.id);" id="Mumbai" data-dismiss="modal">Mumbai,</a> 
+															<a href="#" onclick="f1(this.id);" id="Pune" data-dismiss="modal">Pune</a> 
+															<a href="#" onclick="f1(this.id);" id="Bengaluru" data-dismiss="modal">Bengaluru,</a> 
+															<a href="#" onclick="f1(this.id);" id="Hyderabad" data-dismiss="modal">Hyderabad,</a>
+															<a href="#" onclick="f1(this.id);" id="Chennai" data-dismiss="modal">Chennai,</a> 
+															<a href="#" onclick="f1(this.id);" id="Kolkata" data-dismiss="modal">Kolkata</a>
 														</div>    
 													</div>    
 												</div> 
@@ -260,12 +390,13 @@
 																	</li>
 																</ul>
 															</div>
+															
 															<div class="col-md-8">
 																<!-- Tab Panes -->
 																<div class="tab-content">
 																	<div role="tabpanel" class="tab-pane active" id="AndhraPradesh">
 																		<ul class="cityname">
-																			<li><a onclick="f1(this.id);" id="Visakhapatnam" data-dismiss="modal">Visakhapatnam</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Visakhapatnam" data-dismiss="modal">Visakhapatnam</a></li>
 																		</ul>
 																	</div>
 
@@ -283,33 +414,33 @@
 
 																	<div role="tabpanel" class="tab-pane" id="Chhattisgarh">
 																		<ul class="cityname">
-																			<li><a onclick="f1(this.id);" id="Bhilai" data-dismiss="modal">Bhilai</a></li>
-																			<li><a onclick="f1(this.id);" id="Raipur" data-dismiss="modal">Raipur</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Bhilai" data-dismiss="modal">Bhilai</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Raipur" data-dismiss="modal">Raipur</a></li>
 																		</ul>
 																	</div>
 
 																	<div role="tabpanel" class="tab-pane" id="DelhiNCR">
 																		<ul class="cityname">
-																			<li><a onclick="f1(this.id);" id="Delhi" data-dismiss="modal">Delhi</a></li>
-																			<li><a onclick="f1(this.id);" id="Faridabad" data-dismiss="modal">Faridabad</a></li>
-																			<li><a onclick="f1(this.id);" id="Ghaziabad" data-dismiss="modal">Ghaziabad</a></li>
-																			<li><a onclick="f1(this.id);" id="Gurgaon" data-dismiss="modal">Gurgaon</a></li>
-																			<li><a onclick="f1(this.id);" id="Noida" data-dismiss="modal">Noida</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Delhi" data-dismiss="modal">Delhi</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Faridabad" data-dismiss="modal">Faridabad</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Ghaziabad" data-dismiss="modal">Ghaziabad</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Gurgaon" data-dismiss="modal">Gurgaon</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Noida" data-dismiss="modal">Noida</a></li>
 																		</ul>
 																	</div>
 
 																	<div role="tabpanel" class="tab-pane" id="Goa">
 																		<ul class="cityname">
-																			<li><a onclick="f1(this.id);" id="Goa" data-dismiss="modal">Goa</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Goa" data-dismiss="modal">Goa</a></li>
 																		</ul>        
 																	</div>
 
 																	<div role="tabpanel" class="tab-pane" id="Gujarat">
 																		<ul class="cityname">
-																			<li><a onclick="f1(this.id);" id="Ahmedabad" data-dismiss="modal">Ahmedabad</a></li>
-																			<li><a onclick="f1(this.id);" id="Baroda" data-dismiss="modal">Baroda</a></li>
-																			<li><a onclick="f1(this.id);" id="Rajkot" data-dismiss="modal">Rajkot</a></li>
-																			<li><a onclick="f1(this.id);" id="Surat" data-dismiss="modal">Surat</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Ahmedabad" data-dismiss="modal">Ahmedabad</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Baroda" data-dismiss="modal">Baroda</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Rajkot" data-dismiss="modal">Rajkot</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Surat" data-dismiss="modal">Surat</a></li>
 																		</ul>
 																	</div>
 
@@ -323,7 +454,7 @@
 
 																	<div role="tabpanel" class="tab-pane" id="JammuandKashmir">
 																		<ul class="cityname">
-																			<li><a onclick="f1(this.id);" id="Jammu" data-dismiss="modal">Jammu</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Jammu" data-dismiss="modal">Jammu</a></li>
 																		</ul>
 																	</div>
 
@@ -333,7 +464,7 @@
 
 																	<div role="tabpanel" class="tab-pane" id="Karnataka">
 																		<ul class="cityname">
-																			<li><a onclick="f1(this.id);" id="Bengaluru" data-dismiss="modal">Bengaluru</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Bengaluru" data-dismiss="modal">Bengaluru</a></li>
 																		</ul>
 																	</div>
 
@@ -343,24 +474,24 @@
 
 																	<div role="tabpanel" class="tab-pane" id="MadhyaPradesh">
 																		<ul class="cityname">
-																			<li><a onclick="f1(this.id);" id="Bhopal" data-dismiss="modal">Bhopal</a></li>
-																			<li><a onclick="f1(this.id);" id="Indore" data-dismiss="modal">Indore</a></li>
-																			<li><a onclick="f1(this.id);" id="Jabalpur" data-dismiss="modal">Jabalpur</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Bhopal" data-dismiss="modal">Bhopal</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Indore" data-dismiss="modal">Indore</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Jabalpur" data-dismiss="modal">Jabalpur</a></li>
 
 																		</ul>
 																	</div>
 
 																	<div role="tabpanel" class="tab-pane" id="Maharashtra">
 																		<ul class="cityname">
-																			<li><a onclick="f1(this.id);" id="Ahmednagar" data-dismiss="modal">Ahmednagar</a></li>
-																			<li><a onclick="f1(this.id);" id="Aurangabad" data-dismiss="modal">Aurangabad</a></li>
-																			<li><a onclick="f1(this.id);" id="Jalgaon" data-dismiss="modal">Jalgaon</a></li>
-																			<li><a onclick="f1(this.id);" id="Mumbai" data-dismiss="modal">Mumbai</a></li>
-																			<li><a onclick="f1(this.id);" id="Nagpur" data-dismiss="modal">Nagpur</a></li>
-																			<li><a onclick="f1(this.id);" id="Navi Mumbai" data-dismiss="modal">Navi Mumbai</a></li>
-																			<li><a onclick="f1(this.id);" id="Powai" data-dismiss="modal">Powai</a></li>
-																			<li><a onclick="f1(this.id);" id="Pune" data-dismiss="modal">Pune</a></li>
-																			<li><a onclick="f1(this.id);" id="Thane" data-dismiss="modal">Thane</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Ahmednagar" data-dismiss="modal">Ahmednagar</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Aurangabad" data-dismiss="modal">Aurangabad</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Jalgaon" data-dismiss="modal">Jalgaon</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Mumbai" data-dismiss="modal">Mumbai</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Nagpur" data-dismiss="modal">Nagpur</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Navi Mumbai" data-dismiss="modal">Navi Mumbai</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Powai" data-dismiss="modal">Powai</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Pune" data-dismiss="modal">Pune</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Thane" data-dismiss="modal">Thane</a></li>
 																		</ul>
 																	</div>
 
@@ -378,27 +509,27 @@
 
 																	<div role="tabpanel" class="tab-pane" id="Punjab">
 																		<ul class="cityname">
-																			<li><a onclick="f1(this.id);" id="Chandigarh" data-dismiss="modal">Chandigarh</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Chandigarh" data-dismiss="modal">Chandigarh</a></li>
 																		</ul>
 																	</div>
 
 																	<div role="tabpanel" class="tab-pane" id="Rajasthan">
 																		<ul class="cityname">
-																			<li><a onclick="f1(this.id);" id="Jaipur" data-dismiss="modal">Jaipur</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Jaipur" data-dismiss="modal">Jaipur</a></li>
 																		</ul>
 																	</div>
 
 																	<div role="tabpanel" class="tab-pane" id="TamilNadu">
 																		<ul class="cityname">
-																			<li><a onclick="f1(this.id);" id="Chennai" data-dismiss="modal">Chennai</a></li>
-																			<li><a onclick="f1(this.id);" id="Coimbatore" data-dismiss="modal">Coimbatore</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Chennai" data-dismiss="modal">Chennai</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Coimbatore" data-dismiss="modal">Coimbatore</a></li>
 																		</ul>
 																	</div>
 
 																	<div role="tabpanel" class="tab-pane" id="Telangana">
 																		<ul class="cityname">
-																			<li><a onclick="f1(this.id);" id="Hyderabad" data-dismiss="modal">Hyderabad</a></li>
-																			<li><a onclick="f1(this.id);" id="Secunderabad" data-dismiss="modal">Secunderabad</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Hyderabad" data-dismiss="modal">Hyderabad</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Secunderabad" data-dismiss="modal">Secunderabad</a></li>
 																		</ul>        
 																	</div>
 
@@ -408,12 +539,12 @@
 
 																	<div role="tabpanel" class="tab-pane" id="UttarPradesh">
 																		<ul class="cityname">
-																			<li><a onclick="f1(this.id);" id="Agra" data-dismiss="modal">Agra</a></li>
-																			<li><a onclick="f1(this.id);" id="Allahabad" data-dismiss="modal">Allahabad</a></li>
-																			<li><a onclick="f1(this.id);" id="Kanpur" data-dismiss="modal">Kanpur</a></li>
-																			<li><a onclick="f1(this.id);" id="Lucknow" data-dismiss="modal">Lucknow</a></li>
-																			<li><a onclick="f1(this.id);" id="Meerut" data-dismiss="modal">Meerut</a></li>
-																			<li><a onclick="f1(this.id);" id="Varanasi" data-dismiss="modal">Varanasi</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Agra" data-dismiss="modal">Agra</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Allahabad" data-dismiss="modal">Allahabad</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Kanpur" data-dismiss="modal">Kanpur</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Lucknow" data-dismiss="modal">Lucknow</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Meerut" data-dismiss="modal">Meerut</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Varanasi" data-dismiss="modal">Varanasi</a></li>
 																		</ul>
 																	</div>
 
@@ -423,7 +554,7 @@
 
 																	<div role="tabpanel" class="tab-pane" id="WestBengal">
 																		<ul class="cityname">
-																			<li><a onclick="f1(this.id);" id="Kolkata" data-dismiss="modal">Kolkata</a></li>
+																			<li><a href="#" onclick="f1(this.id);" id="Kolkata" data-dismiss="modal">Kolkata</a></li>
 																		</ul>
 																	</div>
 
@@ -453,218 +584,14 @@
 								</div>
 								<!-- end modal of change location exampleModal3 -->
 
-								<li class="helpbar-border">
-									<a href="sell.php">Sell</a>
-								</li>
-								<li class="helpbar-border">
-									<a href="contact.php">
-										<span class="glyphicon glyphicon-earphone"></span>
-										24x7 Customer Care
-									</a>
-								</li>
-								<li class="helpbar-border">
-									<!-- use data-remote instead of href  -->
-									<a href="" data-toggle="modal" data-target="#exampleModal1">Signup</a>
-									<!-- start modal signup -->
-									<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
-									   <div class="modal-dialog" style="padding-top:130px;">
-										  <div class="modal-content">
-											 <div class="modal-body">
-												 <button type="button" class="close" data-dismiss="modal" aria-label="close">
-												   <span aria-hidden="true">&times;</span> 
-												 </button>
-												 <div class="clearfix"></div>
-												 <div id="social-icons-conatainer">
-													<div class="modal-body-left">
-														<div class="tabbable">
-															<ul class="nav nav-tabs" id="menu3">
-																<li class="active"><a href="#tab1" data-toggle="tab">Signup</a></li>
-																<li><a href="#tab2" data-toggle="tab">Login</a></li>
-															</ul>
-															<div class="tab-content">
-																<div class="tab-pane active" id="tab1">
-																	<form>
-																		<div class="form-group">
-																			<label for="email" class="control-label">Email Address</label>
-																			<input type="email" class="form-control" id="email-id" />
-
-																		</div> 
-																		<div class="form-group">
-																			<label for="password" class="control-label">Password</label>
-																			<input type="password" class="form-control" id="pwd" />
-
-																		</div>
-																		<div class="form-group">
-																			<label for="repeat" class="control-label">Repeat</label>
-																			<input type="password" class="form-control" id="repeat-pwd" />
-
-																		</div> 
-																		<button type="submit" class="btn btn-success">SIGN UP NOW!</button> 
-																	</form> 
-																</div>
-
-																<div class="tab-pane" id="tab2">
-																	<form>
-																		<div class="form-group">
-																			<label for="email" class="control-label">Email</label>
-																			<input type="email" class="form-control" id="email-id" />
-
-																		 </div>
-																		 <div class="form-group">
-																			<label for="password" class="control-label">Password</label>
-																			<input type="password" class="form-control" id="pwd" />
-
-																		 </div>
-																		 <button type="submit" class="btn btn-primary">LOGIN</button>
-																		 <a href=""> Forgot password?</a> 
-																  </form> 
-															   </div> 
-															</div>  
-														</div>   
-													</div>
-
-													<div class="modal-body-right">                                            
-														<div class="modal-social-icons">
-															<h4><strong>Sign in with</strong></h4>
-															<a href="" class="btn btn-default facebook"> 
-																<i class="fa fa-facebook modal-icons"></i> 
-																Facebook 
-															</a>
-															<a href="" class="btn btn-default twitter"> 
-																<i class="fa fa-twitter modal-icons"></i> 
-																Twitter 
-															</a>
-															<a href="" class="btn btn-default google"> 
-																<i class="fa fa-google-plus modal-icons"></i> 
-																Google 
-															</a>
-															<a href="" class="btn btn-default linkedin"> 
-																<i class="fa fa-linkedin modal-icons"></i> 
-																Linkedin 
-															</a>
-														</div> 
-													</div>
-
-													<div id="center-line"> OR </div> 
-												 </div>                                     
-											 </div>        
-											<div class="clearfix"></div>                  
-											 <div class="modal-footer">
-												 <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
-											 </div> 
-										  </div> 
-									   </div> 
-									</div>
-									<!-- end modal signup -->
-								</li>
-								<li class="helpbar-border">
-									<a href="" data-toggle="modal" data-target="#exampleModal2">Login</a>
-									<!-- start modal login -->
-									<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
-									   <div class="modal-dialog" style="padding-top:130px;">
-										  <div class="modal-content">
-											 <div class="modal-body">
-												 <button type="button" class="close" data-dismiss="modal" aria-label="close">
-												   <span aria-hidden="true">&times;</span> 
-												 </button>
-												 <div class="clearfix"></div>
-												 <div id="social-icons-conatainer">
-													<div class="modal-body-left">
-														<div class="tabbable">
-															<ul class="nav nav-tabs" id="menu3">
-																<li><a href="#tab3" data-toggle="tab">Signup</a></li>
-																<li class="active"><a href="#tab4" data-toggle="tab">Login</a></li>
-															</ul>
-															<div class="tab-content">
-																<div class="tab-pane" id="tab3">
-																	<form>
-																		<div class="form-group">
-																			<label for="email" class="control-label">Email Address</label>
-																			<input type="email" class="form-control" id="email-id" />
-
-																		</div> 
-																		<div class="form-group">
-																			<label for="password" class="control-label">Password</label>
-																			<input type="password" class="form-control" id="pwd" />
-
-																		</div>
-																		<div class="form-group">
-																			<label for="repeat" class="control-label">Repeat</label>
-																			<input type="password" class="form-control" id="repeat-pwd" />
-
-																		</div> 
-																		<button type="submit" class="btn btn-success">SIGN UP NOW!</button> 
-																	</form> 
-																</div>
-
-																<div class="tab-pane active" id="tab4">
-																	<form>
-																		<div class="form-group">
-																			<label for="email" class="control-label">Email</label>
-																			<input type="email" class="form-control" id="email-id" />
-
-																		 </div>
-																		 <div class="form-group">
-																			<label for="password" class="control-label">Password</label>
-																			<input type="password" class="form-control" id="pwd" />
-
-																		 </div>
-																		 <button type="submit" class="btn btn-primary">LOGIN</button>
-																		 <a href=""> Forgot password?</a> 
-																  </form> 
-															   </div> 
-															</div>  
-														</div>   
-													</div>
-
-													<div class="modal-body-right">                                            
-														<div class="modal-social-icons">
-															<h4><strong>Sign in with</strong></h4>
-															<a href="" class="btn btn-default facebook"> 
-																<i class="fa fa-facebook modal-icons"></i> 
-																Facebook 
-															</a>
-															<a href="" class="btn btn-default twitter"> 
-																<i class="fa fa-twitter modal-icons"></i> 
-																Twitter 
-															</a>
-															<a href="" class="btn btn-default google"> 
-																<i class="fa fa-google-plus modal-icons"></i> 
-																Google 
-															</a>
-															<a href="" class="btn btn-default linkedin"> 
-																<i class="fa fa-linkedin modal-icons"></i> 
-																Linkedin 
-															</a>
-														</div> 
-													</div>
-
-													<div id="center-line"> OR </div> 
-												 </div>                                     
-											 </div>        
-											<div class="clearfix"></div>                  
-											 <div class="modal-footer">
-												 <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
-											 </div> 
-										  </div> 
-									   </div> 
-									</div> 
-									<!-- end modal login -->
-
-								</li>
-							</ul>
-                    	</div>
-					</div>
-					<!-- helping bar row end -->
-					
-					<!-- search bar row start -->
-					<div class="row">
-						<div class="col-md-11">
+						</div>
+						
+						<div class="col-md-9">
 							<form role="form" id="mysearch" onsubmit="return searchFunction();" method="post">
-								<div class="input-group form-group" id="search-box" style="width:651px;">
-									<input id="mainsearch" type="search"  name="search" class="form-control" placeholder="Search discounts for a Vehicle service, Internet plans and Cakes" list="datalist1" />
+								<div class="input-group form-group" id="search-box" style="margin-left:-30px;width:460px;">
+									<input id="mainsearch" type="search"  name="search" class="form-control" placeholder="Search discounts for producs" list="datalist1" />
 									<span class="input-group-btn">
-										<button type="submit" class="btn btn-warning" style="background-color:#FDD922;"><b style="color:#303030 ;">SEARCH</b></button> 
+										<button type="submit" class="btn btn-default" style="background-color:#FFD700;color:#303030;"><b>SEARCH</b></button> 
 									</span>
 								</div>
 							  	<datalist id="datalist1">
@@ -760,15 +687,22 @@
 	<!-- logo, helping bar and search bar end -->
 
         <!----------------------- menubar start -------------------------->
-        <div class="header-menubar"> <!-- menubar color -->
+        <div class="header-menubar" style="width:100%;"> <!-- menubar color -->
             <nav class="navbar navbar-inverse" role="navigation"> <!-- inverse navbar -->
                 <div class="container">
+					<div class="navbar-header">
+      					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+        					<span class="icon-bar"></span>
+        					<span class="icon-bar"></span>
+        					<span class="icon-bar"></span>                        
+      					</button>
+    				</div>
                     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-                        <!-- menubar items list -->
+						<!-- menubar items list -->
                         <ul class="nav navbar-nav" style="padding: 0px 0px 0px 215px;">
-							
-                            <!-- menubar item 1 "automobile service" -->
-                    <!--    <li class="dropdown mega-dropdown" style="border-right: 1px solid #3b5998;">
+                            
+							<!-- menubar item 1 "automobile service" -->
+                      <!--  <li class="dropdown mega-dropdown" style="border-right: 1px solid #3b5998;">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     AUTOMOBILE SERVICE
                                     <span class="caret"></span>
@@ -958,7 +892,7 @@
                                 </div>				
                             </li>-->
 
-                            <!-- menubar item 2 "internet plans" -->
+                            <!-- menubar item 2 "sweets and cakes" -->
                             <li class="dropdown mega-dropdown" style="border-right: 1px solid #3b5998;">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:#F0F0F0;">
                                     INTERNET PLANS

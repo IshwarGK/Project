@@ -59,6 +59,22 @@ ul#menu1 li a:hover {
 /*helping bar end*/
 
 /*change city location start*/
+#location-box {
+	width:170px;
+	height:34px;
+	border:1px solid white;
+	background-color:white;
+	border-radius:4px;
+	margin-left:-15px;
+}
+
+#location-link {
+	color:black;
+	text-decoration:none;
+	padding:5px 5px 10px 10px;
+	outline-style:none;
+}
+
 .topsearch {
     margin-top: 5px;
 }
