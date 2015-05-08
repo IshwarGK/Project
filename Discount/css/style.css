@@ -302,15 +302,10 @@ html, body {
 
 /*--------- cake page end --------------------*/
 
-/*----------how it works start-----------------*/
-.howitworks{
-    margin: 20px 0px 0px 0px;
-}
-/*------------how it works end----------*/
 
 /*--------footer start ------------*/
 .footer-block {
-    bottom: 0px;
+    margin-top: 50px;
     border-top: 1px solid #C0C0C0;
     padding: 10px 0px 0px 0px;
     background-color: #3b5998;

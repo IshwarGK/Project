@@ -1,49 +1,6 @@
     <script> 
-        // start for creating cookies for city name
-        function getCookie(cname) {
-            var name = cname + "=";
-            var ca = document.cookie.split(';');
-            for(var i=0; i<ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0)==' ') c = c.substring(1);
-                if (c.indexOf(name) == 0) {
-                    return c.substring(name.length, c.length);
-                }
-            }
-            return "";
-        }
-        
-        function citynamefun(){
-                     var city = getCookie("cityname"); 
-                     if(city == "" ){
-                                     $("#mum").text("Pune");
-                                     setCookie("cityname", "Pune", 30);
-                                 }
-                                else{
-                                    $("#mum").text(city);
-                                }
-                                 
-                  
-                }
-        // End for creating cookies for city name
-        
-        // start for setting cookies for city name
-                    function setCookie(cname,cvalue,exdays) {
-                        var d = new Date();
-                        d.setTime(d.getTime() + (exdays*24*60*60*1000));
-                        var expires = "expires=" + d.toGMTString();
-                        document.cookie = cname+"="+cvalue+"; "+expires;
-                    }
-                function f1(id){ 
-                     $("#mum").text(id);
-                    var divsToHide = document.getElementsByClassName("modal fade");
-                    setCookie("cityname", id, 30);
-                    
-                }
-                   // End for setting cookies for city name
-        
+                
 		//fix search bar on scroll start
-			// first method
 			jQuery("document").ready(function($){
                 citynamefun(); // call for city name.
 				var nav = $('.header-topbar');
@@ -57,33 +14,15 @@
 						$('#slogan').slideUp(300);
 						$('#menu1').slideUp(300);
 						$('#search-box').animate({marginTop:"13px"}, -1000);
+						$('#location-box').animate({marginTop:"13px"}, -1000);
      				} else {
 						$('#slogan').slideDown(300);
 						$('#menu1').slideDown(300);
-						$('#search-box').animate({marginTop:"0px"}, -1000);	
+						$('#search-box').animate({marginTop:"0px"}, -1000);
+						$('#location-box').animate({marginTop:"0px"}, -1000);
      				}
 				});
-			});
-			//second method
-			/*
-			$(window).scroll(function () {
-     			if ($(this).scrollTop() > 100) {
-          			$('#top-search').addClass("fix-nav");
-					$('#slogan').hide(1);
-					$('.company-logo').animate({marginTop:"0px"}, -1000);
-   					$('body').addClass("fix-body");
-					$('.header-menubar').hide();
-					
-     			} else {
-   					$('#top-search').removeClass("fix-nav");
-					$('.company-logo').animate({marginTop:"-20px"}, -1000);
-					$('#slogan').show(1);
-					$('.header-menubar').show();
-   					$('body').removeClass("fix-body");
-					
-     			}	 
-			});*/
-		
+			});		
 		//fix search bar on scroll end
 		
 		// search bar find results start
@@ -112,6 +51,47 @@
             );
         });
         //dropdown menu end
+		
+		// start for getting cookies for city name
+        function getCookie(cname) {
+        	var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0; i<ca.length; i++) {
+            	var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1);
+                if (c.indexOf(name) == 0) {
+                	return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+       	}            
+
+		function citynamefun(){
+        	var city = getCookie("cityname"); 
+            if(city == "" ){
+            	$("#mum").text("Pune");
+                setCookie("cityname", "Pune", 30);
+            }
+            else{
+            	$("#mum").text(city);
+            }                  
+       	}
+        // End for getting cookies for city name
+                    
+        // start for setting cookies for city name
+        function setCookie(cname,cvalue,exdays) {
+        	var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires=" + d.toGMTString();
+            document.cookie = cname+"="+cvalue+"; "+expires;
+        }
+        function f1(id){ 
+        	$("#mum").text(id);
+            var divsToHide = document.getElementsByClassName("modal fade");
+            setCookie("cityname", id, 30);        
+       	}
+        // End for setting cookies for city name
+
         
     </script>
     
@@ -699,7 +679,7 @@
     				</div>
                     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 						<!-- menubar items list -->
-                        <ul class="nav navbar-nav" style="padding: 0px 0px 0px 215px;">
+                        <ul class="nav navbar-nav" style="margin: 0px 0px 0px 215px;">
                             
 							<!-- menubar item 1 "automobile service" -->
                       <!--  <li class="dropdown mega-dropdown" style="border-right: 1px solid #3b5998;">

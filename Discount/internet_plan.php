@@ -30,16 +30,103 @@
         $(document).ready(function(){
             $("#header").load("header.php");
             $("#footer").load("footer.php");
+            horizontal_array();
            // $.removeCookie("checkboxValues");
 
         });
+        
+        var horizontal_array = function() {
+           
+                var hori_brands = [];
+                $.each($("input[name='brand']:checked"), function(){            
+                hori_brands.push($(this).val());
+                });
+                var text = "";
+                var i;
+                var j = hori_brands.length;
+                for (i = 0; i < j; i++) {
+                    text += "<span>" + "<lable onclick='toggle_uncheckall_hori(this.id)' id="+hori_brands[i]+" >" + hori_brands[i]  + " </lable > ";
+                }
+                var hori_plan = [];
+                $.each($("input[name='plan']:checked"), function(){            
+                hori_plan.push($(this).val());
+                });
+                var i;
+                var j = hori_plan.length;
+                for (i = 0; i < j; i++) {
+                    text += "<lable onclick='toggle_uncheckall_hori(this.id)' id="+hori_plan[i]+" >" + hori_plan[i]  + " </lable > ";
+                }
+                var hori_speed = [];
+                $.each($("input[name='speed']:checked"), function(){            
+                hori_speed.push($(this).val());
+                });
+                var i;
+                var j = hori_speed.length;
+                for (i = 0; i < j; i++) {
+                    text += "<lable onclick='toggle_uncheckall_hori(this.id)' id="+hori_speed[i]+" >" + hori_speed[i]  + " </lable > ";
+                }
+                var hori_price = [];
+                $.each($("input[name='price']:checked"), function(){            
+                hori_price.push($(this).val());
+                });
+                var i;
+                var j = hori_price.length;
+                for (i = 0; i < j; i++) {
+                    text += "<lable onclick='toggle_uncheckall_hori(this.id)' id="+hori_price[i]+" >" + hori_price[i]  + " </lable > ";
+                }
+                var hori_validity = [];
+                $.each($("input[name='validity']:checked"), function(){            
+                hori_validity.push($(this).val());
+                });
+                var i;
+                var j = hori_validity.length;
+                for (i = 0; i < j; i++) {
+                    text += "<lable onclick='toggle_uncheckall_hori(this.id)' id="+hori_validity[i]+" >" + hori_validity[i]  + " </lable > ";
+                }
+                document.getElementById("horizontal_menubar").innerHTML = text;
+        }
+        
+        function toggle_uncheckall_hori(tp){
+          alert(tp);
+          checkboxes = document.getElementsByName('brand');
+          for(var i=0, n=checkboxes.length;i<n;i++) {
+              if(checkboxes[i].value == tp){
+                checkboxes[i].checked = tp.unchecked;   
+                }
+          } 
+          checkboxes = document.getElementsByName('plan');
+          for(var i=0, n=checkboxes.length;i<n;i++) {
+            if(checkboxes[i].value == tp){
+                checkboxes[i].checked = tp.unchecked;   
+                }
+          }
+          checkboxes = document.getElementsByName('speed');
+          for(var i=0, n=checkboxes.length;i<n;i++) {
+            if(checkboxes[i].value == tp){
+                checkboxes[i].checked = tp.unchecked;   
+                }
+          }    
+          checkboxes = document.getElementsByName('price');
+          for(var i=0, n=checkboxes.length;i<n;i++) {
+            if(checkboxes[i].value == tp){
+                checkboxes[i].checked = tp.unchecked;   
+                }
+          }       
+          checkboxes = document.getElementsByName('validity');
+          for(var i=0, n=checkboxes.length;i<n;i++) {
+            if(checkboxes[i].value == tp){
+                checkboxes[i].checked = tp.unchecked;   
+                }
+          }    
+            cookies_handling();
+        }
         
         //topbar, searchbar and menubar end  
          
         // Start code for uncheck function 
                  
         function toggle_uncheck_brand(source){
-               checkboxes = document.getElementsByName('brand');
+          checkboxes = document.getElementsByName('brand');
           for(var i=0, n=checkboxes.length;i<n;i++) {
             checkboxes[i].checked = source.unchecked;
           }
@@ -49,7 +136,7 @@
            
         }
         function toggle_uncheck_plan(source){
-               checkboxes = document.getElementsByName('plan');
+          checkboxes = document.getElementsByName('plan');
           for(var i=0, n=checkboxes.length;i<n;i++) {
             checkboxes[i].checked = source.unchecked;
           }
@@ -122,14 +209,19 @@
 	<!-- list of internet plans start -->
     <div style="width:1349px;">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-3 col-md-offset-1">
+            
+			<div class="row">
+                <div class="col-md-3" style="border:1px solid black;">
                     <ul id="shortcut-menu">
                         <li><a href="index.html">Home</a></li>
                         <li> > </li>
                         <li>Internet Plans</li>
                     </ul>
                 </div>
+				<div class="col-md-8">
+					<div id="horizontal_menubar">
+    				</div>
+				</div>
             </div>
             
             <div class="row">
