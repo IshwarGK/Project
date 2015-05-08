@@ -37,19 +37,22 @@
 
 /* helping bar start*/
 ul#menu1 {
-    padding: 5px 0px 0px 31px;
+    padding: 5px 0px 0px 0px;
 }
 
 ul#menu1 > li > a {
     padding: 4px;
     color: #DCDCDC;
+	outline: none;
+	text-decoration: none;
 }
 
 ul#menu1 li a:hover {
     text-decoration: none;
-    color: darkred;
+    color: white;
 }
-.helpbar-border {
+
+.helpbar-line {
 	border-left: 1px solid rgba(255, 255, 255, 0.2); 
 	display:inline;
 }
@@ -86,6 +89,7 @@ ul.cityname li {
 ul#menu3 li a {
     color: black;
     font-weight: bold;
+	outline: none;
 }
 
 ul#menu3 li a:hover {
@@ -181,7 +185,6 @@ ul#menu3 li a:hover {
 }
 .menutab {
   display: inline-block;
-  padding: 0px 0px 0px 0px;
   font-weight: bold;
 }
 
@@ -205,9 +208,9 @@ ul#menu3 li a:hover {
 
 .mega-dropdown { position: static !important; }
 .mega-dropdown-menu {
-    margin-left: 335px;
+    margin-left: 245px;
     padding: 20px 15px 15px;
-    width: 60.2%;
+    width: 58.5%;
 }
 
 .sublist { 
