@@ -23,6 +23,7 @@
 	<script src="js/bootstrap.min.js" type="text/javascript"></script> <!-- bootstrap for all -->
 	<script src="js/socialbars.js" type="text/javascript"></script> <!-- social bar left -->
 	<script src="js/back-to-top.js" type="text/javascript"></script> <!-- back to top js -->
+	<script src="js/ZeroClipboard.js" ></script>
     <script> 
         
                 
@@ -34,6 +35,14 @@
            // $.removeCookie("checkboxValues");
 
         });
+		
+		//copy to clipboard start
+		$(document).ready(function() {
+			var clip = new ZeroClipboard($("#copy_button"), {
+				moviePath: "js/ZeroClipboard.swf"
+			}); 
+		});
+		//copy to clipboard end
         
         var horizontal_array = function() {
            
@@ -66,7 +75,7 @@
                         hori_brands_name = 'You Broadband';
                     }
                     
-                    text += "<lable onclick='toggle_uncheckall_hori(this.id)' id="+hori_brands[i]+" >" + hori_brands_name  + " </lable > ";
+                    text += "<span style='margin-right:10px;'><a href='' class='shortcut' onclick='toggle_uncheckall_hori(this.id)' id="+hori_brands[i]+" >" + hori_brands_name  + " <small> &#9932</small></a></span>";
                 }
                 var hori_plan = [];
                 $.each($("input[name='plan']:checked"), function(){            
@@ -85,7 +94,7 @@
                     if(hori_plan[i] == "normal"){
                         hori_plan_name = "GB Plan";
                     }
-                    text += "<lable onclick='toggle_uncheckall_hori(this.id)' id="+hori_plan[i]+" >" + hori_plan_name  + " </lable > ";
+                    text += "<span style='margin-right:10px;'><a href='' class='shortcut' onclick='toggle_uncheckall_hori(this.id)' id="+hori_plan[i]+" >" + hori_plan_name  + " <small> &#9932</small></a></span>";
                 }
                 var hori_speed = [];
                 $.each($("input[name='speed']:checked"), function(){            
@@ -94,7 +103,7 @@
                 var i;
                 var j = hori_speed.length;
                 for (i = 0; i < j; i++) {
-                    text += "<lable onclick='toggle_uncheckall_hori(this.id)' id="+hori_speed[i]+" >" + hori_speed[i]  + " </lable > ";
+                    text += "<span style='margin-right:10px;'><a href='' class='shortcut' onclick='toggle_uncheckall_hori(this.id)' id="+hori_speed[i]+" >" + hori_speed[i]  + " <small> &#9932</small></a></span>";
                 }
                 var hori_price = [];
                 $.each($("input[name='price']:checked"), function(){            
@@ -104,7 +113,7 @@
                 var j = hori_price.length;
                 for (i = 0; i < j; i++) {
                      p3 = hori_price[i].split(" ");
-                    text += "<lable onclick='toggle_uncheckall_hori(this.id)' id="+hori_price[i]+" >" + p3[0] + " - " + p3[1]  + " </lable > ";
+                    text += "<span style='margin-right:10px;'><a href='' class='shortcut' onclick='toggle_uncheckall_hori(this.id)' id="+hori_price[i]+" >" + p3[0] + " - " + p3[1]  + " <small> &#9932</small></a></span>";
                 }
                 var hori_validity = [];
                 $.each($("input[name='validity']:checked"), function(){            
@@ -113,7 +122,7 @@
                 var i;
                 var j = hori_validity.length;
                 for (i = 0; i < j; i++) {
-                    text += "<lable onclick='toggle_uncheckall_hori(this.id)' id="+hori_validity[i]+" >" + hori_validity[i]  + " </lable > ";
+                    text += "<span style='margin-right:10px;'><a href='' class='shortcut' onclick='toggle_uncheckall_hori(this.id)' id="+hori_validity[i]+" >" + hori_validity[i]  + " <small> &#9932</small></a></span>";
                 }
                 document.getElementById("horizontal_menubar").innerHTML = text;
         }
@@ -238,21 +247,20 @@
     <div id="header" style="width:1349px; height:150px;"></div>
     <!-- topbar, searchbar and menubar end  -->
     
-    <div id="horizontal_menubar">
-   
-    </div>
-    
 	<!-- list of internet plans start -->
     <div style="width:1349px;">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-3 col-md-offset-1">
+                <div class="col-md-2 col-md-offset-1">
                     <ul id="shortcut-menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li> > </li>
-                        <li>Internet Plans</li>
+                        <li><a href="index.html" style="color:black;"><strong>Home</strong></a></li>
+                        <li> <span class="glyphicon glyphicon-chevron-down"> </span> Internet Plans</li>
                     </ul>
                 </div>
+				<div class="col-md-9">
+					<div id="horizontal_menubar">
+    				</div>
+				</div>
             </div>
             
             <div class="row">
@@ -875,7 +883,8 @@ var speed = [];
                         
                         <div class="col-md-3" style="padding-bottom:40px;">
                             <div class="brand-block">
-                                <div class="brand-image">
+                                
+								<div class="brand-image">
                                     <center>
                                         <?php
                                             echo '<img src="image/internet/'.$row["Image"].'" alt='.$row["Image"].' 
@@ -883,7 +892,8 @@ var speed = [];
                                         ?>    
                                     </center>
                                 </div>
-                                <table style="margin:5px 0px 0px 10px;">
+								<span class="scissors">&#9986;</span>
+                                <table style="margin:5px 1px 0px 10px;">
                                     <tr>
                                         <td>
                                             <b>Plan Name :</b> 
@@ -933,6 +943,7 @@ var speed = [];
                                         </td>
                                     </tr>
                                 </table>
+								
                             </div>
                             <div style="padding:10px 0px 0px 60px;">
                                 <!--button trigger for coupon modal -->
@@ -975,11 +986,15 @@ var speed = [];
                                                 ?>
 												<form class="form-inline" role="form">
 													<div class="form-group">
-														<input type="text" class="form-control" id="coupon" value= 'Coupons Are Over' size="50" disabled />
+														<input type="text" class="form-control" id="coupon" name="coupon" value= 'Coupons Are Over' size="50" disabled />
 													</div>
                                                     
-													<button type="button" class="btn btn-primary">Copy</button>
+													<button type="button" class="btn btn-primary" id="copy_button" data-clipboard-target="coupon" >Copy</button>
 												</form>
+												<script language="JavaScript">
+		
+</script>
+
 												<h4>Go to <a href="#">Airtel</a> and Avail this Offer</h4>
 												<h5>Share this offer via 
 													<a href="" data-toggle="modal" data-target="#smsmodal"><b>SMS</b></a> or 

@@ -1045,7 +1045,7 @@
             <!-- End Carousel Inner -->       
        	</div>
         <!-- Carousel slide show start -->
-	
+		
 		<!--list of blocks start -->
 		<div class="container">
         	<div class="row">
