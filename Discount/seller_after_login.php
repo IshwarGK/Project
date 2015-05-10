@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	//session_start();
 ?>
 
 <!DOCTYPE html>
@@ -56,6 +56,7 @@
 		
 		//coupon history button start
 		$(document).ready(function(){
+            
 			$("#coupon-history").hide();
 		});
 		var count = 0;
@@ -70,8 +71,8 @@
 			}
 		}
 		//coupon history button end
-		
-		//paynow button start
+	
+        //paynow button start
 		$(document).ready(function(){
 			$(".pay-now").hide();
 		});
@@ -87,18 +88,38 @@
 			}
 		}
 		//paynow button end
+        
+        // start delete login cookies
+        var delete_cookie = function(name) {
+            document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        };
+        
+        // end delete login cookies
+        
 	</script>
 </head>
 <body>
-	<!-- database connection start -->
+    <script>
+    function delete_login_cookies(){
+            
+            delete_cookie('cookies_username');
+            delete_cookie('cookies_pwd');
+        
+            window.location = "sell.php";
+            
+        }
+    </script>
+	<button onclick="delete_login_cookies()">log out</button>
+    
+    <!-- database connection start -->
 	<?php 
 		include 'db_connect.php'; 
-		$username = $_SESSION["user"];
-		$pwd = $_SESSION["pass"];
-		$sql = "SELECT * FROM seller_account WHERE Username = '$username' and Password = '$pwd'";
+		$username = $_COOKIE['cookies_username'];
+        $pwd = $_COOKIE['cookies_pwd'];
+        $sql = "SELECT * FROM seller_account WHERE Username = '$username' and Password = '$pwd'";
 		$result = $conn->query($sql);
 		$row = $result->fetch_assoc();
-	?>
+    ?>
 	<!-- database connection end -->
 	
     <!-- topbar start -->

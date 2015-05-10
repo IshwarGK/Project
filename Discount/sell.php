@@ -24,10 +24,31 @@
     <script>
         //topbar, searchbar and menubar start
         $(document).ready(function(){
+            check_login_cookies();
             $("#footer").load("footer.php");
         });
         //topbar, searchbar and menubar end
-				
+        
+        function check_login_cookies(){
+            var user_name = getCookie('cookies_username');
+             var user_pass = getCookie('cookies_pwd');
+            if (user_name != "") {
+                 window.location = "seller_login_database.php";
+            } 
+        }
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0; i<ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1);
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        
 		//login submit start
 		function loginfunction(){
 			
