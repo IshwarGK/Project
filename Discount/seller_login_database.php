@@ -39,7 +39,11 @@
         $username = $_POST['username'];
         $pwd = $_POST['pwd'];
 
+<<<<<<< HEAD
         $sql = "SELECT * FROM seller_account where  Username = '$username' and Password = '$pwd'";
+=======
+        $sql = "SELECT * FROM seller_account WHERE Username = '$username' and Password = '$pwd'";
+>>>>>>> origin/master
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
         if ($row > 0) {

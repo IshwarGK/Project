@@ -22,7 +22,11 @@
         //topbar, searchbar and menubar start
         $(document).ready(function(){
             check_login_cookies();
+<<<<<<< HEAD
             
+=======
+            $("#footer").load("footer.php");
+>>>>>>> origin/master
         });
         //topbar, searchbar and menubar end
         

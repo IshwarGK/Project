@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+<?php
+	//session_start();
+?>
+
+>>>>>>> origin/master
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -112,6 +119,10 @@
             
         }
     </script>
+<<<<<<< HEAD
+=======
+	<button onclick="delete_login_cookies()">log out</button>
+>>>>>>> origin/master
     
     <!-- database connection start -->
 	<?php 
