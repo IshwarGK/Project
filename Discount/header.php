@@ -1,8 +1,8 @@
     <script> 
-                
+        citynamefun(); // call for city name.        
 		//fix search bar on scroll start
 			jQuery("document").ready(function($){
-                citynamefun(); // call for city name.
+                
 				var nav = $('.header-topbar');
 				var pos = nav.offset().top;
 				$(window).scroll(function () {
@@ -74,7 +74,8 @@
             }
             else{
             	$("#mum").text(city);
-            }                  
+            } 
+            //location.reload();
        	}
         // End for getting cookies for city name
                     
@@ -88,7 +89,8 @@
         function f1(id){ 
         	$("#mum").text(id);
             var divsToHide = document.getElementsByClassName("modal fade");
-            setCookie("cityname", id, 30);        
+            setCookie("cityname", id, 30);
+            location.reload();
        	}
         // End for setting cookies for city name
 
@@ -96,7 +98,7 @@
     </script>
     
     <!-- logo, helping bar and search bar start -->   
-	<div class="header-topbar" style="width:100%;">
+	<div class="header-topbar">
 		<div class="container">
         	<div class="row">
 				
@@ -130,12 +132,15 @@
 								<li class="helpbar-line">
 									<a href="contact.php">
 										<span class="glyphicon glyphicon-earphone"></span>
-										24x7 Customer Care
+										Customer Care
 									</a>
 								</li>
 								<li class="helpbar-line">
 									<!-- use data-remote instead of href  -->
-									<a href="#" data-toggle="modal" data-target="#exampleModal1">Login</a>
+									<a href="#" data-toggle="modal" data-target="#exampleModal1">
+										<span class="glyphicon glyphicon-log-in"></span>
+										Login
+									</a>
 									<!-- start modal signup -->
 									<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
 									   <div class="modal-dialog" style="padding-top:130px;">

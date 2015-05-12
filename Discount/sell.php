@@ -1,33 +1,51 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Diskart: Largest Discount Store</title>
+    <title>Diskart: Sell Products Discounts Online</title>
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="image/titlebar.png" />
     <link rel="stylesheet" href="css/bootstrap.min.css" /> <!-- bootstrap for all -->
-	<link rel="stylesheet" type="text/css" href="css/style.css" /> <!-- all css file -->
+	<link rel="stylesheet" href="css/font-awesome.min.css" /> <!-- signup and login social icons -->
 	<link id="scrollUpTheme" rel="stylesheet" href="css/back-to-top-tab.css"> <!-- back to top button -->
-    <link rel="stylesheet" href="css/back-to-top-labs.css"> <!-- back to top button -->
-    <link rel="stylesheet" href="css/font-awesome.min.css" /> <!-- signup and login social icons -->
-    <link rel="stylesheet" type="text/css" href="css/social.css" /> <!-- social icons bar left -->
-	<link rel="stylesheet" type="text/css" href="css/feedback.css" /> <!-- feedback form -->	
+    <link rel="stylesheet" href="css/back-to-top-labs.css"> <!-- back to top button -->	
 	<link rel="stylesheet" type="text/css" href="css/sell.css" /> <!-- sell.php page css -->
-	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/social-buttons.css" /> <!-- social button css -->
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css" />
 	<!-- bootstrap form validation -->
 	<script src="jquery/jquery-2.1.3.min.js"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script> <!-- bootstrap for all -->
 	<script src="jquery/jquery.scrollUp.min.js"></script> <!-- back to top button js -->
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js">         </script> <!-- bootstrap form validation -->
-	<script src="js/bootstrap.min.js" type="text/javascript"></script> <!-- bootstrap for all -->
-	<script src="js/socialbars.js" type="text/javascript"></script> <!-- social bar left -->
 	<script src="js/back-to-top.js" type="text/javascript"></script> <!-- back to top js -->
     <script>
         //topbar, searchbar and menubar start
         $(document).ready(function(){
-            $("#footer").load("footer.php");
+            check_login_cookies();
+            
         });
         //topbar, searchbar and menubar end
-				
+        
+        function check_login_cookies(){
+            var user_name = getCookie('cookies_username');
+             var user_pass = getCookie('cookies_pwd');
+            if (user_name != "") {
+                 window.location = "seller_login_database.php";
+            } 
+        }
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0; i<ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1);
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        
 		//login submit start
 		function loginfunction(){
 			
@@ -83,23 +101,15 @@
 </head>
 <body>
 	
-	<!-- social buttons start -->
-    <div id="socialside"></div>
-	<!-- social buttons end -->
-	
-	<!-- feedback form start -->
-	<div id="feedback"></div>
-	<!-- feedback form end -->
-	
     <!-- topbar start -->
-    <div class="header-topbar">
+    <div style="height:70px;background-color:#3b5998;">
         <div class="container">
             <div class="row row-items">
                 <div class="col-md-4">
-                    <a href="index.php">
-                        <img src="image/logo.png" alt="Diskart.com:Online Discount India" title="Online Discount India | Diskart.com" style="width:200px;height:40px;margin-top:-20px;" />
+                    <a href="sell.php">
+                        <img src="image/logo.png" alt="Diskart.com:Online Discount India" title="Online Discount India | Diskart.com" style="width:190px;height:40px;margin-top:-18px;" />
                     </a> 
-                    <font style="color:white;font-size:25px;"><b>Marketplace</b></font>
+                    <font style="color:white;font-size:25px;"><b> Marketplace </b></font>
                 </div>
                 
                 <div class="col-md-8">
@@ -126,13 +136,12 @@
     <!-- topbar end -->
     
     <!-- menubar start -->
-    <div class="header-menubar">
+    <div style="background-color:#232f3e;">
         <nav class="navbar navbar-inverse">
             <div class="container">
                 <ul class="nav navbar-nav">
-                    <li class="active" style="border-right: 1px solid #181818;"><a href="home.php"><b>HOME</b></a></li>
-                    <li style="border-right: 1px solid #181818;"><a href="aboutus.php"><b>ABOUT US</b></a></li>
-                    <li style="border-right: 1px solid #181818;"><a href="pricing.php"><b>PRICING</b></a></li>
+                    <li class="active" style="border-right: 1px solid #3b5998;"><a href="sell.php"><b>HOME</b></a></li>
+                    <li style="border-right: 1px solid #3b5998;"><a href="aboutus.php"><b>ABOUT US</b></a></li>
                     <li><a href="start_selling.php"><b>START SELLING</b></a></li>
                 </ul>
             </div>
@@ -146,7 +155,7 @@
             <h2>
                 <div style="color:wheat;">
                     <b>Place Your Product Discount<br />
-                    Your Product Gets Customers</b>
+                     Your Product Gets Customers</b>
                 </div>    
             </h2>
             <h4>
@@ -163,7 +172,7 @@
     <div class="container how-sell">
         <h2>
             <div style="color:#680000;">
-                <strong>How to sell</strong> with<font face="bauhaus 93"> diskart.com </font>
+                <strong>How to sell</strong> with<font face="bauhaus 93"> diskart.in </font>
             </div>    
         </h2>
     </div>    
@@ -224,7 +233,46 @@
 	<!-- back to top button end -->
     
     <!-- start footer -->
-    <div id="footer"></div>    
+    <div style="background-color:#005387;margin-top:70px;padding:50px 0px 50px 0px;">
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-md-3 col-md-offset-1">
+					<h2 class="sell-contact">CONTACT US</h2>
+					<font style="color:white;">
+						<p><b>Email : sell@diskart.in</b></p>
+						<p><b>Mb. No.: 7028257052</b></p>
+					</font>
+				</div>
+				
+				<div class="col-md-3 col-md-offset-1">
+					<h2 class="sell-contact">SOCIAL</h2>
+					<button class="btn btn-facebook"><i class="fa fa-facebook"></i> </button>
+					<button class="btn btn-twitter"><i class="fa fa-twitter"></i> </button>
+					<button class="btn btn-google-plus"><i class="fa fa-google-plus"></i> </button>
+					<button class="btn btn-linkedin"><i class="fa fa-linkedin"></i> </button>
+				</div>
+				
+				<div class="col-md-3 col-md-offset-1">
+					<h2 class="sell-contact">SITEMAP</h2>
+					<p><strong><a href="sell.php" id="footer-shortcut-link">HOME</a></strong></p>
+					<p><strong><a href="#" id="footer-shortcut-link">ABOUT US</a></strong></p>
+					<p><strong><a href="start_selling.php" id="footer-shortcut-link">START SELLING</a></strong></p>
+					<p><strong><a href="index.php" id="footer-shortcut-link">DISKART.IN</a></strong></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div style="background-color:#3b5998;padding:15px 0px 10px 0px;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-md-offset-1">
+					<p style="color:white;"><b>&#169; 2015 Diskart. All rights reserved.</b></p>
+				</div>
+			</div>
+		</div>
+	</div>
     <!-- end footer -->
     
 </body>    

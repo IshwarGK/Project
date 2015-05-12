@@ -1,3 +1,10 @@
+.close-button {
+	background-color:#080808;
+	width:40px;
+	height:40px;
+	margin:-15px -15px 0px 0px;
+}
+
 ul#shortcut-menu li {
     list-style-type: none;
     font-size: 16px;
@@ -13,7 +20,7 @@ ul#shortcut-menu li {
     border: 1px dashed darkred;
 	background-color:#F0F0F0;
     border-radius: 5px;
-    height: 220px;
+    height: 235px;
     width: 230px;
 }
 

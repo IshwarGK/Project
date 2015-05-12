@@ -429,8 +429,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2">
-                    <a href="index.php">
-                        <img src="image/logo.png" alt="Diskart.com:Online Discount India" title="Online Discount India | Diskart.com" style="width:200px;height:40px;" />
+                    <a href="sell.php">
+                        <img src="image/logo.png" alt="Diskart.com:Online Discount India" title="Online Discount India | Diskart.com" style="width:190px;height:40px;" />
                     </a>	
                 </div>
 				<div class="col-md-9" style="padding-top:5px;">

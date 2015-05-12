@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <script>
+     citynamefun();
+    </script>
     <title>Diskart: Largest Discount Store</title>
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,6 +15,7 @@
     <link rel="stylesheet" href="css/font-awesome.min.css" /> <!-- signup and login social icons -->
     <link rel="stylesheet" type="text/css" href="css/social.css" /> <!-- social icons bar left -->
 	<link rel="stylesheet" type="text/css" href="css/feedback.css" /> <!-- feedback form -->
+	<link rel="stylesheet" type="text/css" href="css/best-internet-plan.css" /> <!-- best plans -->
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css"/>
 	<!-- bootstrap form validation -->
 	<script src="jquery/jquery-2.1.3.min.js"></script>
@@ -20,10 +24,12 @@
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js">         </script> <!-- bootstrap form validation -->
 	<script src="js/socialbars.js" type="text/javascript"></script> <!-- social bar left -->
 	<script src="js/back-to-top.js" type="text/javascript"></script> <!-- back to top js -->
+	<script src="js/ZeroClipboard.js" ></script><!-- copy to clipboard -->
     <script type="text/javascript"> 
         
 		//fix search bar on scroll start
 			jQuery("document").ready(function($){
+                citynamefun();
 				var nav = $('.header-topbar');
 				var pos = nav.offset().top;
 				$(window).scroll(function () {
@@ -47,6 +53,23 @@
 			});
 		//fix search bar on scroll end
 		
+        // Start City selection
+        function citynamefun(){
+        	var city = getCookie("cityname"); 
+            if(city == "" ){
+            	$("#mum").text("Pune");
+                setCookie("cityname", "Pune", 30);
+                
+            }
+            else{
+            	$("#mum").text(city);
+                
+            }
+            
+       	}
+        // End city selection 
+        
+        
 		// search bar find results start
 		function searchFunction(){   
 			var x = $('#mainsearch').val();
@@ -84,7 +107,7 @@
 		
 		//feedback form load start
 		$(document).ready(function(){
-            citynamefun();
+           
             $("#feedback").load("feedback_form.php");
         });
 		//feedback form load end
@@ -103,16 +126,7 @@
             return "";
        	}            
 
-		function citynamefun(){
-        	var city = getCookie("cityname"); 
-            if(city == "" ){
-            	$("#mum").text("Pune");
-                setCookie("cityname", "Pune", 30);
-            }
-            else{
-            	$("#mum").text(city);
-            }                  
-       	}
+		
         // End for getting cookies for city name
                     
         // start for setting cookies for city name
@@ -125,9 +139,18 @@
         function f1(id){ 
         	$("#mum").text(id);
             var divsToHide = document.getElementsByClassName("modal fade");
-            setCookie("cityname", id, 30);        
+            setCookie("cityname", id, 30); 
+            location.reload();
        	}
         // End for setting cookies for city name
+		
+		//copy to clipboard start
+		$(document).ready(function() {
+			var clip = new ZeroClipboard($("#copy_button"), {
+				moviePath: "js/ZeroClipboard.swf"
+			}); 
+		});
+		//copy to clipboard end
 		
     </script>
 </head>
@@ -142,7 +165,7 @@
 	<!-- feedback form end -->
 	
     <!-- logo, helping bar and search bar start -->   
-	<div class="header-topbar" style="width:100%;">
+	<div class="header-topbar">
 		<div class="container">
         	<div class="row">
 				
@@ -176,12 +199,15 @@
 								<li class="helpbar-line">
 									<a href="contact.php">
 										<span class="glyphicon glyphicon-earphone"></span>
-										24x7 Customer Care
+										Customer Care
 									</a>
 								</li>
 								<li class="helpbar-line">
 									<!-- use data-remote instead of href  -->
-									<a href="#" data-toggle="modal" data-target="#exampleModal1">Login</a>
+									<a href="#" data-toggle="modal" data-target="#exampleModal1">
+										<span class="glyphicon glyphicon-log-in"></span>
+										Login
+									</a>
 									<!-- start modal signup -->
 									<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
 									   <div class="modal-dialog" style="padding-top:130px;">
@@ -995,54 +1021,8 @@
         <!-- menubar end-->
         
         <!-- Carousel slide show start -->
-		<div id="myCarousel" class="carousel slide slide-show" data-ride="carousel">						
-			<!-- Slide show Indicators -->			
-			<ol class="carousel-indicators">
-    			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    			<li data-target="#myCarousel" data-slide-to="1"></li>
-    			<li data-target="#myCarousel" data-slide-to="2"></li>
-				<li data-target="#myCarousel" data-slide-to="3"></li>
-  			</ol>
-            <!-- Wrapper for slides -->
-			<div class="carousel-inner">
-            	<div class="item active">
-                	<img src="image/four-wheeler.jpg" style="width:100%; height:400px;" />
-                    <div class="carousel-caption">
-                    	<a href="automobile_service.php" type="button" class="btn btn-success" style="background-color:#DC143C;">
-                        	<strong>GET OFFER <span class="glyphicon glyphicon-circle-arrow-right"></span></strong>
-                        </a>
-                    </div>
-                </div>
-                <!-- End Item -->
-                <div class="item">
-                	<img src="image/two-wheeler.jpg" style="width:100%; height:400px;" />
-                    <div class="carousel-caption">
-                    	<a href="automobile_service.php" type="button" class="btn btn-success" style="background-color:#DC143C;">
-                        	<strong>GET OFFER <span class="glyphicon glyphicon-circle-arrow-right"></span></strong>
-                        </a>
-                   	</div>
-               	</div>
-                <!-- End Item -->
-                <div class="item">
-                	<img src="image/internet.png" style="width:100%; height:400px;" />
-                    <div class="carousel-caption">
-                    	<a href="cake_seller.php" type="button" class="btn btn-success" style="background-color:#DC143C;">
-                        	<strong>GET OFFER <span class="glyphicon glyphicon-circle-arrow-right"></span></strong>
-                        </a>
-                    </div>
-                </div>
-                <!-- End Item -->
-                <div class="item">
-                	<img src="image/cake.jpg" style="width:100%; height:400px;" />
-                    <div class="carousel-caption">
-                    	<a href="internet_plan.php?bb=B" type="button" class="btn btn-success" style="background-color:#DC143C;">
-                        	<strong>GET OFFER <span class="glyphicon glyphicon-circle-arrow-right"></span></strong>
-                        </a>
-                   	</div>
-               	</div>
-                <!-- End Item -->
-       		</div>
-            <!-- End Carousel Inner -->       
+		<div class="slide-show">
+			<img src="image/four-wheeler.jpg" alt="car" style="width:100%;height:580px;" />       
        	</div>
         <!-- Carousel slide show start -->
 		
@@ -1051,222 +1031,2869 @@
         	<div class="row">
             	<div class="col-md-12">
                 	
-					<!-- start airtel  block -->
+					<!------------------------------------------ Start Airtel  block ------------------------------------------>
                     <div class="clearfix"></div>
-					<div style="margin-top:40px;">
+					<div style="margin-top:60px;">
                    		<div class="head-block">
                         	<h4>
-                            	<a href="internet_plan.php" style="color:white;">Airtel</a>
+                            	<a href="internet_plan.php" class="brand-block-name">Airtel</a>
                             </h4>
                        	</div>
-                        <div id="thumbcarousel1" class="carousel slide slide-block" data-interval="false">
+                        <div id="thumbcarousel1" class="carousel slide" data-interval="false">
                         	<div class="carousel-inner">	
 								<!-- First active item -->
 								<div class="item active">
-                                	<div data-target="#carousel" data-slide-to="0" class="thumb" style="border-right:1px solid #F8F8F8;">
-                                    	<center>
-                                        	<a href="#">
-                                            	<img src="image/tata.jpg" alt="tata" style="width:150px;height:120px;" />
-                                                <div class="caption">
-                                                	<h5><b>15% OFF</b></h5>
-                                                </div>
-                                            </a>
-                                        </center>
+                                	<div data-target="#carousel" data-slide-to="0" class="thumb">	
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/airtellogo.png" alt="brand" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>
                                    	</div>
-                                    <div data-target="#carousel" data-slide-to="1" class="thumb" style="border-right:1px solid #F8F8F8;">
-                                    	<center>
-                                        	<a href="#">    
-                                            	<img src="image/bmw.jpg" alt="tata" style="width:150px;height:120px;" />
-                                                <div class="caption">
-                                                	<h5><b>15% OFF</b></h5>
-                                                </div>
-                                            </a>
-                                       	</center>
+									
+                                    <div data-target="#carousel" data-slide-to="1" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/airtellogo.png" alt="brand" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>
                                    	</div>
-                                    <div data-target="#carousel" data-slide-to="2" class="thumb" style="border-right:1px solid #F8F8F8;">
-                                    	<center>
-                                        	<a href="#">
-                                            	<img src="image/Force%20motors.jpg" alt="tata" style="width:150px;height:120px;" />
-                                                <div class="caption">
-                                                	<h5><b>15% OFF</b></h5>
-                                                </div>
-                                           	</a>
-                                       	</center>
+									
+                                    <div data-target="#carousel" data-slide-to="2" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/airtellogo.png" alt="brand" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>
                                    	</div>
                                     <div data-target="#carousel" data-slide-to="3" class="thumb">
-                                    	<center>
-                                        	<a href="#">    
-                                            	<img src="image/ford.jpg" alt="tata" style="width:150px;height:120px;" />
-                                                <div class="caption">
-                                                	<h5><b>15% OFF</b></h5>
-                                                </div>
-                                            </a>    
-                                       	</center>
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/airtellogo.png" alt="brand" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>
                                    	</div>
                              	</div>
                                     
 								<div class="item">
-                                	<div data-target="#carousel" data-slide-to="4" class="thumb" style="border-right:1px solid #F8F8F8;">
-                                    	<center>
-                                        	<a href="#">
-                                            	<img src="image/volkswagen.jpg" alt="tata" style="width:150px;height:120px;" />
-                                                <div class="caption">
-                                                	<h5><b>15% OFF</b></h5>
-                                                </div>
-                                           	</a>    
-                                       	</center>    
+                                	<div data-target="#carousel" data-slide-to="4" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/airtellogo.png" alt="brand" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal" data-target="#example"> Get Coupon </button> 
+										</div>    
                                    	</div>
-                                    <div data-target="#carousel" data-slide-to="5" class="thumb" style="border-right:1px solid #F8F8F8;">
-                                    	<center>
-                                        	<a href="#">
-                                            	<img src="image/maruti%20suzuki.jpg" alt="tata" style="width:150px;height:120px;" />
-                                                <div class="caption">
-                                                	<h5><b>15% 0FF</b></h5>
-                                                </div>
-                                           	</a>
-                                       	</center>    
+                                    <div data-target="#carousel" data-slide-to="5" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/airtellogo.png" alt="brand" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>    
                                   	</div>
-                                    <div data-target="#carousel" data-slide-to="6" class="thumb" style="border-right:1px solid #F8F8F8;">
-                                     	<center>
-                                        	<a href="#">    
-                                            	<img src="image/tata.jpg" alt="tata" style="width:150px;height:120px;" />
-                                                <div class="caption">
-                                                	<h5><b>15% OFF</b></h5>
-                                                </div>
-                                            </a>
-                                       	</center>    
+                                    <div data-target="#carousel" data-slide-to="6" class="thumb">
+                                     	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/airtellogo.png" alt="brand" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>    
                                    	</div>
                                     <div data-target="#carousel" data-slide-to="7" class="thumb">
-                                    	<center>
-                                        	<a href="#">
-                                            	<img src="image/tata.jpg" alt="tata" style="width:150px;height:120px;" />
-                                                <div class="caption">
-                                                	<h5><b>15% OFF</b></h5>
-                                                </div>
-                                            </a>
-                                       	</center>    
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/airtellogo.png" alt="brand" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal" data-target="#example"> Get Coupon </button> 
+										</div>    
                                    	</div>    
                              	</div>
                          	</div>
-                            <a class="left carousel-control" href="#thumbcarousel1" role="button" data-slide="prev">
-                            	<span class="glyphicon glyphicon-chevron-left" style="left:15px; background-color:black;"></span>
+                            <a class="left carousel-control" href="#thumbcarousel1" role="button" data-slide="prev" style="width:10px;">
+                            	<span class="glyphicon glyphicon-menu-left" style="top:130px;background-color:black;"></span>
                             </a>
-                            <a class="right carousel-control" href="#thumbcarousel1" role="button" data-slide="next">
-                            	<span class="glyphicon glyphicon-chevron-right" style="right:15px; background-color:black;"></span>
+                            <a class="right carousel-control" href="#thumbcarousel1" role="button" data-slide="next" style="width:10px;">
+                            	<span class="glyphicon glyphicon-menu-right" style="top:130px;right:11px;background-color:black;"></span>
                             </a>
                     	</div>
                     </div>
-                    <!-- end four wheeler block -->
+                    <!------------------------------------------- End Airtel block -------------------------------------------------------->
 
-                    <!-- start two wheeler block -->
+                    <!------------------------------------------- start BSNL  block ------------------------------------------------------->
                     <div class="clearfix"></div>
-                    <div style="margin-top:60px;">
-                    	<div class="head-block">
+					<div style="margin-top:50px;">
+                   		<div class="head-block">
                         	<h4>
-                            	<a href="cake_seller.php" style="color:white;">Cakes</a>
+                            	<a href="internet_plan.php" class="brand-block-name">BSNL</a>
                             </h4>
                        	</div>
-                        <div id="thumbcarousel2" class="carousel slide slide-block" data-interval="false">
-                        	<div class="carousel-inner">
-                            	<div class="item active">
-                                	<div data-target="#carousel" data-slide-to="0" class="thumb" style="border-right:1px solid #F8F8F8;">
-                                    	<center>
-                                        	<a href="#">
-                                            	<img src="image/tata.jpg" alt="tata" style="width:150px;height:120px;" />
-                                                <div class="caption">
-                                                	<h5><b>15% OFF</b></h5>
-                                                </div>
-                                            </a>
-                                        </center>
-                                    </div>
-                                    <div data-target="#carousel" data-slide-to="1" class="thumb" style="border-right:1px solid #F8F8F8;">
-                                    	<center>
-                                        	<a href="#">    
-                                            	<img src="image/bmw.jpg" alt="tata" style="width:150px;height:120px;" />
-                                                <div class="caption">
-                                                	<h5><b>15% OFF</b></h5>
-                                                </div>
-                                            </a>
-                                       	</center>
+                        <div id="thumbcarousel2" class="carousel slide" data-interval="false">
+                        	<div class="carousel-inner">	
+								<!-- First active item -->
+								<div class="item active">
+                                	<div data-target="#carousel" data-slide-to="0" class="thumb">	
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/bsnllogo.png" alt="BSNL" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>
                                    	</div>
-                                    <div data-target="#carousel" data-slide-to="2" class="thumb" style="border-right:1px solid #F8F8F8;">
-                                    	<center>
-                                        	<a href="#">
-                                            	<img src="image/Force%20motors.jpg" alt="tata" style="width:150px;height:120px;" />
-                                                <div class="caption">
-                                                	<h5><b>15% OFF</b></h5>
-                                                </div>
-                                            </a>
-                                       	</center>
-                                  	</div>
+									
+                                    <div data-target="#carousel" data-slide-to="1" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/bsnllogo.png" alt="BSNL" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>
+                                   	</div>
+									
+                                    <div data-target="#carousel" data-slide-to="2" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/bsnllogo.png" alt="BSNL" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>
+                                   	</div>
                                     <div data-target="#carousel" data-slide-to="3" class="thumb">
-                                    	<center>
-                                        	<a href="#">    
-                                            	<img src="image/ford.jpg" alt="tata" style="width:150px;height:120px;" />
-                                                <div class="caption">
-                                                	<h5><b>15% OFF</b></h5>
-                                               	</div>
-                                            </a>    
-                                       	</center>
-                                   	</div>
-                               	</div>
-                                <div class="item">
-                                	<div data-target="#carousel" data-slide-to="4" class="thumb" style="border-right:1px solid #F8F8F8;">
-                                    	<center>
-                                        	<a href="#">
-                                            	<img src="image/volkswagen.jpg" alt="tata" style="width:150px;height:120px;" />
-                                                <div class="caption">
-                                                	<h5><b>15% OFF</b></h5>
-                                                </div>
-                                            </a>    
-                                       	</center>    
-                                  	</div>
-                                    <div data-target="#carousel" data-slide-to="5" class="thumb" style="border-right:1px solid #F8F8F8;">
-                                    	<center>
-                                        	<a href="#">
-                                            	<img src="image/maruti%20suzuki.jpg" alt="tata" style="width:150px;height:120px;" />
-                                                <div class="caption">
-                                                	<h5><b>15% 0FF</b></h5>
-                                                </div>
-                                          	</a>
-                                       	</center>    
-                                   	</div>
-                                    <div data-target="#carousel" data-slide-to="6" class="thumb" style="border-right:1px solid #F8F8F8;">
-                                    	<center>
-                                        	<a href="#">    
-                                            	<img src="image/tata.jpg" alt="tata" style="width:150px;height:120px;" />
-                                                <div class="caption">
-                                                	<h5><b>15% OFF</b></h5>
-                                                </div>
-                                            </a>
-                                       	</center>    
-                                  	</div>
-                                    <div data-target="#carousel" data-slide-to="7" class="thumb">
-                                    	<center>
-                                    		<a href="#">
-                                        		<img src="image/tata.jpg" alt="tata" style="width:150px;height:120px;" />
-                                                <div class="caption">
-                                                	<h5><b>15% OFF</b></h5>
-                                                </div>
-                                            </a>
-                                       	</center>    
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/bsnllogo.png" alt="BSNL" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>
                                    	</div>
                              	</div>
-                        	</div>
-                            <a class="left carousel-control" href="#thumbcarousel2" role="button" data-slide="prev">
-                            	<span class="glyphicon glyphicon-chevron-left" style="left:15px; background-color:black;"></span>
-                           	</a>
-                            <a class="right carousel-control" href="#thumbcarousel2" role="button" data-slide="next">
-                            	<span class="glyphicon glyphicon-chevron-right" style="right:15px; background-color:black;"></span>
+                                    
+								<div class="item">
+                                	<div data-target="#carousel" data-slide-to="4" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/bsnllogo.png" alt="BSNL" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal" data-target="#example"> Get Coupon </button> 
+										</div>    
+                                   	</div>
+                                    <div data-target="#carousel" data-slide-to="5" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/bsnllogo.png" alt="BSNL" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>    
+                                  	</div>
+                                    <div data-target="#carousel" data-slide-to="6" class="thumb">
+                                     	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/bsnllogo.png" alt="BSNL" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>    
+                                   	</div>
+                                    <div data-target="#carousel" data-slide-to="7" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/bsnllogo.png" alt="BSNL" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal" data-target="#example"> Get Coupon </button> 
+										</div>    
+                                   	</div>    
+                             	</div>
+                         	</div>
+                            <a class="left carousel-control" href="#thumbcarousel2" role="button" data-slide="prev" style="width:10px;">
+                            	<span class="glyphicon glyphicon-menu-left" style="top:130px;background-color:black;"></span>
                             </a>
-                      	</div>
+                            <a class="right carousel-control" href="#thumbcarousel2" role="button" data-slide="next" style="width:10px;">
+                            	<span class="glyphicon glyphicon-menu-right" style="top:130px;right:11px;background-color:black;"></span>
+                            </a>
+                    	</div>
                     </div>
-                    <!-- end two wheeler block -->
-                    
+                    <!-------------------------------------------- end BSNL block ------------------------------------------------------->
+					
+					<!-------------------------------------------- Start HATHWAY block -------------------------------------------------->
+                    <div class="clearfix"></div>
+					<div style="margin-top:50px;">
+                   		<div class="head-block">
+                        	<h4>
+                            	<a href="internet_plan.php" class="brand-block-name">Hathway</a>
+                            </h4>
+                       	</div>
+                        <div id="thumbcarousel3" class="carousel slide" data-interval="false">
+                        	<div class="carousel-inner">	
+								<!-- First active item -->
+								<div class="item active">
+                                	<div data-target="#carousel" data-slide-to="0" class="thumb">	
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/hathway.png" alt="Hathway" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>
+                                   	</div>
+									
+                                    <div data-target="#carousel" data-slide-to="1" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/hathway.png" alt="Hathway" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>
+                                   	</div>
+									
+                                    <div data-target="#carousel" data-slide-to="2" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/hathway.png" alt="Hathway" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>
+                                   	</div>
+                                    <div data-target="#carousel" data-slide-to="3" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/hathway.png" alt="Hathway" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>
+                                   	</div>
+                             	</div>
+                                    
+								<div class="item">
+                                	<div data-target="#carousel" data-slide-to="4" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/hathway.png" alt="Hathway" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal" data-target="#example"> Get Coupon </button> 
+										</div>    
+                                   	</div>
+                                    <div data-target="#carousel" data-slide-to="5" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/hathway.png" alt="Hathway" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>    
+                                  	</div>
+                                    <div data-target="#carousel" data-slide-to="6" class="thumb">
+                                     	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/hathway.png" alt="Hathway" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>    
+                                   	</div>
+                                    <div data-target="#carousel" data-slide-to="7" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/hathway.png" alt="Hathway" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal" data-target="#example"> Get Coupon </button> 
+										</div>    
+                                   	</div>    
+                             	</div>
+                         	</div>
+                            <a class="left carousel-control" href="#thumbcarousel3" role="button" data-slide="prev" style="width:10px;">
+                            	<span class="glyphicon glyphicon-menu-left" style="top:130px;background-color:black;"></span>
+                            </a>
+                            <a class="right carousel-control" href="#thumbcarousel3" role="button" data-slide="next" style="width:10px;">
+                            	<span class="glyphicon glyphicon-menu-right" style="top:130px;right:11px;background-color:black;"></span>
+                            </a>
+                    	</div>
+                    </div>
+                    <!------------------------------------------ End Hathway block ------------------------------------------------->
+
+                    <!------------------------------------------ Start Tata docomo block ------------------------------------------->
+                    <div class="clearfix"></div>
+					<div style="margin-top:50px;">
+                   		<div class="head-block">
+                        	<h4>
+                            	<a href="internet_plan.php" class="brand-block-name">Tata Docomo</a>
+                            </h4>
+                       	</div>
+                        <div id="thumbcarousel4" class="carousel slide" data-interval="false">
+                        	<div class="carousel-inner">	
+								<!-- First active item -->
+								<div class="item active">
+                                	<div data-target="#carousel" data-slide-to="0" class="thumb">	
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/tatadocomo.gif" alt="TataDocomo" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>
+                                   	</div>
+									
+                                    <div data-target="#carousel" data-slide-to="1" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/tatadocomo.gif" alt="TataDocomo" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>
+                                   	</div>
+									
+                                    <div data-target="#carousel" data-slide-to="2" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/tatadocomo.gif" alt="TataDocomo" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>
+                                   	</div>
+                                    <div data-target="#carousel" data-slide-to="3" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/tatadocomo.gif" alt="TataDocomo" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>
+                                   	</div>
+                             	</div>
+                                    
+								<div class="item">
+                                	<div data-target="#carousel" data-slide-to="4" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/tatadocomo.gif" alt="TataDocomo" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal" data-target="#example"> Get Coupon </button> 
+										</div>    
+                                   	</div>
+                                    <div data-target="#carousel" data-slide-to="5" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/tatadocomo.gif" alt="TataDocomo" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>    
+                                  	</div>
+                                    <div data-target="#carousel" data-slide-to="6" class="thumb">
+                                     	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/tatadocomo.gif" alt="TataDocomo" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>    
+                                   	</div>
+                                    <div data-target="#carousel" data-slide-to="7" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/tatadocomo.gif" alt="TataDocomo" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal" data-target="#example"> Get Coupon </button> 
+										</div>    
+                                   	</div>    
+                             	</div>
+                         	</div>
+                            <a class="left carousel-control" href="#thumbcarousel4" role="button" data-slide="prev" style="width:10px;">
+                            	<span class="glyphicon glyphicon-menu-left" style="top:130px;background-color:black;"></span>
+                            </a>
+                            <a class="right carousel-control" href="#thumbcarousel4" role="button" data-slide="next" style="width:10px;">
+                            	<span class="glyphicon glyphicon-menu-right" style="top:130px;right:11px;background-color:black;"></span>
+                            </a>
+                    	</div>
+                    </div>
+                    <!------------------------------------ End Tata Docomo block ------------------------------------------------->
+
+					<!------------------------------------ Start Tikona  block ----------------------------------------------------->
+                    <div class="clearfix"></div>
+					<div style="margin-top:50px;">
+                   		<div class="head-block">
+                        	<h4>
+                            	<a href="internet_plan.php" class="brand-block-name">Tikona</a>
+                            </h4>
+                       	</div>
+                        <div id="thumbcarousel5" class="carousel slide" data-interval="false">
+                        	<div class="carousel-inner">	
+								<!-- First active item -->
+								<div class="item active">
+                                	<div data-target="#carousel" data-slide-to="0" class="thumb">	
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/tikonalogo.png" alt="Tikona" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>
+                                   	</div>
+									
+                                    <div data-target="#carousel" data-slide-to="1" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/tikonalogo.png" alt="Tikona" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>
+                                   	</div>
+									
+                                    <div data-target="#carousel" data-slide-to="2" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/tikonalogo.png" alt="Tikona" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>
+                                   	</div>
+                                    <div data-target="#carousel" data-slide-to="3" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/tikonalogo.png" alt="Tikona" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>
+                                   	</div>
+                             	</div>
+                                    
+								<div class="item">
+                                	<div data-target="#carousel" data-slide-to="4" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/tikonalogo.png" alt="Tikona" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal" data-target="#example"> Get Coupon </button> 
+										</div>    
+                                   	</div>
+                                    <div data-target="#carousel" data-slide-to="5" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/tikonalogo.png" alt="Tikona" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>    
+                                  	</div>
+                                    <div data-target="#carousel" data-slide-to="6" class="thumb">
+                                     	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/tikonalogo.png" alt="Tikona" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>    
+                                   	</div>
+                                    <div data-target="#carousel" data-slide-to="7" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/tikonalogo.png" alt="Tikona" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal" data-target="#example"> Get Coupon </button> 
+										</div>    
+                                   	</div>    
+                             	</div>
+                         	</div>
+                            <a class="left carousel-control" href="#thumbcarousel5" role="button" data-slide="prev" style="width:10px;">
+                            	<span class="glyphicon glyphicon-menu-left" style="top:130px;background-color:black;"></span>
+                            </a>
+                            <a class="right carousel-control" href="#thumbcarousel5" role="button" data-slide="next" style="width:10px;">
+                            	<span class="glyphicon glyphicon-menu-right" style="top:130px;right:11px;background-color:black;"></span>
+                            </a>
+                    	</div>
+                    </div>
+                    <!------------------------------------------------- End Tikona block ---------------------------------------->
+					
+					<!------------------------------------------------- Start You Broadband  block ------------->
+                    <div class="clearfix"></div>
+					<div style="margin-top:50px;">
+                   		<div class="head-block">
+                        	<h4>
+                            	<a href="internet_plan.php" class="brand-block-name">You Broadband</a>
+                            </h4>
+                       	</div>
+                        <div id="thumbcarousel6" class="carousel slide" data-interval="false">
+                        	<div class="carousel-inner">	
+								<!-- First active item -->
+								<div class="item active">
+                                	<div data-target="#carousel" data-slide-to="0" class="thumb">	
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/youbblogo.png" alt="YouBroadband" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>
+                                   	</div>
+									
+                                    <div data-target="#carousel" data-slide-to="1" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/youbblogo.png" alt="YouBroadband" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>
+                                   	</div>
+									
+                                    <div data-target="#carousel" data-slide-to="2" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/youbblogo.png" alt="YouBroadband" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>
+                                   	</div>
+                                    <div data-target="#carousel" data-slide-to="3" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/youbblogo.png" alt="YouBroadband" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>
+                                   	</div>
+                             	</div>
+                                    
+								<div class="item">
+                                	<div data-target="#carousel" data-slide-to="4" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/youbblogo.png" alt="YouBroadband" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal" data-target="#example"> Get Coupon </button> 
+										</div>    
+                                   	</div>
+                                    <div data-target="#carousel" data-slide-to="5" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/youbblogo.png" alt="YouBroadband" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>    
+                                  	</div>
+                                    <div data-target="#carousel" data-slide-to="6" class="thumb">
+                                     	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/youbblogo.png" alt="YouBroadband" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example"> Get Coupon </button> 
+										</div>    
+                                   	</div>
+                                    <div data-target="#carousel" data-slide-to="7" class="thumb">
+                                    	<div class="brand-block">
+											<div class="brand-image">
+												<center>
+													<img src="image/internet/youbblogo.png" alt="YouBroadband" width="130" height="25" /> 
+												</center>
+											</div>
+											<span class="scissors">&#9986;</span>
+											<table style="margin:5px 1px 0px 10px;">
+												<tr>
+													<td>
+														<b>Plan Name :</b>
+														Zoom 599
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Validity :</b>
+														1 Month
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Data Usage : </b>
+														Unlimited
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<b>Speed :</b>
+														100 Mbps
+													</td>
+												</tr>
+												<tr>
+													<td> 
+														<b>After Data Usage:</b>
+														Unlimited Download @ 512 Kbps
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<h4><strong>
+																<del>&#8377 1500 </del> 15% OFF &#8377 1200  
+															</strong>
+														</h4>
+													</td>
+												</tr>
+											</table>        
+										</div>
+										<div style="padding:10px 0px 0px 60px;">
+											<!--button trigger for coupon modal -->
+											<button type="button" class="btn btn-info" data-toggle="modal" data-target="#example"> Get Coupon </button> 
+										</div>    
+                                   	</div>    
+                             	</div>
+                         	</div>
+                            <a class="left carousel-control" href="#thumbcarousel6" role="button" data-slide="prev" style="width:10px;">
+                            	<span class="glyphicon glyphicon-menu-left" style="top:130px;background-color:black;"></span>
+                            </a>
+                            <a class="right carousel-control" href="#thumbcarousel6" role="button" data-slide="next" style="width:10px;">
+                            	<span class="glyphicon glyphicon-menu-right" style="top:130px;right:11px;background-color:black;"></span>
+                            </a>
+                    	</div>
+                    </div>
+                    <!-------------------------------------- End You Broadband block --------------------------------------------------->
+
                 </div>
             </div>
         </div>    
-        <!-- start Carousel slide show and blocks -->
+        <!-- end all brand blocks -->
+	
+		<!-------------------------- Start modals of all brand plans ---------------------------->
+		<!-- coupon-modal -->
+		<div class="modal fade" id="example" tabindex="-1" role="dialog" aria-labelledby="mycouponmodal" aria-hidden="true">
+			<div class="modal-dialog" style="width:700px;padding:150px 0px 0px 50px;">
+				<div class="modal-content">
+					<div class="modal-body">
+                     	<button type="button" class="close close-button" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true" style="color:white;">&times;</span>
+						</button>
+						<center id="couponbody" style="color:#888888;">
+							<h4>HERE IS YOUR COUPON CODE</h4>
+                            <?php $modalname++;                        
+                            ?>
+							<form class="form-inline" role="form">
+								<div class="form-group">
+									<input type="text" class="form-control" id="coupon" name="coupon" value= 'Coupons Are Over' size="50" disabled />
+								</div>                 
+								<button type="button" class="btn btn-primary" id="copy_button" data-clipboard-target="coupon" >Copy</button>
+							</form>
+							<h4>Go to <a href="#">Airtel</a> and Avail this Offer</h4>
+							<h5>Share this offer via 
+								<a href="" data-toggle="modal" data-target="#smsmodal"><b>SMS</b></a> or 
+								<a href="" data-toggle="modal" data-target="#emailmodal"><b>EMAIL</b></a>
+							</h5>	
+						</center>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+					</div>
+				</div>     
+			</div>
+		</div>                        
+							
+		<!-- sms coupon -->
+		<div class="modal fade" tabindex="-1" id="smsmodal" role="dialog" aria-labelledby="smsmodal" aria-hidden="true">
+			<div class="modal-dialog ezCustTrans" style="width:700px;padding:150px 0px 0px 50px;">
+				<div class="modal-content">
+					<div class="modal-body">
+						<button type="button" class="close close-button" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true" style="color:white;">&times;</span>
+						</button>
+						<center id="couponbody" style="color:#888888;">
+							<h4>Share via SMS</h4>
+							<form class="form-inline" role="form">
+								<div class="form-group">
+									<input type="tel" class="form-control" id="mobilenumber" size="50" />
+								</div>
+								<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-envelope">  </span> SMS</button>
+							</form>	
+						</center>
+						<p style="padding:15px 0px 0px 90px;">
+							<span class="glyphicon glyphicon-chevron-left"> </span>
+							<a href="" data-dismiss="modal">Back</a>
+						</p>
+						<div style="height:33px;" ></div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+					</div>
+				</div>
+			</div>
+		</div>
+							
+		<!-- email coupon -->
+		<div class="modal fade" tabindex="-1" id="emailmodal" role="dialog" aria-labelledby="emailmodal" aria-hidden="true">
+			<div class="modal-dialog ezCustTrans" style="width:700px;padding:150px 0px 0px 50px;">
+				<div class="modal-content">
+					<div class="modal-body">
+						<button type="button" class="close close-button" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true" style="color:white;">&times;</span>
+						</button>
+						<center id="couponbody" style="color:#888888;">
+							<h4>Share via EMAIL</h4>
+							<form class="form-inline" role="form">
+								<div class="form-group">
+									<input type="email" class="form-control" id="email" size="50" />
+								</div>
+								<button type="button" class="btn btn-primary">Send Email</button>
+							</form>	
+						</center>
+						<p style="padding:15px 0px 0px 90px;">
+							<span class="glyphicon glyphicon-chevron-left"> </span>
+							<a href="" data-dismiss="modal">Back</a>
+						</p>
+						<div style="height:33px;" ></div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+					</div>
+				</div>
+			</div>
+		</div>
 
         
 	

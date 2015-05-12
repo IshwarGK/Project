@@ -244,11 +244,11 @@
 	<!-- feedback form end -->
 
     <!-- topbar, searchbar and menubar start  -->
-    <div id="header" style="width:1349px; height:150px;"></div>
+    <div id="header" style="width:100%; height:150px;"></div>
     <!-- topbar, searchbar and menubar end  -->
     
 	<!-- list of internet plans start -->
-    <div style="width:1349px;">
+    <div style="width:100%;">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2 col-md-offset-1">
@@ -834,13 +834,13 @@ var speed = [];
                             function pwd($plan_name){
                                             include "db_connect.php";
                                                 
-                                            $sql2 = "SELECT * FROM coupon_validation_airtel where plan_name = '$plan_name' and used = 0 limit 1";
+                                            $sql2 = "SELECT * FROM coupon_validation_airtel WHERE plan_name in (select plan_name from city_plans where cityid = $cityid) and  plan_name = '$plan_name' and used = 0 limit 1";
                                         $result2 = $conn->query($sql2);
                                         $row2 = $result2->fetch_assoc();
                                         
                                         if($row2 > 0){
                                             $coupon_code = $row2['coupon_code'];
-                                            $sql3 = "UPDATE coupon_validation_airtel SET used= 1 WHERE coupon_code= '$coupon_code'";
+                                            $sql3 = "UPDATE coupon_validation_airtel SET used= 1 WHERE plan_name in (select plan_name from city_plans where cityid = $cityid) and  coupon_code= '$coupon_code'";
                                             $result3 = $conn->query($sql3);
                                                 
                                         }
@@ -947,16 +947,11 @@ var speed = [];
                             </div>
                             <div style="padding:10px 0px 0px 60px;">
                                 <!--button trigger for coupon modal -->
-                                <button type="button" class="btn btn-success" data-toggle="modal"  data-target="#example" onclick="loginfunction('<?php echo $plan_name ?>')" >  Get Coupon</button>
+                                <button type="button" class="btn btn-info" data-toggle="modal"  data-target="#example" onclick="loginfunction('<?php echo $plan_name ?>')" >  Get Coupon</button>
                                 
                             </div>
                             <!-- PHP code for getting coupon code  -->
                            
-                           
-                                    
-    			
-							
-                   
                         </div>
                         <?php                                            
                                 }        
@@ -969,6 +964,7 @@ var speed = [];
                             // Close connection
                             $conn->close();
                         ?>
+						
                         <!-- coupon-modal -->
 							<div class="modal fade" id="example" tabindex="-1" role="dialog" aria-labelledby="mycouponmodal" aria-
 								 hidden="true">
@@ -977,7 +973,7 @@ var speed = [];
 									<div class="modal-content">
 										<div class="modal-body">
                                  
-											<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background-color:#080808;width:40px;height:40px;margin:-15px -15px 0px 0px;">
+											<button type="button" class="close close-button" data-dismiss="modal" aria-label="Close">
 												<span aria-hidden="true" style="color:white;">&times;</span>
 											</button>
 											<center id="couponbody" style="color:#888888;">
@@ -991,10 +987,6 @@ var speed = [];
                                                     
 													<button type="button" class="btn btn-primary" id="copy_button" data-clipboard-target="coupon" >Copy</button>
 												</form>
-												<script language="JavaScript">
-		
-</script>
-
 												<h4>Go to <a href="#">Airtel</a> and Avail this Offer</h4>
 												<h5>Share this offer via 
 													<a href="" data-toggle="modal" data-target="#smsmodal"><b>SMS</b></a> or 
@@ -1016,7 +1008,7 @@ var speed = [];
 								<div class="modal-dialog ezCustTrans" style="width:700px;padding:150px 0px 0px 50px;">
 									<div class="modal-content">
 										<div class="modal-body">
-											<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="background-color:#080808;width:40px;height:40px;margin:-15px -15px 0px 0px;">
+											<button type="button" class="close close-button" data-dismiss="modal" aria-label="Close">
 												<span aria-hidden="true" style="color:white;">&times;</span>
 											</button>
 											<center id="couponbody" style="color:#888888;">
@@ -1028,7 +1020,10 @@ var speed = [];
 													<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-envelope">  </span> SMS</button>
 												</form>	
 											</center>
-											<p style="padding:15px 0px 0px 90px;"><span class="glyphicon glyphicon-chevron-left"> </span><a href="" data-dismiss="modal">Back</a></p>
+											<p style="padding:15px 0px 0px 90px;">
+												<span class="glyphicon glyphicon-chevron-left"> </span>
+												<a href="" data-dismiss="modal">Back</a>
+											</p>
 											<div style="height:33px;" ></div>
 										</div>
 										<div class="modal-footer">

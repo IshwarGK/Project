@@ -1,11 +1,7 @@
-<?php
-	session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Diskart: Largest Discount Store</title>
+    <title>Diskart: Seller Account</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="image/titlebar.png" />
@@ -18,7 +14,7 @@
 		.seller_profile_top {
 			padding:8px 0px 15px 0px;
 			width:100%;
-			background-color:#228B22;
+			background-color:#3b5998;
 		}
 		/* topbar div start */
 		
@@ -54,8 +50,16 @@
 	</style>
 	<script>
 		
+		//coupon check message start
+		$(document).ready(function(){
+			document.getElementById("coupon-check").innerHTML = "";
+			document.getElementById("coupon_form").reset();
+		});
+		//coupon check message end
+		
 		//coupon history button start
 		$(document).ready(function(){
+            
 			$("#coupon-history").hide();
 		});
 		var count = 0;
@@ -70,8 +74,8 @@
 			}
 		}
 		//coupon history button end
-		
-		//paynow button start
+	
+        //paynow button start
 		$(document).ready(function(){
 			$(".pay-now").hide();
 		});
@@ -87,18 +91,37 @@
 			}
 		}
 		//paynow button end
+        
+        // start delete login cookies
+        var delete_cookie = function(name) {
+            document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        };
+        
+        // end delete login cookies
+        
 	</script>
 </head>
 <body>
-	<!-- database connection start -->
+    <script>
+    function delete_login_cookies(){
+            
+            delete_cookie('cookies_username');
+            delete_cookie('cookies_pwd');
+        
+            window.location = "sell.php";
+            
+        }
+    </script>
+    
+    <!-- database connection start -->
 	<?php 
 		include 'db_connect.php'; 
-		$username = $_SESSION["user"];
-		$pwd = $_SESSION["pass"];
-		$sql = "SELECT * FROM seller_account WHERE Username = '$username' and Password = '$pwd'";
+		$username = $_COOKIE['cookies_username'];
+        $pwd = $_COOKIE['cookies_pwd'];
+        $sql = "SELECT * FROM seller_account WHERE Username = '$username' and Password = '$pwd'";
 		$result = $conn->query($sql);
 		$row = $result->fetch_assoc();
-	?>
+    ?>
 	<!-- database connection end -->
 	
     <!-- topbar start -->
@@ -106,11 +129,11 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2">
-                    <a href="index.php">
-                        <img src="image/logo.png" alt="Diskart.com:Online Discount India" title="Online Discount India | Diskart.com" style="width:200px;height:40px;" />
+                    <a>
+                        <img src="image/logo.png" alt="Diskart.com:Online Discount India" title="Online Discount India | Diskart.com" style="width:190px;height:40px;" />
                     </a>	
                 </div>
-				<div class="col-md-9" style="padding-top:5px;">
+				<div class="col-md-4" style="padding-top:5px;">
 					<span style="margin-left:-15px;">
 						<font style="color:white;font-size:25px;">Marketplace</font>
 					</span>
@@ -136,14 +159,14 @@
 				
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3">
-						<form role="form" class="form-inline" style="margin-top:40px;" onsubmit="return verify_coupon_code_fun('<?php echo $username ?>', '<?php echo $pwd ?>')">
+						<form role="form" class="form-inline" id="coupon_form" style="margin-top:40px;" onsubmit="return verify_coupon_code_fun('<?php echo $username ?>', '<?php echo $pwd ?>')">
 							<h4>Enter Coupon</h4>
 							<div class="form-group">
 								<input type="text" class="form-control" id="coupon" name="coupon" placeholder="Enter Coupon" autofocus required />
 							</div>
 							<button type="submit" class="btn btn-primary">Verify</button>
-                            <span class="verified">hi</span>
 						</form>
+						<div id="coupon-check" style="margin-top:10px;"> </div>
                         
 					</div>
 				</div>
@@ -163,9 +186,22 @@
                                     dataType: "json",
                                     success:function(data) {
                                         if(data.status == 'success'){
-                                            alert('Success');
-                                             
-                                        }    
+                                            
+                                            document.getElementById("coupon-check").innerHTML = "<font style='color:green;'>Verified</font>";
+											document.getElementById("coupon_form").reset();
+											location.reload();
+											
+                                        } 
+										if(data.status == 'error'){
+                                            
+                                            document.getElementById("coupon-check").innerHTML = "<font style='color:darkred;'>Coupon code is already used</font>";
+                                        }
+										if(data.status == 'wrongcoupon'){
+                                            
+                                            document.getElementById("coupon-check").innerHTML = "<font style='color:darkred;'>Coupon Code is wrong</font>";
+                                        }
+										
+										
                                     }
                                     });
                                 return false;
@@ -301,6 +337,13 @@
 			
 			<!-- right panel start -->
 			<div class="col-md-5">
+				<div class="row">
+					<div class="col-md-1 col-md-offset-9">
+						<button class="btn btn-info" onclick="delete_login_cookies()" style="margin-top:20px;"> 
+							<span class="glyphicon glyphicon-log-out"> </span> log out 
+						</button>
+					</div>
+				</div>
 				<div class="company-profile">
 					
 					<center><font size="5"><strong>Company Profile</strong></font></center>
@@ -380,5 +423,16 @@
 		// Close connection
     	$conn->close();
 	?>
+	
+	<div style="background-color:#3b5998;padding:15px 0px 10px 0px;margin-top:192px;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-md-offset-1">
+					<p style="color:white;"><b>&#169; 2015 Diskart. All rights reserved.</b></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 </body>
 </html>    

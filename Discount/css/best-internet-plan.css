@@ -1,0 +1,32 @@
+.close-button {
+	background-color:#080808;
+	width:40px;
+	height:40px;
+	margin:-15px -15px 0px 0px;
+}
+/*-- list of internet plan blocks start --*/
+    /* plan block */
+.brand-block {
+    border: 1px dashed darkred;
+	background-color:#F0F0F0;
+    border-radius: 5px;
+    height: 235px;
+    width: 230px;
+}
+
+    /* brand image in plan block */
+.brand-image {
+    height:40px;
+    border-bottom: 3px solid #F8F8F8;
+    padding-top: 5px;
+}
+/*-- list of internet plan blocks end --*/
+
+.scissors{
+	float:right;
+	-ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Safari */
+	transform:rotate(-90deg);
+	margin-right:-6px;
+	color:darkred;
+}

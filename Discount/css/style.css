@@ -4,13 +4,14 @@
 .header-topbar {
     /*background-color: #228B22;   amazon : #232f3e;*/
     background-color:#3b5998;
+	height:80px;
 }
 
 /*company logo*/
 .company-logo {
-	margin-top:13px;
+	margin-top:11px;
 	margin-left:30px;
-	width:200px;
+	width:190px;
 	height:40px;
 }
 
@@ -28,6 +29,7 @@
 	top: 0;
 	padding-top:0px;		
 	width: 100%;
+	height:60px;
 }
 
 .fix-body {
@@ -37,7 +39,7 @@
 
 /* helping bar start*/
 ul#menu1 {
-    padding: 5px 0px 0px 0px;
+    padding: 5px 0px 0px 12px;
 }
 
 ul#menu1 > li > a {
@@ -193,11 +195,13 @@ ul#menu3 li a:hover {
 .header-menubar{
     /*background-color: #333;   */
     background-color: #232f3e;
+	
 }
 
 .navbar-inverse {
 	background-color: #232f3e;
 	border-color: #232f3e;
+	
 }
 .menutab {
   display: inline-block;
@@ -224,7 +228,7 @@ ul#menu3 li a:hover {
 
 .mega-dropdown { position: static !important; }
 .mega-dropdown-menu {
-    margin-left: 335px;
+    margin-left: 24.8%;
     padding: 20px 15px 15px;
     width: 58.5%;
 }
@@ -239,7 +243,7 @@ ul#menu3 li a:hover {
 
 .slide-show {
 	width: 100%;
-    height: 400px;
+    height: 580px;
 	margin-top: -20px;
 	position: relative;
 	z-index: -9999;
@@ -249,33 +253,27 @@ ul#menu3 li a:hover {
 
 /*---------four wheeler, two wheeler, cakes and internet plans block start -------*/
 
-.slide-block {
-    width:1100px;
+.brand-block-name{
+	color:aliceblue;
+	outline: none;
 }
-
-div.slide-block img:hover {
-    border: 2px solid #FF8C00;
+.brand-block-name:hover {
+	text-decoration: none;
+	color:aliceblue;
 }
-
-.head-block {
-    width:1100px; 
+.head-block { 
     background-color:#333;
-    color: whitesmoke;
-    padding: 4px 0px 2px 9px;
+    padding: 4px 0px 2px 20px;
 }
-
+.item {
+	padding:25px 0px 25px 40px;
+}
 .item .thumb {
 	width: 25%;
 	cursor: pointer;
 	float: left;
 }
-.item .thumb img {
-	width: 100%;
-	margin: 2px;
-}
-.item img {
-	width: 100%;	
-}
+
 /*---------four wheeler, two wheeler, cakes and internet plans block end ---------*/
 
 html, body {
